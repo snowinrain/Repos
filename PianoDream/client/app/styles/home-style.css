@@ -1,0 +1,121 @@
+@CHARSET "ISO-8859-1";
+
+/**
+* table region
+*/
+table  {
+
+}
+.favorite-1  {
+
+}
+.favorite-2  {
+  color: #ee9815;
+}
+.favorite-3  {
+  color: #679c10;
+}
+.favorite-4  {
+  color: #d35b3e;
+}
+table {
+  border-collapse: collapse;
+}
+thead tr  {
+  /*background-color: #1a1a1a;*/
+  height: 25px;
+  text-align: left;
+}
+thead th  {
+  font-weight: normal;
+}
+.table-row  {
+  background-color: #4b4b4b;
+  height: 35px;
+  border-bottom: 2px solid #3f3f40;
+  cursor: pointer;
+}
+.table-row:hover  {
+  background-color: #5c5c5c;
+}
+td, th  {
+  padding-left: 10px;
+}
+
+/* .paginate_button, .paginate_active  {
+  background: #4b4b4b;
+  cursor: pointer;
+  padding: 2px 6px 2px 6px;
+  margin-left: 2px;
+} */
+.paginate_button {
+  background: #4b4b4b;
+  cursor: pointer;
+  padding: 2px 6px 2px 6px;
+  margin-left: 2px;
+  margin-right: 1px;
+  border-radius: 5px;
+}
+.paginate_active{
+  background: #4b4b4b;
+  cursor: pointer;
+  padding: 2px 8px 2px 8px;
+  margin-left: 1px;
+}
+
+
+.paginate_active {
+  background: #333232;
+}
+/* .sorting_asc {
+    background: url("../images/sort_asc.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+}
+.sorting_desc {
+    background: url("../images/sort_desc.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+}
+.sorting {
+    background: url("../images/sort_both.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+}
+.sorting_asc_disabled {
+    background: url("../images/sort_asc_disabled.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+}
+.sorting_desc_disabled {
+    background: url("../images/sort_desc_disabled.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+} */
+
+th > img
+{
+  height: 15px;
+    margin-left: 10px;
+    width: 20px;
+}
+.sorting_asc img{
+  background: url("img/sort_asc.png") no-repeat scroll rgba(0, 0, 0, 0);
+}
+.sorting_desc img{
+    background: url("img/sort_desc.png") no-repeat scroll rgba(0, 0, 0, 0);
+}
+.sorting img {
+    background: url("img/sort_both.png") no-repeat scroll rgba(0, 0, 0, 0);
+}
+.sorting_asc_disabled img {
+    background-image: url("img/sort_asc_disabled.png") no-repeat scroll rgba(0, 0, 0, 0);
+}
+.sorting_desc_disabled img {
+    background: url("img/sort_desc_disabled.png") no-repeat scroll rgba(0, 0, 0, 0);
+}
+
+/* Favorite -- Hide */
+.header-favoriteLevel, .row-favoriteLevel
+{
+  display: none;
+}
+
+#filter-item select
+{
+  height: 24px;
+  width: auto;
+  background: #222222;
+  border: 1px solid #555555;
+  color: #c3c1b5;
+  border-radius: 3px;}

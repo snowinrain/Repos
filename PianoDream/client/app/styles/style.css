@@ -1,0 +1,324 @@
+@import url("font.css");
+
+#wrapper  {
+    margin: 0 auto 0;
+    margin-top: 0;
+}
+body  {
+  background-color: #151515;
+  color: #adb0b0;
+  margin: 0;
+  font-family: "my Segoe UI";
+  font-size: 11pt;
+  height: 100%;
+
+  /*2014-07-02*/
+  overflow-y: hidden;
+  overflow-x: auto;
+  min-width: 1300px;
+  position: relative;
+}
+
+#wrapper-content  {
+  margin-top: 0;
+  float: lelf;
+  border: 1px dotted #666666;
+  height: auto 100%;
+  overflow: auto;
+}
+#header  {
+  height: 30px;
+  background-color: #000;
+  font-size: 10.5pt;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  /*min-width: 1320px;*/
+}
+.small-container  {
+  width: 1200px;
+   margin: 0 auto 0;
+}
+#topbar  {
+  width: 100%;
+}
+#container  {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  top: 30px;
+  width: 100%;
+  background: url("../images/main_bg.png") #4b4b4b;
+}
+#footer  {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: #151515;
+  z-index: 30;
+  /*min-width: 1320px;*/
+}
+
+/**
+* HEADER - topbar
+*/
+.topbar-item  {
+  float: left;
+  margin: 1px 5px 5px 3px;
+}
+#logo  {
+  border-right: 1px dotted #666666;
+  padding-right:10px;
+}
+#user-profile  {
+  width: 100px;
+  border-left: 1px dotted #666666;
+  padding-left: 10px;
+}
+
+
+/**
+* CONTAINER
+*/
+#container-content  {
+  float: left;
+  width: 100%;
+}
+.content-section  {
+  margin-left: 15px;
+  margin-right: 15px;
+  float: left;
+  width: 97.3%;
+}
+
+/*custom table*/
+#table-projects_length, #table-projects_info, #table-projects_first,  #table-projects_last  {
+  display: none;
+}
+
+#table-projects_paginate  {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+#table-projects_filter  {
+  display: none;
+}
+
+/**
+* Nav section: search region + filter region
+*/
+#nav-section  {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+#search  {
+  background-color: #535353;
+  border: 0;
+  color: #999999;
+  height: 25px;
+  padding-left: 7px;
+  padding-left: 7px;
+}
+#search-item  {
+  float: left;
+  width: 40#;
+}
+#filter-item  {
+  float: left;
+  margin: 2px 0px 0px 10px;
+  width: 40#;
+}
+#search-icon
+{
+  margin: 0px 0px 0px 0px;
+  float: left;
+  width: 27px;
+  height: 27px;
+  background: #333;
+}
+
+/**
+* Common
+*/
+@CHARSET "ISO-8859-1";
+input::-webkit-input-placeholder, isindex::-webkit-input-placeholder, textarea::-webkit-input-placeholder
+{/* safari browsers */
+  color:    #888888 !important;
+}
+:-webkit-input-placeholder { /* WebKit browsers */
+    color:    #888888 !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #888888 !important;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #888888 !important;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #888888 !important;
+}
+
+select {
+    display: inline-block;
+    color: #bfc1c5;
+    border: 1px solid #bfc1c5;
+    border-radius: 2px;
+    background-color: black;
+}
+a img
+{
+  border:none;
+}
+
+/**
+* custom HTML element
+*/
+
+select
+{
+  /* width: 113px; */
+  width: auto;
+  background: #222222;
+  border: 1px solid #555555;
+  color: #c3c1b5;
+  border-radius: 3px;
+}
+
+#ui-datepicker-div   {
+  background: #242424;
+  border: none;
+  color: #c0c0c0;
+  font-weight: normal;
+  font-family: "my Segoe UI";
+  border-radius: 0px;
+
+}
+
+#ui-datepicker-div .ui-widget-header {
+    background: none;
+    border: none;
+    color: #c0c0c0;
+    font-weight: normal;
+}
+#ui-datepicker-div .ui-widget-header .ui-state-hover {
+  border-radius: 0px;
+  border: none;
+  background: none;
+}
+.ui-datepicker-header  {
+  font-size: 18pt;
+}
+.ui-datepicker th  {
+  font-weight: normal !important;
+  text-transform: uppercase;
+  font-size: 9pt;
+}
+#ui-datepicker-div thead tr{
+  border-bottom: solid 1px #747474;
+
+}
+#ui-datepicker-div thead tr td{
+  font-weight: normal;
+
+}
+
+#ui-datepicker-div .ui-state-default  {
+  background: none;
+  border: none;
+  color: #C0C0C0;;
+  text-align: center;
+
+}
+#ui-datepicker-div .ui-state-active  {
+  border-radius: 50%;
+  background: #fff !important;
+  color: #000;
+}
+#ui-datepicker-div .ui-state-hover  {
+  background: #353535;
+  border-radius: 50%;
+}
+#ui-datepicker-div .ui-icon-circle-triangle-w  {
+  background: url("../images/ic_calendar_prev.png") no-repeat top left;
+}
+#ui-datepicker-div .ui-icon-circle-triangle-e  {
+  background: url("../images/ic_calendar_next.png") no-repeat top left;
+}
+#ui-datepicker-div .ui-icon  {
+  width: 25px;
+  height: 25px;
+}
+.ui-datepicker-prev, .ui-datepicker .ui-datepicker-prev-hover {
+  left: 0px !important;
+  top: 0px !important;
+  cursor: pointer;
+}
+.ui-datepicker-next, .ui-datepicker .ui-datepicker-next-hover {
+  right: 0px !important;
+  top: 0px !important;
+  cursor: pointer;
+}
+#ui-datepicker-div .ui-priority-secondary  {
+  opacity: 0.2 !important;
+}
+
+.float-to-right
+{
+  float: right;
+}
+.float-to-left
+{
+  float: left;
+}
+.logo-item  {
+  float: left;
+}
+#user-nav  {
+  background: #4f4f4f;
+  width: 120px;
+  padding-bottom: 8px;
+    padding-top: 8px;
+    position: fixed;
+    left: 0;
+    top: 30px;
+    display: none;
+    z-index: 1000;
+    font-size: 10pt;
+}
+#nav-user  {
+  cursor: pointer;
+  margin-top: 10px;
+}
+.user-nav-item   {
+  float: left;
+  width: 100%;
+}
+.user-nav-item-img  {
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding-top: 2px;
+}
+.user-nav-item-title  {
+  float: left;
+  width: 73%;
+}
+.user-nav-item-top  {
+  padding-bottom: 5px;
+  border-bottom: solid 1px #383838;
+}
+.user-nav-item-bot  {
+  padding-top: 5px;
+  border-top: solid 1px #6d6d6d;
+}
+.modal {
+  overflow-y: hidden;
+}
+.fa {
+  font-family: "FontAwesome" !important
+}
+

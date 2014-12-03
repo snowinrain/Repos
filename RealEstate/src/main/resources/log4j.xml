@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<log4j:configuration debug="true"
+	xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- ================================================================== -->
+	<!-- APPENDERS -->
+	<!-- ================================================================== -->
+
+	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{dd MMM yyyy HH:mm:ss} %5p %c{1} | %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="file" class="org.apache.log4j.rolling.RollingFileAppender">
+		<param name="File" value="${catalina.base}/logs/RealEstate.log" />
+		<param name="Encoding" value="UTF-8" />
+		<rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+			<param name="FileNamePattern"
+				value="${catalina.base}/logs/RealEstate.%d{yyyy-MM}.log.gz" />
+		</rollingPolicy>
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="%d{dd MMM yyyy HH:mm:ss} %5p %c{1} | %m%n" />
+		</layout>
+	</appender>
+
+
+	<!-- ================================================================== -->
+	<!-- LOGGERS -->
+	<!-- ================================================================== -->
+
+	<logger name="com.realestate">
+		<level value="INFO" />
+		<appender-ref ref="consoleAppender" />
+	</logger>
+
+	<logger name="org.springframework.data.document.mongodb">
+		<level value="DEBUG" />
+		<appender-ref ref="consoleAppender" />
+	</logger>
+
+	<logger name="org.springframework">
+		<level value="ERROR" />
+	</logger>
+
+	<root>
+		<priority value="ERROR" />
+		<appender-ref ref="file" />
+	</root>
+
+</log4j:configuration>

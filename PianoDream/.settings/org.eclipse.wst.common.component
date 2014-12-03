@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="2.0">
+	<wb-module deploy-name="PianoDream">
+		<property name="context-root" value="PianoDream"/>
+		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/resources"/>
+		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>
+		<wb-resource deploy-path="/" source-path="src/main/webapp"/>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1/e6cb541461c2834bdea3eb920f1884d1eb508b50/activation-1.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/4.0.3.RELEASE/76b870a5aa132b4c0dd78cd061feb3e1652cddd1/spring-test-4.0.3.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.0.3.RELEASE/4d5066f31ea4b9c58957bf8c0c213b13ed44c1c5/spring-web-4.0.3.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-chrome-driver/2.42.2/c36ab01e47eea449942aea7f86e325ca37896be9/selenium-chrome-driver-2.42.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.0.3.RELEASE/dcedf5329d7092d66cc9d2496687a5f29d883eb6/spring-aop-4.0.3.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.webbitserver/webbit/0.4.14/3bf3f17fe41fb34c4d98663957ec0795a6b6653e/webbit-0.4.14.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/4.0.3.RELEASE/27535507818810b3dc17decee9f293565747094d/spring-context-support-4.0.3.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/761ea405b9b37ced573d2df0d1e3a4e0f9edc668/commons-collections-3.2.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/javax.el/el-api/2.2/42971279cc8ba864462580c7fc2199fd5715ee7f/el-api-2.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/commons-fileupload/commons-fileupload/1.3.1/c621b54583719ac0310404463d6d99db27e1052c/commons-fileupload-1.3.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/cglib/cglib/3.1/1f1cb6c7a7479e0c7fd7987109e503914bebe84a/cglib-3.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/4.2/4b2c12b92dd045aeabf5b2aeeb3220bf010da9d4/asm-4.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.6.1/bd245d6746cdd4e6203e976e21d597a46f115802/slf4j-log4j12-1.6.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.3.2/3202421d9425ced69919b282afa644e7ef0e8fef/httpmime-4.3.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-support/2.42.2/77ea1515455e3c259188b29eec7775262bee2ba5/selenium-support-2.42.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.w3c.css/sac/1.3/cdb2dcb4e22b83d6b32b93095f644c3462739e82/sac-1.3.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-safari-driver/2.42.2/10dc2d7cdeeac36c9f037789ef57db35777c540c/selenium-safari-driver-2.42.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/net.sourceforge.cssparser/cssparser/0.9.13/be59b8e492327e69ef1571266f1a34d83d7b2417/cssparser-0.9.13.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.primefaces/primefaces/5.0/65bdce80509320280b3b5210fcddae9b7d50338/primefaces-5.0.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-java/2.42.2/1d56722a74a495c7e588508b84b91a76cd40f362/selenium-java-2.42.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/3.2.3.RELEASE/76dffb9b355448255291533a8499ec801349b570/spring-security-core-3.2.3.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/15.0/ed727a8d9f247e2050281cb083f1c77b09dcb5cd/guava-15.0.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/xalan/serializer/2.7.1/4b4b18df434451249bb65a63f2fb69e215a6a020/serializer-2.7.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/javax.mail/mail/1.4.7/9add058589d5d85adeb625859bf2c5eeaaedf12d/mail-1.4.7.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-mongodb/1.4.2.RELEASE/dc0adbc87658c388e44622adca2bed85d187e563/spring-data-mongodb-1.4.2.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.0.3.RELEASE/138d28200d97f4affe9ccaa47fab54718b438319/spring-core-4.0.3.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis/1.4.01/3789d9fada2d3d458c4ba2de349d48780f381ee3/xml-apis-1.4.01.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/4.0.3.RELEASE/92220b99c3a8b576286c10edd1726f837450bc2c/spring-orm-4.0.3.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-websocket/8.1.14.v20131031/eca95fc1d20a71cd4adc89b35df473798118deaa/jetty-websocket-8.1.14.v20131031.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.glassfish.web/el-impl/2.2/a401771e200ff17a77756c2109250619722e4660/el-impl-2.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/4.0.3.RELEASE/83dfa294b89feda22caba2842cdc32729554dd86/spring-tx-4.0.3.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/3.4.0/803ff252fedbd395baffd43b37341dc4a150a554/jna-3.4.0.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/b1b6ea3b7e4aa4f492509a4952029cd8e48019ad/commons-io-2.4.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/log4j/apache-log4j-extras/1.1/1e4b290f5c9ce5ea3a1a7352496c9c9d2a894800/apache-log4j-extras-1.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/9ce04e34240f674bc72680f8b843b1457383161a/commons-codec-1.9.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.1.3/f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f/commons-logging-1.1.3.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-nop/1.6.1/70249094d4e5653b6bdfea46f3a1a4165c1e1993/slf4j-nop-1.6.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-http/8.1.14.v20131031/8dd4e01b374e16cf0335b7975a7aa0a57396d5da/jetty-http-8.1.14.v20131031.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/7999a63bfccbc7c247a9aea10d83d4272bd492c6/log4j-1.2.16.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/1.7.2.RELEASE/ccaf8f785382bdef27a0c287d2d75af7e5c8dccf/spring-data-commons-1.7.2.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.0.3.RELEASE/d6fd9778619ab87a41ae3aa879a53ee60f160c08/spring-webmvc-4.0.3.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.primefaces.themes/all-themes/1.0.10/341df9500861747f174500d7d912ec6f6ff80824/all-themes-1.0.10.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-io/8.1.14.v20131031/12f6f92d7e58349501f2cfc0716b8f1c6a2962eb/jetty-io-8.1.14.v20131031.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-firefox-driver/2.42.2/ea341c7a3b1e23b20656a76ab962ebf5fd0c02c3/selenium-firefox-driver-2.42.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-web/3.2.3.RELEASE/715b0357d6585d5730cad91a263b8848ae19caa6/spring-security-web-3.2.3.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/platform/3.4.0/e3f70017be8100d3d6923f50b3d2ee17714e9c13/platform-3.4.0.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/4.0.3.RELEASE/5c86b94f15523b3b125c35861aeb4ca85897231a/spring-jdbc-4.0.3.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/io.netty/netty/3.5.2.Final/e6fb74a0699abe108969b2ec1f269391169a0426/netty-3.5.2.Final.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-htmlunit-driver/2.42.2/1e2c89b6edd0250cea19432c652222eb8a732a6/selenium-htmlunit-driver-2.42.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/cglib/cglib-nodep/2.1_3/58d3be5953547c0019e5704d6ed4ffda3b0c7c66/cglib-nodep-2.1_3.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-config/3.2.3.RELEASE/7274ca699e45bb9110ef5e801e0684ceb2e4d2db/spring-security-config-3.2.3.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/xerces/xercesImpl/2.11.0/9bb329db1cfc4e22462c9d6b43a8432f5850e92c/xercesImpl-2.11.0.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/8.1.14.v20131031/43063284480a41eca024dc8852452eedf6379c16/jetty-util-8.1.14.v20131031.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.0.3.RELEASE/40b25b3a693cb4cc382ddf2e69ff1b29c75a2e7d/spring-expression-4.0.3.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.6/ab1648fe1dd6f1e5c2ec6d12f394672bb8c1036a/jcl-over-slf4j-1.7.6.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.json/json/20080701/d652f102185530c93b66158b1859f35d45687258/json-20080701.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/net.sourceforge.nekohtml/nekohtml/1.9.20/f7c918a3548dd81a15aab0619809b59f9bf4e931/nekohtml-1.9.20.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-remote-driver/2.42.2/230a6905f2cee5ca5fc2ab31bd342e757bccad2d/selenium-remote-driver-2.42.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.3.1/98e2eefcf524f757188f172642ecf5e2c7421947/httpcore-4.3.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.0.3.RELEASE/41eabd53fd4ba5ba2b2d8af6c256a3741f65c2f3/spring-beans-4.0.3.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/net.sourceforge.htmlunit/htmlunit-core-js/2.14/77e78f065dc90726226c47ccd1b6babc4687c18b/htmlunit-core-js-2.14.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.2.1/66f13681add50ca9e4546ffabafaaac7645db3cf/commons-lang3-3.2.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-ie-driver/2.42.2/c9c16383fcd66cdf0a38d63b93c9cea808eaf9f7/selenium-ie-driver-2.42.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/xalan/xalan/2.7.1/75f1d83ce27bab5f29fff034fc74aa9f7266f22a/xalan-2.7.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/2.12.0/79dde454a0dc079da453825220e0c8dcb790eb69/mongo-java-driver-2.12.0.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.3.2/10a45d03873baa34436ae54548d9f1140d4bb68a/httpclient-4.3.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/com.sun.faces/jsf-impl/2.1.20/fc68e40734745463247aa80f9de82a60c7f507b4/jsf-impl-2.1.20.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.6/562424e36df3d2327e8e9301a76027fca17d54ea/slf4j-api-1.7.6.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-api/2.42.2/4aa197c299747cb0e8f36297f56c4ce76ecc4f80/selenium-api-2.42.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.0.3.RELEASE/782a71a312dc307fa531023aa66247b9b4a109d/spring-context-4.0.3.RELEASE.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/javax.servlet/jstl/1.2/74aca283cd4f4b4f3e425f5820cda58f44409547/jstl-1.2.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/net.sourceforge.htmlunit/htmlunit/2.14/182c75720d34b71bb5726d498d91b854627c5a90/htmlunit-2.14.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.6/ce1edb914c94ebc388f086c6827e8bdeec71ac2/commons-lang-2.6.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-exec/1.1/7dfdf16fade726000564386825ed6d911a44ba1/commons-exec-1.1.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/nhanle/.gradle/caches/modules-2/files-2.1/com.sun.faces/jsf-api/2.2.6/801410df866e58567ac715139c87770372272617/jsf-api-2.2.6.jar">
+			<dependency-type>uses</dependency-type>
+		</dependent-module>
+	</wb-module>
+</project-modules>

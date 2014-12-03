@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="common/header.xhtml">
+	<ui:define name="main">
+
+		<style>
+			span {
+				line-height: 24px !important;
+			}
+		</style>
+
+		<div id="content" style="padding-top:0px; ">
+
+			<section id="content" class="alternate-bg" style="background-image: none;">
+				<section class="container" style="width: 1230px;">
+					<section class="row featured-items">
+						<h:form style="margin-bottom: 0px;">
+							<section class="span9">
+								<div class="property-box">
+									<div class="top">
+										<div class="row">
+											<div class="left" style="width: 100%">
+												<div class="title-line">
+													<div>
+														<h2 style=" font-size: 24px; line-height: 135%;">
+															#{ArticleBean.selectedArticle.title}
+														</h2>
+														<br/><br/>
+														<p style="font-weight: bold;">
+															#{ArticleBean.selectedArticle.subTitle}
+														</p>
+													</div>
+												</div>
+												<div class="description">
+													<p>
+														<h:outputText escape="false" value="#{ArticleBean.selectedArticle.content}" />
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="bottom">
+										<div class="inner">
+											<div class="row">
+												<div class="pull-left update-box">
+													<h:outputText value="#{msg['article.keyword']}: #{ArticleBean.selectedArticle.keywords}" />
+												</div>
+												<div class="pull-right">
+													<p>
+														#{msg['text.lastUpdated']}
+														<h:outputText value="#{ArticleBean.selectedArticle.updatedDate}" >
+	                                                		<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+	                                                	</h:outputText>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</h:form>
+
+						<aside class="span3">
+	                        <section class="widget" style="border: 0px; overflow: visible;">
+	                        	<div style="float: left">
+									<script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+									<!-- Google Ads 2 -->
+									<ins class="adsbygoogle"
+									     style="display:inline-block;width:300px;height:250px"
+									     data-ad-client="ca-pub-1573245275402428"
+									     data-ad-slot="3154395598"></ins>
+									<script>
+									(adsbygoogle = window.adsbygoogle || []).push({});
+									</script>
+								</div>
+	                        </section>
+	                    </aside>
+
+					</section>
+				</section>
+			</section>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

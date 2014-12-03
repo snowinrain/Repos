@@ -1,0 +1,221 @@
+body{
+	font-size: 14px !important;
+	background-color: #E8EDF0;
+	margin: 0;
+}
+
+a{
+	text-decoration: none;
+	font-size: 14px;
+}
+
+h4{
+	color: #666666;
+	font-size: 14px;
+	font-weight:bold;
+}
+
+label{
+	font-size: 14px ;
+}
+
+.topMenu{
+	background-color: #3B5998;
+	height: 37px;
+	text-align: right;
+	padding-right: 30px;
+	margin-bottom: 20px;
+}
+
+.menuLabel{
+	color:#D8DFEA;
+	vertical-align: super;
+	margin-left: 5px;
+}
+
+.menuLabel:HOVER{
+	color:blue;
+}
+
+.smallLink{
+	color: #959494 !important;
+	font-size : 11px;
+	float:right;
+}
+
+.loginPanel{
+	width: 676px;
+	border: 0;
+	background-color: #E8EDF0;
+	margin: 0 auto;
+	margin-top: 12%;
+}
+
+.topPanel{
+	border: 1px solid #DDE0E8;
+	margin: 0 auto;
+}
+
+.bottomPanel{
+	background-color: #F0F5F7; 
+	border: 1px solid #DDE0E8;
+	height: 35px;
+	padding: 20px 30px;
+}
+
+.left{
+	float : left;
+}
+
+.right{
+	float : right;
+}
+
+.col1{
+	font-size: 14px;
+	padding-right: 10px;
+}
+
+.col2{
+	font-size: 14px;
+}
+
+.row1{
+	margin-bottom: -5px;
+	font-size: 14px;
+}
+
+.comboBox{
+	height:28px !important;
+}
+
+#listSubscription tr{
+	height : 32px;
+}
+
+#dlgSubscription .ui-dialog-footer{
+	background-color: #EEEEEE;
+	padding-top: 10px;
+	border : 1px solid #FFFFFF;
+	outline : 1px solid #CCCCCC;
+	text-align:right;
+}
+
+div#top {
+	height: 60px;
+	margin-bottom: 10px;
+}
+
+div#content{
+	width: 100%;
+	float: left;
+}
+
+div#left{
+	float: left;
+	margin-right: 10px;
+	margin-left: 4px;
+}
+
+div#right{
+	float: left;
+	width: 85%;
+}
+
+/***************** Ajax Status *******************/
+#loadingPanel{
+	border:0;
+	box-shadow:none;
+}
+
+#loadingPanel .ui-widget-content{
+	border:0;
+	background: none !important;
+	display: -moz-groupbox;
+}
+
+#loading .ui-shadow{
+	box-shadow:0;
+}
+
+#loading .ui-dialog-content{
+	padding:0 !important;
+}
+
+#loadingPanel_modal.ui-widget-overlay{
+	background: none;
+}
+
+/***************** message *******************/
+.ui-message-error-icon{
+	background-image: none;
+}
+
+.ui-messages-info-detail, .ui-messages-warn-detail, .ui-messages-error-detail, .ui-messages-fatal-detail, .ui-message-info-detail, .ui-message-warn-detail, .ui-message-error-detail, .ui-message-fatal-detail{
+	margin-left: -15px;
+}
+
+/***************** input field *******************/
+.ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield{
+	border: 1px solid #D2D9DC;
+	border-radius: 3px 3px 3px 3px;
+	box-shadow: 0 0 1px 4px #F7F9FA;
+	padding-left:10px;
+	padding-right:10px;
+	width: 270px;
+	height: 30px;
+}
+
+.ui-inputfield.ui-state-focus, .ui-widget-content .ui-inputfield.ui-state-focus, .ui-widget-header .ui-inputfield.ui-state-focus{
+	border-color:#B7D4EA;
+	box-shadow: 0 0 1px 4px #E5F1FA;
+	outline-width: 0;
+}
+
+/***************** widget *******************/
+.ui-widget{
+	font-size: 14px !important;
+}
+
+/***************** radio button *******************/
+.ui-radiobutton{
+	margin-right: 5px;
+}
+
+/***************** Table *******************/
+.ui-datatable thead th, .ui-datatable tbody td, .ui-datatable tfoot td {
+	font-size : 12px;
+}
+
+.IcoEdit {
+	background: url(../images/sprites.png) no-repeat right -124px;
+	width: 16px;
+	height: 16px;
+	display: block;
+	float: left;
+	text-indent: -9999;
+	margin-top: 7px;
+}
+
+.IcoDelete {
+	background: url(../images/sprites.png) no-repeat right -172px;
+	width: 14px;
+	height: 16px;
+	display: block;
+	float: left;
+	text-indent: -9999;
+	margin-top: 7px;
+	margin-left: 4px;
+	cursor: pointer;
+}
+
+.IcoView {
+	background: url(../images/sprites.png) no-repeat -355px -122px;
+	width: 14px;
+	height: 16px;
+	display: block;
+	float: left;
+	text-indent: -9999;
+	margin-top: 7px;
+	margin-left: 4px;
+}

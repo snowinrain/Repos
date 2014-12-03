@@ -1,0 +1,95 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link href="css/style_login.css" rel="stylesheet" type="text/css"/>
+</h:head>
+
+<h:body>
+	<p:ajaxStatus onstart="PF('statusDialog').show();" onsuccess="PF('statusDialog').hide();" />
+	<p:dialog modal="true" widgetVar="statusDialog" showHeader="false" id="loadingPanel" resizable="false"
+	        draggable="false" closable="false">
+	    <p:graphicImage value="/images/ajax-loading.gif" style="position: fixed;margin-top:-50px;margin-left:-50px"/>
+	</p:dialog>
+	<h:form prependId="false" id="form">
+		<p:panel styleClass="loginPanel">
+			<p:panel styleClass="topPanel" style="padding-left:20px;">
+				<p:messages id="msg" />
+				<table style="height: 155px;" >
+					<tr>
+						<td colspan="2" class="col1">
+							<h:outputText value="UserName" />
+						</td>
+						<td class="col1">
+							<h:outputText value="Password" />
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="2" class="col1" valign="top">
+							<p:inputText id="username" value="#{RegisterBean.account.userName}" style="margin-right: 10px;"
+								required="true" requiredMessage="UserName is required field">
+							</p:inputText>
+						</td>
+						<td valign="top">
+							<p:password value="#{RegisterBean.account.password}" id="password"
+								required="true" requiredMessage="Password is required field"
+								validatorMessage="Password length contains 6 - 12 characters">
+								<f:validateLength minimum="6" maximum="12"></f:validateLength>
+							</p:password>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<h:outputText value="First Name" class="col1"/>
+						</td>
+						<td>
+							<h:outputText value="Last Name" class="col1"/>
+						</td>
+						<td>
+							<h:outputText value="Email" class="col1"/>
+						</td>
+					</tr>
+
+					<tr>
+						<td valign="top">
+							<p:inputText id="fname" value="#{RegisterBean.account.accountDetail.firstName}"
+								style="width:120px; margin-right : 5px;"
+								required="true" requiredMessage="FirstName is required field">
+							</p:inputText>
+						</td>
+						<td valign="top">
+							<p:inputText id="lname" value="#{RegisterBean.account.accountDetail.lastName}" style="width:120px"
+								required="true" requiredMessage="LastName is required field">
+							</p:inputText>
+						</td>
+						<td valign="top">
+							<p:inputText id="email" value="#{RegisterBean.account.email}"
+								required="true" requiredMessage="Email is required field">
+							</p:inputText>
+						</td>
+					</tr>
+				</table>
+			</p:panel>
+
+			<p:panel styleClass="bottomPanel">
+				<div class="button">
+					<div class="left">
+						<h:selectBooleanCheckbox value="#{RegisterBean.agree}" style="margin-left:-4px;"/>
+						<h:outputText value=" I agree to the " style="font-size:11px"></h:outputText>
+						<h:commandLink value="terms and conditions and privacy policy" style="font-size:11px"></h:commandLink>
+					</div>
+					<div class="right">
+						<p:commandButton value="Register" update="@form" action="#{RegisterBean.register}"></p:commandButton>
+						<h:outputText value="or " style="margin-left : 5px; margin-right : 3px"></h:outputText>
+						<p:commandLink value="login" action="login?faces-redirect=true" immediate="true" style="text-decoration: underline;"></p:commandLink>
+					</div>
+				</div>
+			</p:panel>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>

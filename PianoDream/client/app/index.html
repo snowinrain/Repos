@@ -1,0 +1,942 @@
+<html ng-app="qmap">
+  <head>
+    <meta charset="utf-8">
+    <title>Qmap || new</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css"/>
+<!--    <link rel="stylesheet" href="styles/bootstrap-theme.min.css"/>-->
+<!--    <link rel="stylesheet" href="styles/bootstrap-responsive.css"/>-->
+    <link rel="stylesheet" href="styles/jquery-ui-1.10.4.css"/>
+    <link rel="stylesheet" href="styles/selectize.css"/>
+    <link rel="stylesheet" href="styles/selectize.bootstrap3.css"/>
+    <link rel="stylesheet" href="styles/login.css"/>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/home-style.css" />
+    <link rel="stylesheet" href="styles/project-style.css" />
+    <link rel="stylesheet" href="styles/jquery.qtip.min.css" />
+    <link rel="stylesheet" href="styles/font-awesome.min.css" />
+    <!-- <link rel="stylesheet" href="styles/jquery.dropdown.css" /> -->
+    <link rel="stylesheet" href="styles/basic.css" />
+    <link rel="stylesheet" href="styles/basic_ie.css" />
+    <link rel="stylesheet" href="styles/tooltipster-light.css" />
+    <link rel="stylesheet" href="styles/tooltipster-noir.css" />
+    <link rel="stylesheet" href="styles/tooltipster-punk.css" />
+    <link rel="stylesheet" href="styles/tooltipster-shadow.css" />
+    <link rel="stylesheet" href="styles/new-header.css" />
+    <link rel="stylesheet" href="styles/new-svg-node-style.css" />
+    <link rel="stylesheet" href="styles/new-content.css" />
+    <link rel="stylesheet" href="styles/new-footer.css" />
+    <link rel="stylesheet" href="styles/filter.css" />
+    <style>
+
+    </style>
+  </head>
+  <body >
+    <div class="loading-overlay">
+      <img src="images/ic_loading.gif"></img>
+    </div>
+    <div ng-view class="view" ></div>
+    <!-- Button trigger modal -->
+    <div ng-include="'alert_template.html'"></div>
+    <div ng-include=" 'restore_template.html' "></div>
+    <div ng-include=" 'delete_filter_confirmation_template.html' "></div>
+<!-- Modal -->
+    <script type="text/ng-template" id="alert_template.html">
+    <button data-toggle="modal" data-target="#myModal" class="hide" id="alert"></button>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Map is processing!</h4>
+          </div>
+          <div class="modal-body">
+             Waitting at least 24 hours to see your qMap :D
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </script>
+<!--confirm delete filter-->
+    <script type="text/ng-template" id="delete_filter_confirmation_template.html">
+     <button data-toggle="modal" data-target="#delete-filter-modal" class="hide" id="btn-delete-filter-modal"></button>
+     <div class="modal fade" id="delete-filter-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Delete Filter Confirmation</h4>
+            </div>
+            <div class="modal-body">
+               <b>Do you want to delete choosen filter. Continue?</b>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal" id="btn-delete-filter" action="deleteFilter(fid)" delete-filter-confirm>Delete</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+    <script type="text/ng-template" id="restore_template.html">
+    <button data-toggle="modal" data-target="#restore-modal" class="hide" id="btn-restore-modal"></button>
+    <div class="modal fade" id="restore-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Restore Confirmation</h4>
+          </div>
+          <div class="modal-body">
+             <b>You are about to restore map to default position. Continue?</b>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" id="btn-restore">Restore</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </script>
+<!--define templates-->
+    <script type="text/ng-template" id="login_template.html">
+        <div class="login-header row">
+            <div class="login-logo text-center">
+                <img src="images/login-logo.jpg"/>
+            </div>
+        </div>
+        <div class="login-body row">
+            <div class="col-md-3 col-md-offset-3 news">
+                <h4>Latest News</h4>
+                <div class="news-item">
+
+                    <strong><em>02 May, 2014</strong></em><br/>
+                    <small>Map has been updated to version 2. please refer to our qMap has been updated to version 2. please refer to our</small>
+                </div>
+                <div class="news-item">
+                    <strong><em>02 May, 2014</strong></em><br/>
+                    <small>Map has been updated to version 2. please refer to our qMap has been updated to version 2. please refer to our</small>
+                </div>
+            </div>
+            <div class="col-md-3 login-form">
+                <h4>Login qTest account</h4>
+                <div class="login-form-content col-md-8 form-horizontal">
+                    <div class="form-group {{error}}">
+                        <input type="text" class="form-control col-md-1" placeholder="yourdomain.qtestnet.com" ng-keypress="detectEnterKey($event.keyCode === 13)" ng-model="domain"/></br>
+                    </div>
+                    <div class="form-group {{error}}">
+                        <input type="text" class="form-control col-md-1" placeholder="Username" ng-keypress="detectEnterKey($event.keyCode === 13)" ng-model="username" />
+                    </div>
+                    <div class="form-group {{error}}">
+                        <input type="password" class="form-control col-md-1" placeholder="Password" ng-keypress="detectEnterKey($event.keyCode === 13)" ng-model="password"/>
+                    </div>
+                    <div class="form-group">
+                        <p class="bg-danger" style="color: black" ng-show="error">Wrong username or password !</p>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-warning col-md-4" ng-click="performLoginAction()">Login</button>
+                        <div class="pull-right checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="rememberMe"/>Remember Me?
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <p><u> Cant access your account?</u></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="login-footer row text-center">
+            <h6>Copyright @ 2014, QASymphony</h6>
+        </div>
+    </script>
+    <script type="text/ng-template" id="user_project_template.html">
+      <div ng-controller="UserProjectController">
+
+      <div class="topbar-item float-to-left nav-topbar-item">
+        <img src="images/qmap-logo.png">
+      </div>
+      <div id="nav-user-navigation" class="topbar-item float-to-left nav-topbar-item  topbar-dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle">
+          <img src="images/user-avatar.jpg">
+
+          <span>
+              <span id="display-name" ng-bind="displayName"></span>
+            <b class="caret"></b>
+          </span>
+        </a>
+        <ul class="dropdown-menu user-navigation-list">
+          <li>
+            <div class="user-navigation-list-item" ng-click="performLogout()">
+              <img src="images/logout.png">
+              <span>Logout</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="topbar-item float-to-left nav-topbar-item nav-topbar-arrow">
+        <img src="images/nav-arrow.png">
+      </div>
+      <!-- Project list -->
+      <div id="nav-project-list" class="topbar-item float-to-left nav-topbar-item topbar-dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle">
+            <span ng-show="curProject.name" id="project-name" ng-bind="curProject.name | SubString"></span>
+            <b ng-show="curProject.name" class="caret"></b>
+            <span id="project-name" ng-show="!curProject.name"><i class="fa fa-refresh fa-spin"></i></span>
+        </a>
+        <ul class="dropdown-menu project-list">
+            <li class="project-list-holder">
+              <input id="project-finder-input" class="project-finder-input" type="text" placeholder="Search project" ng-model="search" >
+            </li>
+            <li class="project-list-item" ng-repeat="c in projects|filter:{name:search}|ProjectFilter:curProject.id " value="{{c.id}}" ng-click="changeProject(c)" ng-bind="c.name"></li>
+
+            <li class="project-list-item more-project">
+              <img src="images/three-dot.png">
+            </li>
+        </ul>
+      </div>
+      <div class="topbar-item float-to-left nav-topbar-item nav-topbar-arrow nav-topbar-arrow-last">
+        <img src="images/nav-arrow.png">
+      </div>
+      </div>
+    </script>
+    <script type="text/ng-template" id="coverage_template.html">
+      <div ng-controller="CoverageController">
+      <!-- Coverage -->
+      <div id="nav-size-guide" class="topbar-item float-to-left topbar-dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle float-to-left" ng-show="perspectiveView == 0">Visit <b class="caret"></b></a>
+        <a data-toggle="dropdown" class="dropdown-toggle float-to-left" ng-show="perspectiveView == 1">Quality <b class="caret"></b></a>
+        <ul class="dropdown-menu map-type-list">
+            <li>
+              <label class="map-type-list-item-label coverage-box">
+                <input id="coverage-radio" type="radio" name="map-type-radio" ng-model="perspectiveView" value=0>
+                <span class="label-content" style="color: rgb({{curColorByTypes[0].colors.color.red}},{{curColorByTypes[0].colors.color.green}},{{curColorByTypes[0].colors.color.blue}})">Visits </span>
+                <span class="label-information">
+                  <div class="nav-size-guide-item nav-size-min"style="color: rgb({{curColorByTypes[0].colors.color.red}},{{curColorByTypes[0].colors.color.green}},{{curColorByTypes[0].colors.color.blue}})">0</div>
+                  <img class="nav-size-guide-item" alt=""
+                  src="{{curColorByTypes[0].colors.img}}"/>
+                  <div class="nav-size-guide-item nav-size-max" style="color: rgb({{curColorByTypes[0].colors.color.red}},{{curColorByTypes[0].colors.color.green}},{{curColorByTypes[0].colors.color.blue}})"max-visit>0</div>
+                </span>
+              </label>
+            </li>
+            <li>
+              <label class="map-type-list-item-label quality-box">
+                <input id="quality-radio" type="radio" name="map-type-radio" ng-model="perspectiveView" value=1>
+                <span class="label-content"style="color: rgb({{curColorByTypes[1].colors.color.red}},{{curColorByTypes[1].colors.color.green}},{{curColorByTypes[1].colors.color.blue}})">Qualities </span>
+                <span class="label-information">
+                  <div class="nav-size-guide-item nav-size-min"style="color: rgb({{curColorByTypes[1].colors.color.red}},{{curColorByTypes[1].colors.color.green}},{{curColorByTypes[1].colors.color.blue}})">0</div>
+                  <img class="nav-size-guide-item" alt=""
+                    src="{{curColorByTypes[1].colors.img}}"/>
+                  <div class="nav-size-guide-item nav-size-max" style="color: rgb({{curColorByTypes[1].colors.color.red}},{{curColorByTypes[1].colors.color.green}},{{curColorByTypes[1].colors.color.blue}})" max-visit>0</div>
+                </span>
+              </label>
+            </li>
+        </ul>
+      </div>
+
+
+
+      <!-- Change color -->
+      <div id="nav-size-guide-color" class="topbar-item float-to-left topbar-dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle float-to-left">
+            <div id="nav-size-min" class="nav-size-guide-item">0</div>
+            <img class="nav-size-guide-item" id="nav-size-img" alt=""
+            src="{{curColorLine}}"/>
+            <div class="nav-size-guide-item" id="nav-size-max" max-visit style="color: rgb({{curColor.red}},{{curColor.green}},{{curColor.blue}})">0</div>
+        </a>
+        <ul class="dropdown-menu color-list">
+          <li>
+            <label class="color-list-item-label coverage-box">
+              <input id="color-type1-radio" type="radio" name="color-radio" ng-model="nodeColor" value="0">
+              <img class="nav-size-guide-item" alt=""
+                src="images/green_line.png"/>
+            </label>
+          </li>
+          <li>
+            <label class="color-list-item-label coverage-box">
+              <input id="color-type1-radio" type="radio" name="color-radio" ng-model="nodeColor" value="1">
+              <img class="nav-size-guide-item" alt=""
+                src="images/orange_line.png"/>
+            </label>
+          </li>
+          <li>
+            <label class="color-list-item-label coverage-box">
+              <input id="color-type1-radio" type="radio" name="color-radio" ng-model="nodeColor" value="2">
+              <img class="nav-size-guide-item" alt=""
+                src="images/red_line.png"/>
+            </label>
+          </li>
+          <li>
+            <label class="color-list-item-label coverage-box">
+              <input id="color-type1-radio" type="radio" name="color-radio" ng-model="nodeColor" value="3">
+              <img class="nav-size-guide-item" alt=""
+                src="images/puble_line.png"/>
+            </label>
+          </li>
+          <li>
+            <label class="color-list-item-label coverage-box">
+              <input id="color-type1-radio" type="radio" name="color-radio" ng-model="nodeColor" value="4">
+              <img class="nav-size-guide-item" alt=""
+                src="images/violet_line.png"/>
+            </label>
+          </li>
+          <li>
+            <label class="color-list-item-label coverage-box">
+              <input id="color-type1-radio" type="radio" name="color-radio" ng-model="nodeColor" value="5">
+              <img class="nav-size-guide-item" alt=""
+                src="images/blue_line.png"/>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+
+      <!-- Coverage -->
+
+      <!-- Separator -->
+      <div class="float-to-left topbar-separator"></div>
+      <!-- Separator -->
+
+      <!-- Marker -->
+      <div id="nav-show-marker" class="topbar-item float-to-left topbar-dropdown">
+        <a data-toggle="dropdown" class="dropdown-toggle">Show <b class="caret"></b></a>
+        <ul class="dropdown-menu marker-list">
+            <li >
+                <label  class="marker-list-item-label">
+                  <input id="bugs-checkbox" type="checkbox" ng-model="bug" name="bugs" bug>
+                  <img src="images/red.png" title="Disabled" />
+                  Bugs
+                </label>
+            </li>
+            <li>
+                  <label  class="marker-list-item-label">
+                    <input id="suggestions-checkbox" type="checkbox" ng-model="sug" bug>
+                    <img src="images/blue.png" title="Disabled" />
+                    Suggestions
+                  </label>
+            </li>
+            <li>
+                <label  class="marker-list-item-label">
+                  <input id="notes-checkbox" type="checkbox" ng-model="note" bug>
+                  <img src="images/orange.png" title="Disabled" />
+                  Notes
+                </label>
+            </li>
+            <li>
+                <label  class="marker-list-item-label">
+                  <input id="questions-checkbox" type="checkbox" ng-model="question" bug>
+                  <img src="images/pink.png" title="Disabled" />
+                  Questions
+                </label>
+            </li>
+        </ul>
+        <div class="marker-indicator">
+          <img src="images/red.png" class="bug-indicator" ng-show="bug"/>
+          <img src="images/blue.png" class="suggestion-indicator" ng-show="sug"/>
+          <img src="images/orange.png" class="note-indicator" ng-show="note"/>
+          <img src="images/pink.png" class="question-indicator" ng-show="question"/>
+          <span class="tag-correction">.</span> <!-- this tag correct the container align-->
+        </div>
+      </div>
+    </div>
+    </script>
+    <script type="text/ng-template" id="filter_template.html">
+    <div ng-controller="FilterController">
+      <div ng-include=" 'right_bar_template.html' "></div>
+      <div id="nav-filter-panel" class="topbar-item float-to-right">
+              <div class="nav-content-item float-to-left">
+                <span class="float-to-left">Filter by</span>
+              </div>
+
+              <div class="filter-dropdown dropdown float-to-left">
+                <a class="dropdown-toggle">
+                  <input id="current-filter-input" class="filter-input" value="{{_.choosenFilter| SubString}}" size="16" type="text" readonly>
+                </a>
+                <div class="dropdown-menu">
+                  <div class="system-filter dropdown-part">
+                    <div class="dropdown-part-name">qMap filter</div>
+                    <ul class="">
+                      <li ng-click="life = lifeTime[0]; _.choosenFilter = 'All conditions'; updateLifeTime()">All conditions</li>
+                      <li ng-click="life = lifeTime[1]; _.choosenFilter = 'Year'; updateLifeTime()">Year</li>
+                      <li ng-click="life = lifeTime[3]; _.choosenFilter = 'Month'; updateLifeTime()">Month</li>
+                      <li ng-click="life = lifeTime[2]; _.choosenFilter = 'Week'; updateLifeTime()">Week</li>
+                    </ul>
+                  </div>
+                  <div class="team-filter dropdown-part">
+                    <div class="dropdown-part-name">Team filter</div>
+                    <ul class="">
+                      <li ng-repeat="f in _.filters|FilterTeam" ng-click="updateLifeTime(f.id)" >
+                        <div >
+                            <span ng-bind="f.filterName | SubString"></span>
+                            <!--ng-click="deleteFilter($event, f.id)"-->
+                          <img class="delete-filter" src="images/delete.png" onClick="deleteFilter(event, this)" value="{{f.id}}" >
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <p ng-repeat="f in parent" ng-bind="f.name "></p>
+                  <div class="personal-filter dropdown-part">
+                    <div class="dropdown-part-name">Personal filter</div>
+                    <ul class="">
+                      <li ng-repeat="f in _.filters|FilterPersonal" ng-click="updateLifeTime(f.id)">
+                        <div >
+                            <span ng-bind="f.filterName | SubString"></span>
+                            <img class="delete-filter" src="images/delete.png" onClick="deleteFilter(event, this)" value="{{f.id}}" >
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="nav-content-item float-to-left filter-toggle" ng-click="showFilter = !showFilter">
+                <span class="float-to-left">Filter</span>
+                <img src="images/double_arrow_up.png" ng-show="showFilter">
+                <img src="images/double_arrow_down.png" ng-show="!showFilter">
+              </div>
+
+
+            </div>
+
+            <!-- Filter -->
+
+
+            <!-- Separator -->
+            <div class="float-to-right topbar-separator"></div>
+            <!-- Separator -->
+
+
+            <!-- Animation bar -->
+            <div id="nav-animate" class="topbar-item float-to-right">
+              <div class="nav-content-item float-to-left">
+                  <span class="float-to-left" ng-bind="date.stDate|date: 'd MMM, y'"></span>
+              </div>
+              <div id="nav-animate-button-start" class="nav-animate-item" animate>
+                <img alt="" src="images/ic_animate_start.png">
+              </div>
+              <div id="nav-animate-slider" class="nav-animate-item ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false" action="handleTimelife(val)" timelife><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 100%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 100%;"></a></div>
+              <div class="nav-content-item float-to-right">
+                  <span class="float-to-right" ng-bind="date.endDate|date: 'd MMM, y'"></span>
+              </div>
+            </div>
+    </div>
+    </script>
+    <script type="text/ng-template" id="home_header_template.html">
+    <div id="header"  style="z-index:10">
+        <!-- BEGIN TOPBAR -->
+        <div class="small-container">
+          <div id="topbar">
+            <!-- Left -->
+            <div ng-include =" 'user_project_template.html' "></div>
+            <!-- Coverage -->
+            <div ng-include="'coverage_template.html'"></div>
+            <!-- Marker -->
+            <!-- Right -->
+            <!-- commented 2014-06-16 -->
+            <!-- Filter -->
+            <div ng-include=" 'filter_template.html' "></div>
+
+          </div>
+          <!-- END TOPBAR -->
+        </div>
+      </div>
+    </script>
+    <script type="text/ng-template" id="footer_function_template.html">
+      <div id="footer-left-function" ng-controller="PersistController">
+          <div class="footer-left-function-item float-to-left" action="restore()" restore>
+            <a class="">Restore</a>
+          </div>
+
+          <!-- Separator -->
+          <div class="float-to-left footer-left-function-separator"></div>
+          <!-- Separator -->
+
+          <div class="footer-left-function-item float-to-left" ng-click="saveMap()">
+            <a class="">Saving</a>
+          </div>
+
+          <!-- Separator -->
+          <div class="float-to-left footer-left-function-separator"></div>
+          <!-- Separator -->
+
+          <div class="footer-left-function-item footer-dropdown float-to-left dropup ">
+            <a data-toggle="dropdown" class="dropdown-toggle">Export to <b class="caret"></b></a>
+            <ul class="dropdown-menu export-list-dropdown">
+                <li>
+                  <!-- currently using -->
+                  <div class="export-list-item" ng-click="exportToPDF()">
+                    <img src="images/ic_pdf.png">
+                    <span>PDF</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="export-list-item" ng-click="exportToPNG()">
+                    <img src="images/ic_png.png">
+                    <span>PNG</span>
+                  </div>
+                </li>
+                <li ng-click="exportToXMIND()">
+                  <div class="export-list-item">
+                    <img src="images/ic_xmind.png">
+                    <span>xMind</span>
+                  </div>
+                </li>
+            </ul>
+          </div>
+        </div>
+    </script>
+    <script type="text/ng-template" id="footer_control_template.html">
+      <div id="footer-project-content" ng-controller="ScreenController">
+
+      <!-- old Save button -->
+      <!-- old restore button -->
+      <div id="dialog-confirm" title="Restore Map" style="display:none" >
+        <p>
+          <span class="ui-icon ui-icon-alert"
+            style="float: left; margin: 0 7px 20px 0;"></span>Restore Map page to their first-generated position?
+        </p>
+      </div>
+
+      <!-- Fit to screen -->
+      <div class="footer-project-item">
+        <img title="Zoom map to fit the screen" src="images/zoom-fit.png" alt="" id="zoom-fit-to-screen" ng-click="zoomToFit()">
+      </div>
+
+      <!-- Move to center -->
+      <div class="footer-project-item">
+        <img id="move-to-center-screen" alt="" src="images/zoom-center.png" title="Move map to center of screen" ng-click="moveToCenter()"/>
+      </div>
+    <!-- Zoom slider -->
+    <div class="footer-project-item">
+      <div id="zoom-control-up">
+        <img alt="" src="images/zoom-in.png"/>
+      </div>
+      <div id="zoom-control-slider" max="31" min="1" begin="16" action="handleZoom(zlevel)" slider></div>
+      <div id="zoom-control-down">
+        <img alt="" src="images/zoom-out.png" />
+      </div>
+    </div>
+
+    <div class="footer-project-item">
+      <div class="dropup">
+        <input id="screen-finder-input" class="screen-finder-input dropdown-toggle" data-toggle="dropdown" type="text"
+          placeholder="Jump to screen" ng-model="jumpInputValue"
+          ng-keypress="jumpToScreenKeyPress($event.keyCode === 13)" ng-click="updateListTitles()"
+          onfocus="this.select()"/>
+        <ul class="dropdown-menu jump-screen-list-dropdown" role="menu">
+          <li data-toggle="tooltip" data-placement="left" title="{{t.fullTitle}}" ng-repeat="t in filteredList = (listTitles|filter: {fullTitle: jumpInputValue}|Truncate)" ng-click="jumpToNode(t.id, t.fullTitle)" class="list-node-titles" class="item-title-name">
+
+            <!-- <div class="jump-screen-list-item">{{t.title}}</div> -->
+            <div class="jump-screen-list-item" ng-bind="t.title"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- Map layouts selector -->
+    <div class="footer-right-function-item footer-project-item footer-dropdown dropup ">
+      <a data-toggle="dropdown" class="dropdown-toggle">Map styles <b class="caret"></b></a>
+      <ul class="dropdown-menu map-layouts-list-dropdown">
+          <li>
+            <div class="map-layouts-list-item" ng-click="changeMap(2)">
+              <!-- <i class="fa fa-check {{choosenMap(2)}}" style="{{choosenMap(2)}}"></i> -->
+              <i class="fa fa-check {{choosenMap(2)}}"></i>
+              <img src="images/left.png">
+              <span>Left horizontal</span>
+            </div>
+          </li>
+          <li>
+            <div class="map-layouts-list-item" ng-click="changeMap(3)">
+              <i class="fa fa-check {{choosenMap(3)}}"></i>
+              <img src="images/right.png">
+              <span>Right horizontal</span>
+            </div>
+          </li>
+          <li>
+            <div class="map-layouts-list-item" ng-click="changeMap(4)">
+              <i class="fa fa-check {{choosenMap(4)}}"></i>
+              <img src="images/clockwise.png">
+              <span>Vertical</span>
+            </div>
+          </li>
+      </ul>
+    </div>
+    <!-- Map Expand/Collapse level -->
+    <div id="nav-level" class="footer-project-item">
+      <div id="nav-level-left" class="nav-level-item" >
+        <img alt="" src="images/ic_level_left.png" />
+      </div>
+      <div id="nav-level-slider" class="nav-level-item" action="handleCollapse(clevel)" level>
+      </div>
+      <div id="nav-level-right" class="nav-level-item">
+        <img alt="" src="images/ic_level_right.png"/>
+      </div>
+    </div>
+    <!-- Map Expand/Collapse level -->
+    </script>
+    <script type="text/ng-template" id="right_bar_template.html">
+    <!-- Right sidebar -->
+    <div class="right-bar" ng-controller="TestFilterController">
+      <div class="right-bar-content">
+      <div class="home-date right-bar-part">
+          <div class="home-date-picker home-date-picker-from">
+
+              <!-- <input type="text" class="form-control input-sm calendar"
+              placeholder="From"> -->
+
+              <input type="text" class="form-control input-sm calendar" datepicker-popup="{{format}}" ng-model="stDate" is-open="opened"
+               datepicker-options="dateOptions"
+               show-button-bar="false"
+                close-on-date-selection="false"
+                ng-required="true" close-text="Close"  ng-click="openStartPicker($event)" placeholder="From"/>
+
+          </div>
+          <div class="home-date-picker home-date-picker-to">
+
+              <!--<input type="text" class="form-control input-sm calendar"
+                placeholder="To"> -->
+              <input type="text" class="form-control input-sm calendar" datepicker-popup="{{format}}" ng-model="endDate" is-open="opened"
+               datepicker-options="dateOptions"
+               show-button-bar="false"
+                close-on-date-selection="false"
+                 ng-required="true" close-text="Close" ng-click="openEndPicker($event)" placeholder="To"/>
+
+          </div>
+      </div>
+
+      <!-- Old Testers & Session filter-->
+      <div id="tester-filter-panel" class="right-bar-part">
+        <div class="right-bar-panel-header" data-toggle="collapse" data-target="#tester-filter-panel-collapse">
+          <span class="down-caret"></span>
+          <span>Tester</span>
+        </div>
+
+        <div id="tester-filter-panel-collapse" class="panel-collapse collapse in">
+          <div class="right-bar-panel-body">
+            <input type ="text" class="form-control input-sm" placeholder="input to add tester" value="" id="testers" remove-action="removeItem(val)" add-action="addItem(add)" select-testers>
+
+            <p class="panel-header-instruction"> Search tester by name or email address </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="session-filter-panel" class="right-bar-part">
+        <div class="right-bar-panel-header" data-toggle="collapse" data-target="#session-filter-panel-collapse">
+          <span class="down-caret"></span>
+          <span>Session type <i>({{_.sumSession(_.curFilter.sessionType)}})</i></span>
+        </div>
+
+        <div id="session-filter-panel-collapse" class="panel-collapse collapse in">
+          <div class="right-bar-panel-body">
+              <div class="checkbox-item">
+                  <label>
+                      <input type="checkbox" ng-model="_.curFilter.sessionType.script" session-type/>Scripted
+                  </label>
+              </div>
+              <div class="checkbox-item">
+                  <label>
+                      <input type="checkbox" ng-model="_.curFilter.sessionType.automate" session-type/>Automation
+                  </label>
+              </div>
+              <div class="checkbox-item" >
+                  <label>
+                      <input type="checkbox" ng-model="_.curFilter.sessionType.exploratory" session-type/>Exploratory
+                  </label>
+              </div>
+              <div class="checkbox-item" >
+                  <label>
+                      <input type="checkbox" ng-model="_.curFilter.sessionType.regression" session-type/>Regression
+                  </label>
+              </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="right-bar-part">
+        <div class="create-filter right-bar-panel-header">
+          <div class="save-filter-bar hide">
+            <input type="text" class="form-control input-sm filter-name" ng-model="_.curFilter.filterName" placeholder="Filter one">
+            <div class="filter-type-panel">
+              <label class="filter-type-item">
+                <input type="radio" ng-model = "_.curFilter.filterType" value="1" name="filter-type-radio">&nbsp;Team
+                &nbsp;&nbsp;&nbsp;
+              </label>
+
+              <label class="filter-type-item">
+                <input type="radio" ng-model= "_.curFilter.filterType" value="0" name="filter-type-radio" >&nbsp;Personal
+              </label>
+            </div>
+            <button class="btn btn-primary" ng-click="saveFilter()" id="save-filter-name"><div>Save</div></button>
+            <button class="btn btn-primary" id="cancel-filter-name"><div>Cancel</div></button>
+          </div>
+          <button class="btn btn-primary" id="save-filter">Save Filter</button>
+          </div>
+      </div>
+      <div class="right-bar-part">
+          <div>
+           <input ng-model="selectedItem" type="text" ng-click="showTesterInfo(selectedItem)" id="show-tester" class=" hide">
+          </div>
+        <div class="full-date-picker">
+          <div class="date-picker-start">
+          </div>
+          <div class="date-picker-end">
+          </div>
+        </div>
+      </div>
+      <div class="right-bar-part">
+          <p>Tester Name :  <span ng-bind="selectedTester"></span></p>
+      </div>
+  </div>
+  </div>
+    </script>
+    <script type="text/ng-template" id="home_footer_template.html">
+      <div id="footer" >
+        <div ng-include="'footer_function_template.html'"></div>
+        <div ng-include="'footer_control_template.html'"></div>
+      </div>
+    </script>
+    <script type="text/ng-template" id = "empty_template.html">
+    </script>
+    <script type="text/ng-template" id = "home_template.html">
+      <div ng-include=" mainTemplate"></div>
+    </script>
+    <script type="text/ng-template" id="home_content_template.html">
+    <div id="home-page">
+      <div id="wrapper">
+    <div id="wrapper-content">
+      <div ng-include=" 'home_header_template.html' "></div>
+      <div id="container" style="z-index:5">
+        <div id="common-hidden">
+          <div id="user-nav" class="dropdown-content">
+            <div class="user-nav-item user-nav-item-top">
+              <div class="user-nav-item-img">
+                <img src="images/user.png" />
+              </div>
+            </div>
+            <div class="user-nav-item user-nav-item-bot">
+              <div class="user-nav-item-img">
+                <img src="images/logout.png" />
+              </div>
+              <div class="user-nav-item-title">Logout</div>
+            </div>
+          </div>
+        </div>
+        <!--container content-->
+        <div id="container-content" ng-controller="ContentController">
+          <div id="project-container" class="row123">
+            <!-- BEGIN SVG -->
+            <!-- <div id="div-svgid" class="col-md-12"></div>-->
+            <div id="div-svgid"></div>
+            <!-- END SVG -->
+          </div>
+
+
+          <!--<img id="svgdataurl" >
+          <canvas id="test" width="640" height="480"></canvas>
+          <canvas id="canvas"></canvas>-->
+
+          <!-- note that we need to use "export-svg" class for export to PNG working -->
+          <div id="pngdataurl" class="export-svg hidden"></div>
+
+
+          <div id="nav-drilldown-history">
+            <div id="bt-drilldown-home" class="drilldown-home" ng-click="restoreOrigin()">
+              <img src="images/home-icon.png">
+            </div>
+
+            <div id="nav-drilldown-group-item" class="nav-drilldown-group">
+
+            </div>
+          </div>
+
+          <div id="page-info-popup" style="display:none">
+            <div class="page-info-popup-content">
+              <div class="page-info-popup-content-part">
+                <span class="page-info-popup-part-label">List parent:</span>
+                <span class="page-info-popup-part-content">
+                  <div class="page-info-popup-dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle">
+                      <span>
+                        <span id="node-name">David Bund</span>
+                        <b class="caret"></b>
+                      </span>
+                    </a>
+                    <ul class="dropdown-menu page-parent-list">
+                    </ul>
+                  </div>
+                </span>
+              </div>
+              <div class="page-info-popup-content-part">
+                <span class="page-info-popup-part-label">Title: </span>
+                <span class="page-info-popup-part-content page-info-title">Leadership & Management</span>
+              </div>
+              <div class="page-info-popup-content-part">
+                <span class="page-info-popup-part-label">URL: </span>
+                <span class="page-info-popup-part-content page-info-url">http://en.wikipedia.org/wiki/Extract,_transform,_load#Rerunnability.2C_recoverability</span>
+              </div>
+              <div class="page-info-popup-content-part">
+                <div class="page-info-popup-part-label">Attachment: </div>
+                <div class="page-info-popup-part-content content-multiline">
+                  <img src="images/doc-attachment.png">
+                  <span class="popup-bug-counter">report.docx</span>
+                </div>
+                <div class="page-info-popup-part-content content-multiline">
+                  <img src="images/screen-attachment.png">
+                  <span class="popup-bug-counter">screen-01-23.jpg</span>
+                </div>
+              </div>
+              <div class="page-info-popup-content-part">
+                <span class="page-info-popup-part-label">Screen Layer: </span>
+                <span class="page-info-popup-part-content page-info-layer">5</span>
+              </div>
+              <div class="page-info-popup-content-part">
+                <span class="page-info-popup-part-label">Visits: </span>
+                <span class="page-info-popup-part-content page-info-visit">4</span>
+              </div>
+              <div class="page-info-popup-content-part">
+                <span class="page-info-popup-part-label">Bugs: </span>
+                <span class="page-info-popup-part-content annotation-counter">
+                  <img src="images/ic_bug.png">
+                  <span class="popup-bug-counter page-info-bug">13</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+        <div id="map-control" >
+          <!-- control -->
+
+          <!-- BEGIN HIDDEN CONTENT  -->
+          <!-- modal content -->
+          <div id="marker-modal-content" style="display:none" >
+            <h2 class="name">Screen Information</h2>
+            <div class="marker-modal-item">
+              <h3>Information</h3>
+              <p class="title"></p>
+              <p class="url">URL: </p>
+              <p>Attachment: </p>
+            </div>
+            <div class="marker-modal-item">
+              <h3>Property</h3>
+              <p class="level"></p>
+              <p class="size"></p>
+              <p>Comment: </p>
+            </div>
+            <div style="float: right; padding-right:8px">
+              <input id="modal-close" class="simplemodal-close" type="button" value="Save & Close" />
+            </div>
+          </div>
+          <div id="datepicker-nav"></div>
+          <!-- END HIDDEN CONTENT  -->
+<!--
+
+-->
+        </div>
+        <div id="loading-screen" class="hidden">
+          <img src="images/ic_loading.gif" />
+        </div>
+        <div id="under-construction-screen">
+          <img src="images/ic_under_construction.png" />
+        </div>
+      </div>
+      <!-- Footer -->
+      <div ng-include="'home_footer_template.html'"></div>
+      </div>
+    </div>
+  </div>
+    </div>
+    </script>
+    <script type="text/ng-template" id="rightbar_template.html">
+    </script>
+<!--load configuration-->
+    <script src="scripts/config.js"></script>
+<!--load libs-->
+    <script src="scripts/libs/jquery-2.1.1.min.js"></script>
+    <script src="scripts/libs/jquery-ui-1.10.4.js"></script>
+    <script src="scripts/libs/jquery.qtip.min.js"></script>
+    <script src="scripts/libs/angular.min.js"></script>
+    <script src="scripts/libs/bootstrap.min.js"></script>
+    <script src="scripts/libs/angular-route.min.js"></script>
+    <script src="scripts/libs/selectize.js"></script>
+    <script src="scripts/libs/angular-cookies.min.js"></script>
+    <script src="scripts/libs/jstoxml.js"></script>
+    <script src="scripts/libs/hex-rgb.js"></script>
+<!--<script src="scripts/libs/ui-bootstrap-tpls-0.11.0.min.js"></script> -->
+    <script src="scripts/libs/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="scripts/libs/moment.min.js"></script>
+    <script src="scripts/libs/angular-momentjs.js"></script>
+    <script src="scripts/libs/angular-resource.min.js"></script>
+    <script src="scripts/libs/jszip.min.js"></script>
+    <script src="scripts/libs/FileSaver.js"></script>
+<!--load lib custom-->
+    <script src="scripts/libs/raphael-min.js"></script>
+    <script src="scripts/libs/raphael.group.js"></script>
+    <script src="scripts/libs/raphael.pan-zoom.js"></script>
+    <script src="scripts/libs/qmouse.js"></script>
+    <script src="scripts/libs/d3.v3.js"></script>
+    <script src="scripts/libs/d3_custom.js"></script>
+<!--load javascript animation-->
+    <script src="index.js"></script>
+
+    <!-- For Export: save SVG to IMAGE/PDF -->
+    <!-- <script src="rgbcolor.js"></script>
+    <script src="svgenie.js"></script>
+    <script src="canvg.js"></script>
+    <script src="canvas2image.js"></script> -->
+
+    <!-- <script src="scripts/custom-libs/saveSvgAsPng.js"></script>   -->
+    <script src="scripts/custom-libs/svg-exporter.js"></script>
+    <script src="scripts/libs/jspdf.min.js"></script>
+    <!-- For Export: save SVG to IMAGE/PDF -->
+
+
+
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/display.js"></script>
+<!--load directive-->
+    <script src="scripts/directives/generaldirective.js"></script>
+<!--load factories/services/providers-->
+    <script src="scripts/factories/ImageFactory.js"></script>
+    <script src="scripts/factories/MapToXMINDFactory.js"></script>
+    <script src="scripts/factories/UpdateUIFactory.js"></script>
+    <script src="scripts/providers/SessionProvider.js"></script>
+    <script src="scripts/factories/UtilsFactory.js"></script>
+    <script src="scripts/services/QService.js"></script>
+    <script src="scripts/services/QSessionService.js"></script>
+    <script src="scripts/services/RaphaelCusService.js"></script>
+    <script src="scripts/services/DrillDownService.js"></script>
+    <script src="scripts/services/ContainerService.js"></script>
+    <script src="scripts/services/ContainerSimpleService.js"></script>
+    <script src="scripts/services/ContainerTwoBranchService.js"></script>
+    <script src="scripts/services/ContainerHorizontalService.js"></script>
+    <script src="scripts/services/ZoomService.js"></script>
+    <script src="scripts/services/FitMapService.js"></script>
+    <script src="scripts/factories/InitMapFactory.js"></script>
+    <script src="scripts/services/MapService.js"></script>
+    <script src="scripts/services/LoginService.js"></script>
+<!--load controller-->
+    <script src="scripts/controllers/logincontroller.js"></script>
+    <script src="scripts/controllers/homecontroller.js"></script>
+    <script src="scripts/controllers/filtercontroller.js"></script>
+    <script src="scripts/controllers/contentcontroller.js"></script>
+    <script src="scripts/controllers/screencontroller.js"></script>
+    <script src="scripts/controllers/persistcontroller.js"></script>
+    <script src="scripts/controllers/coveragecontroller.js"></script>
+    <script src="scripts/controllers/testfiltercontroller.js"></script>
+    <script src="scripts/controllers/userprojectcontroller.js"></script>
+<!--load filter-->
+    <script src="scripts/filters/projectfilter.js"></script>
+
+  </body>
+</html>

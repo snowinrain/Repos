@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition>
+
+	<img src="../../images/14_1367137940.png" style="float:left; margin-top: 10px; margin-left: 5px;"></img>
+	
+	<div align="right" style="padding-right: 10px;">
+		Welcome <h:outputText id="welcomeText" value="#{ChangePasswordBean.userName}" style="color:#333333;"/> <br/><br/>
+		
+		<p:commandLink value="Change Password" oncomplete="chgPassDialog.show()"/>
+		 | 
+		<p:commandLink value="Logout" action="#{LoginBean.logout}" immediate="true"/>
+	 </div>
+	 
+	 <p:dialog id="chgPassDg" header="Change Password" widgetVar="chgPassDialog" resizable="false" modal="true" closable="false" 
+               showEffect="fade" hideEffect="explode">
+               
+               <p:messages id="chgPassMsg"/>
+               
+		        <h:panelGrid columns="2" cellpadding="4" id="displaychgPass">
+		        
+		        	<h:outputText value="Current Password" />  
+		            <p:password value="#{ChangePasswordBean.currentPassword}" required="true" autocomplete="false"
+						requiredMessage="Current Password is required field"/>  
+		        	
+		            <h:outputText value="New Password:" />  
+		            <p:password value="#{ChangePasswordBean.newPassword}" id="pass1" match="pass2" autocomplete="false"
+		            	validatorMessage="Retype Password must be matched with New Password"
+						required="true" requiredMessage="New Password is required field">
+					</p:password>  
+		  
+		            <h:outputText value="Retype Password:" />
+		             <p:password value="#{ChangePasswordBean.newPassword}" id="pass2">
+					</p:password>  
+
+		            <p:commandButton id="submitButton" value="Submit" update="chgPassMsg, displaychgPass" process=":topForm:chgPassDg"
+                  			action="#{ChangePasswordBean.changePassword}" oncomplete="handleChgPassRequest(xhr, status, args)"/>
+		            <p:commandButton id="canceltButton" value="Cancel" immediate="true" update="chgPassMsg, displaychgPass" oncomplete="chgPassDialog.hide()">
+		            	<p:resetInput target=":topForm:chgPassDg" />
+		            </p:commandButton>
+		        </h:panelGrid>
+	    </p:dialog>
+	    
+	     <script type="text/javascript">  
+		    function handleChgPassRequest(xhr, status, args) {
+	        	if (args.isValid) {
+	        		chgPassDialog.hide();
+	        	}
+		    }  
+		 </script>
+	 
+</ui:composition>
+</html>

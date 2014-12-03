@@ -1,0 +1,166 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="common/header.xhtml">
+	<ui:define name="main">
+
+		<script type="text/javascript">
+			setActiveLink(7);
+		</script>
+
+		<div id="content" style="padding-bottom: 35px">
+			<section class="container">
+	                <section class="row">
+	                    <div class="span9" style="width:420px;">
+	                        <div class="contact-box" style="width:100%">
+	                            <div class="title-bar">
+	                                <div class="inner">
+	                                    <h2>#{msg['menu.changePassword']}</h2>
+	                                </div>
+	                            </div>
+	                            <div class="contact-box-content">
+	                                <div class="inner">
+                                        <h:form id="changePasswordForm" prependId="false">
+
+											<p:messages id="changePasswordMsg"/>
+
+                                            <p:password value="#{LoginBean.oldPass}" placeholder="#{msg['text.password1']}" type="text" styleClass="input-block-level"
+												id="password" required="true" requiredMessage="#{msg['text.password1'] + ' ' + msg['text.required']}">
+											</p:password>
+
+											<div style="clear:both" />
+
+		                                	<p:password value="#{LoginBean.newPass}" id="pass" type="text" styleClass="input-block-level"
+		                                		placeholder="#{msg['text.password2']}"
+												validatorMessage="#{msg['password.required2']}">
+												<f:validateLength minimum="6" maximum="12" />
+											</p:password>
+
+											<div style="clear:both" />
+
+		                                	<p:password value="#{LoginBean.reNewPass}" id="rePass" type="text" styleClass="input-block-level"
+		                                		requiredMessage="#{msg['password.required2']}" placeholder="#{msg['text.password3']}"
+		                                		validatorMessage="#{msg['password.required2']}">
+												<f:validateLength minimum="6" maximum="12" />
+											</p:password>
+
+									        <div style="clear:both" />
+
+											<p:commandLink update="@form" process="@form" styleClass="btn btn-primary btn-large pull-right customButton" id="btnChangePassword"
+												action="#{LoginBean.changePassword}" type="submit" value="#{msg['button.change']}" style="margin-bottom: 20px;"/>
+
+											<p:defaultCommand target="btnChangePassword"/>
+
+                                        </h:form>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <aside class="span7">
+	                        <section class="widget">
+	                            <section class="widget-title">
+	                                <div class="inner" style="padding-top: 5px; padding-bottom: 5px;">
+	                                    <h2 style="font-size:18px;">#{msg['menu.personalInfo']}</h2>
+	                                </div>
+	                            </section>
+	                            <section class="widget-content">
+	                                <div class="inner">
+
+	                                	<h:form id="uploadForm" prependId="false" enctype="multipart/form-data">
+	                                		<p:messages id="registerMsg"/>
+
+											<h4><img src="img/bullet_black.png" style="margin-left: -10px; margin-right: -5px;"/> #{msg['text.avatar']}</h4>
+
+											<div style="text-align: center">
+		                                		<section class="featured-items" style="height: 60px; margin-left:40%">
+													<div class="featured-item" style="margin-right: 20px; float: left; height: 122px;margin-bottom: 10px;">
+														<figure style="height: 120px; width: 120px;">
+															<p:graphicImage value="#{LoginBean.account.accountDetail.avatar}" style="height:inherit"/>
+				                                        </figure>
+			                                        </div>
+												</section>
+
+												<div style="clear:both"/>
+
+												<p:commandLink value="#{msg['news.upload']}" style="margint-top: 10px;" onclick="document.getElementById('fileUpload_input').click()"/>
+
+												<p:fileUpload id="fileUpload" mode="advanced" multiple="false" auto="true" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+													sizeLimit="2097152" fileUploadListener="#{LoginBean.avatarUpload}"
+													showButtons="false" update="@form" style="visibility:hidden; position:absolute"
+													invalidSizeMessage="The maximum of image is 2MB. Please choose again"
+													invalidFileMessage="Please choose file type gif, jpg, jpeg, png"/>
+											</div>
+
+	                                	</h:form>
+
+										<hr/>
+
+	                                	<h:form id="registerForm" prependId="false">
+
+	                                		<h4><img src="img/bullet_black.png" style="margin-left: -10px; margin-right: -5px;"/> #{msg['text.accountInfo']}</h4>
+
+	                                		<div style="float: left; width: 45%;">
+			                                	<label for="user">#{msg['text.userName']}</label>
+			                                    <p:inputText id="user" value="#{LoginBean.account.userName}" disabled="true"
+			                                            	type="text" styleClass="input-block-level" required="true" requiredMessage="#{msg['userName.required']}"/>
+											</div>
+
+											<div style="float: right;  width: 45%;">
+			                                    <label for="email">Email</label>
+			                                    <p:inputText id="email" value="#{LoginBean.account.email}"
+			                                            	type="text" styleClass="input-block-level" required="true" requiredMessage="#{msg['email.required']}"/>
+		                                    </div>
+
+		                                    <div style="clear:both" />
+
+		                                    <hr/>
+
+		                                    <h4><img src="img/bullet_black.png" style="margin-left: -10px; margin-right: -5px;"/> #{msg['text.contactInfo']}</h4>
+
+		                                	<label for="fullName">#{msg['text.fullName']}</label>
+		                                	<p:inputText id="fullName" value="#{LoginBean.account.accountDetail.fullName}"
+			                                            	type="text" styleClass="input-block-level" required="true" requiredMessage="#{msg['fullName.required']}"/>
+
+											<label for="address">#{msg['text.address']}</label>
+		                                	<p:inputText id="address" value="#{LoginBean.account.accountDetail.address}"
+			                                            	type="text" styleClass="input-block-level"/>
+
+											<div style="float: left; width: 45%;">
+				                                <label for="phone">#{msg['text.phone']}</label>
+			                                	<p:inputText id="phone" value="#{LoginBean.account.accountDetail.phone}" onkeypress="return isNumberKey(event)"
+				                                            	type="text" styleClass="input-block-level" required="true" requiredMessage="#{msg['phone.required']}"/>
+				                            </div>
+
+				                            <div style="float: right;  width: 45%;">
+				                            	<label for="birthday">#{msg['text.birthday']}</label>
+				                            	<p:calendar id="birthday" value="#{LoginBean.account.accountDetail.birthDate}" pattern="dd-MM-yyyy" mask="true"
+				                            		navigator="true" locale="vi"/>
+				                            </div>
+
+											<div style="clear:both" />
+
+											<div style="float: left; width: 100%; text-align: center;">
+												<p:commandLink value="#{msg['text.clear']}" update="@form :uploadForm" immediate="true" style="margin-right: 10px;" actionListener="#{LoginBean.reset}">
+													<p:ajax update="@form" resetValues="true" />
+												</p:commandLink>
+				                                <p:commandLink update="@form :uploadForm" process="@form" styleClass="btn btn-primary btn-large customButton" id="btnEdit"
+													action="#{LoginBean.editProfile}" type="submit" value="#{msg['button.change']}" style="margin-bottom: 20px;"/>
+											</div>
+
+											<p:defaultCommand target="btnEdit"/>
+		                               </h:form>
+
+	                                </div>
+	                            </section>
+	                        </section>
+	                    </aside>
+	                </section>
+	            </section>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

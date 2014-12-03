@@ -1,0 +1,982 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="common/header.xhtml">
+	<ui:define name="main">
+
+	<script type="text/javascript">
+		//<![CDATA[
+		    $(document).ready(function() {
+
+			    var owl = $("#owl-demo");
+
+			    owl.owlCarousel({
+			    	autoPlay: 5000, //Set AutoPlay to 3 seconds
+				    items : 3, //10 items above 1000px browser width
+				    itemsDesktop : [1199,3], //5 items between 1000px and 901px
+				    itemsDesktopSmall : [979,3], // betweem 900px and 601px
+				    itemsTablet: [600,2], //2 items between 600 and 0
+				    itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+			    });
+
+			    // Custom Navigation Events
+			    $(".next").click(function(){
+			    	owl.trigger('owl.next');
+			    })
+			    $(".prev").click(function(){
+			    	owl.trigger('owl.prev');
+			    })
+		    });
+		//]]>
+		</script>
+
+		<!-- TOP CAROUSEL -->
+		<div class='top-carousel'>
+			<div class='top-carousel-section section' id='top-carousel-section'>
+				<div class='widget HTML' id='HTML1'>
+					<h2 class='title'>Featured Videos</h2>
+					<div class='widget-content'>
+						<div class="container">
+							<div class="row">
+
+								<div class="owl-carousel owl-theme" id="owl-demo">
+									<div class="item">
+										<div class="item-img">
+											<a title="Free Birds Official"
+												href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html"
+												class="feathumb"> <img
+												src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/gxslnpqFwOs.jpg"
+												alt="" />
+											</a> <a title="Free Birds Official"
+												href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html"
+												class="feathumb">
+												<div class="img-hover" />
+											</a>
+										</div>
+										<div class="feat-item">
+											<div class="feat-info">
+												<h3>
+													<a title="Free Birds Official"
+														href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html">Free
+														Birds Official</a>
+												</h3>
+												<div class="meta">
+													<span class="date">22 - June - 2014</span><span
+														class="comnum"><i class="fa fa-comments"></i><a
+														title="No Comments"
+														href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html#comment-form">No
+															Comments</a></span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="item">
+										<div class="item-img">
+											<a title="Mercedes Benz C63"
+												href="http://videotube-sora.blogspot.com/2014/06/mercedes-benz-c63.html"
+												class="feathumb"><img
+												src="http://res.cloudinary.com/demo/image/vimeo/w_360,h_240/34592862.jpg"
+												alt="" /></a><a title="Mercedes Benz C63"
+												href="http://videotube-sora.blogspot.com/2014/06/mercedes-benz-c63.html"
+												class="feathumb"><div class="img-hover"></div></a>
+										</div>
+										<div class="feat-item">
+											<div class="feat-info">
+												<h3>
+													<a title="Mercedes Benz C63"
+														href="http://videotube-sora.blogspot.com/2014/06/mercedes-benz-c63.html">Mercedes
+														Benz C63</a>
+												</h3>
+												<div class="meta">
+													<span class="date">22 - June - 2014</span><span
+														class="comnum"><i class="fa fa-comments"></i><a
+														title="No Comments"
+														href="http://videotube-sora.blogspot.com/2014/06/mercedes-benz-c63.html#comment-form">No
+															Comments</a></span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="item">
+										<div class="item-img">
+											<a title="Transformers - Kreo"
+												href="http://videotube-sora.blogspot.com/2014/06/transformers-kreo.html"
+												class="feathumb"><img
+												src="http://res.cloudinary.com/demo/image/vimeo/w_360,h_240/25754975.jpg"
+												alt="" /></a><a title="Transformers - Kreo"
+												href="http://videotube-sora.blogspot.com/2014/06/transformers-kreo.html"
+												class="feathumb"><div class="img-hover"></div></a>
+										</div>
+										<div class="feat-item">
+											<div class="feat-info">
+												<h3>
+													<a title="Transformers - Kreo"
+														href="http://videotube-sora.blogspot.com/2014/06/transformers-kreo.html">Transformers
+														- Kreo</a>
+												</h3>
+												<div class="meta">
+													<span class="date">22 - June - 2014</span><span
+														class="comnum"><i class="fa fa-comments"></i><a
+														title="No Comments"
+														href="http://videotube-sora.blogspot.com/2014/06/transformers-kreo.html#comment-form">No
+															Comments</a></span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="item">
+										<div class="item-img">
+											<a title="Age of Extinction"
+												href="http://videotube-sora.blogspot.com/2014/06/age-of-extinction.html"
+												class="feathumb"><img
+												src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/pbI980iUb78.jpg"
+												alt="" /></a><a title="Age of Extinction"
+												href="http://videotube-sora.blogspot.com/2014/06/age-of-extinction.html"
+												class="feathumb"><div class="img-hover"></div></a>
+										</div>
+										<div class="feat-item">
+											<div class="feat-info">
+												<h3>
+													<a title="Age of Extinction"
+														href="http://videotube-sora.blogspot.com/2014/06/age-of-extinction.html">Age
+														of Extinction</a>
+												</h3>
+												<div class="meta">
+													<span class="date">22 - June - 2014</span><span
+														class="comnum"><i class="fa fa-comments"></i><a
+														title="No Comments"
+														href="http://videotube-sora.blogspot.com/2014/06/age-of-extinction.html#comment-form">No
+															Comments</a></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item-img">
+											<a title="We Are LIVE !"
+												href="http://videotube-sora.blogspot.com/2014/06/we-are-live.html"
+												class="feathumb"><img
+												src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/JqIIv68utwk.jpg"
+												alt="" /></a><a title="We Are LIVE !"
+												href="http://videotube-sora.blogspot.com/2014/06/we-are-live.html"
+												class="feathumb"><div class="img-hover"></div></a>
+										</div>
+										<div class="feat-item">
+											<div class="feat-info">
+												<h3>
+													<a title="We Are LIVE !"
+														href="http://videotube-sora.blogspot.com/2014/06/we-are-live.html">We
+														Are LIVE !</a>
+												</h3>
+												<div class="meta">
+													<span class="date">22 - June - 2014</span><span
+														class="comnum"><i class="fa fa-comments"></i><a
+														title="No Comments"
+														href="http://videotube-sora.blogspot.com/2014/06/we-are-live.html#comment-form">No
+															Comments</a></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="item-img">
+											<a title="Awesome Moments"
+												href="http://videotube-sora.blogspot.com/2014/06/awesome-moments.html"
+												class="feathumb"><img
+												src="http://res.cloudinary.com/demo/image/vimeo/w_360,h_240/35329199.jpg"
+												alt="" /></a><a title="Awesome Moments"
+												href="http://videotube-sora.blogspot.com/2014/06/awesome-moments.html"
+												class="feathumb"><div class="img-hover" /></a>
+										</div>
+										<div class="feat-item">
+											<div class="feat-info">
+												<h3>
+													<a title="Awesome Moments"
+														href="http://videotube-sora.blogspot.com/2014/06/awesome-moments.html">Awesome
+														Moments</a>
+												</h3>
+												<div class="meta">
+													<span class="date">22 - June - 2014</span><span
+														class="comnum"><i class="fa fa-comments"></i><a
+														title="No Comments"
+														href="http://videotube-sora.blogspot.com/2014/06/awesome-moments.html#comment-form">No
+															Comments</a></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='clear'></div>
+		</div>
+		<!-- TOP CAROUSEL ENDS! -->
+
+		<!-- MAIN CONTAINER -->
+		<div class='container'>
+			<div class='row'>
+				<!-- Main Left -->
+				<div class='col-sm-8'>
+					<div class='section-header'>
+						<h3>
+							<i class='fa fa-pencil'></i> Lastest Videos
+						</h3>
+					</div>
+					<div id="main" class="main section">
+						<div id="Blog1" class="widget Blog">
+							<div class="blog-posts hfeed">
+								<div class="row">
+									<!-- google_ad_section_start(name=default) -->
+
+									<div class="date-outer">
+
+
+										<div class="date-posts">
+
+											<div class="post-outer">
+												<div itemtype="http://schema.org/BlogPosting"
+													itemscope="itemscope" itemprop="blogPost"
+													class="post hentry uncustomized-post-template">
+													<meta itemprop="image_url"
+														content="http://res.cloudinary.com/demo/image/vimeo/w_360,h_240/80209061.jpg" />
+													<meta itemprop="blogId" content="4998516947001987705" />
+													<meta itemprop="postId" content="3389781754201799629" />
+													<a name="3389781754201799629"></a>
+													<h3 itemprop="name" class="post-title entry-title">
+														<a
+															href="http://videotube-sora.blogspot.com/2014/06/big-game.html">Big
+															Game</a>
+													</h3>
+													<div class="post-header">
+														<div class="post-header-line-1"></div>
+													</div>
+													<div itemprop="description articleBody"
+														id="post-body-3389781754201799629"
+														class="post-body entry-content">
+														<div id="summary3389781754201799629">
+															<div class="post-summary">
+																<a
+																	href="http://videotube-sora.blogspot.com/2014/06/big-game.html">
+																	<img width="230px" height="150px"
+																	src="http://res.cloudinary.com/demo/image/vimeo/w_230,h_150/80209061.jpg"
+																	class="imgcon" />
+																	<div class="img-hover"
+																		style="width: 230px; height: 150px; top: 51; left: 13" />
+																</a>
+
+															</div>
+															<a title="Big Game"
+																href="http://videotube-sora.blogspot.com/2014/06/big-game.html"
+																class="post-home-title"> Big Game </a>
+														</div>
+
+														<div style="clear: both;"></div>
+													</div>
+													<div class="post-footer">
+														<div class="post-footer-line post-footer-line-1">
+															<span class="post-author vcard"> </span> <span
+																class="post-timestamp"> <i class="fa fa-clock-o"></i>
+																<meta itemprop="url"
+																	content="http://videotube-sora.blogspot.com/2014/06/big-game.html" />
+																<a title="permanent link" rel="bookmark"
+																href="http://videotube-sora.blogspot.com/2014/06/big-game.html"
+																class="timestamp-link"><abbr
+																	title="2014-06-24T14:00:00-07:00"
+																	itemprop="datePublished" class="published">6/24/2014</abbr></a>
+															</span> <span class="reaction-buttons"> </span> <span
+																class="star-ratings"> </span> <span
+																class="post-comment-link"> <a onclick=""
+																href="http://videotube-sora.blogspot.com/2014/06/big-game.html#comment-form"
+																class="comment-link"> No comments: </a>
+															</span> <span class="post-backlinks post-comment-link"> </span>
+															<span class="post-icons"> </span>
+															<div class="post-share-buttons goog-inline-block">
+															</div>
+														</div>
+														<div class="post-footer-line post-footer-line-2">
+															<span class="post-labels">
+																<div class="label-title">Labels:</div> <a rel="tag"
+																href="http://videotube-sora.blogspot.com/search/label/animation">animation</a>
+															</span>
+															<div class="clear"></div>
+															<div class="related_posts row">
+																<script type="text/javascript">
+																	var defaultnoimage = "http://3.bp.blogspot.com/-H3EZ0LhM0Og/UZ8s_cbYLMI/AAAAAAAABis/r6YgFYWrO-U/s1600/no_image.jpg";
+																	var maxresults = 9;
+																	var splittercolor = "";
+																	var relatedpoststitle = "Related Videos";
+																</script>
+															</div>
+														</div>
+														<div class="post-footer-line post-footer-line-3">
+															<span class="post-location"> </span>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+
+
+									<div class="date-outer">
+
+
+										<div class="date-posts">
+
+											<div class="post-outer">
+												<div itemtype="http://schema.org/BlogPosting"
+													itemscope="itemscope" itemprop="blogPost"
+													class="post hentry uncustomized-post-template">
+													<meta itemprop="image_url"
+														content="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/xVSMbvLKNBg.jpg" />
+													<meta itemprop="blogId" content="4998516947001987705" />
+													<meta itemprop="postId" content="467153380184041343" />
+													<a name="467153380184041343"></a>
+													<h3 itemprop="name" class="post-title entry-title">
+														<a
+															href="http://videotube-sora.blogspot.com/2014/06/kits-ratings.html">Kits
+															&amp; Ratings</a>
+													</h3>
+													<div class="post-header">
+														<div class="post-header-line-1"></div>
+													</div>
+													<div itemprop="description articleBody"
+														id="post-body-467153380184041343"
+														class="post-body entry-content">
+														<div id="summary467153380184041343">
+															<div class="post-summary">
+																<a
+																	href="http://videotube-sora.blogspot.com/2014/06/kits-ratings.html"><img
+																	width="230px" height="150px"
+																	src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/xVSMbvLKNBg.jpg"
+																	class="imgcon" /></a>
+															</div>
+															<a title="Kits &amp; Ratings"
+																href="http://videotube-sora.blogspot.com/2014/06/kits-ratings.html"
+																class="post-home-title">Kits &amp; Ratings</a>
+														</div>
+														<div style="clear: both;"></div>
+													</div>
+													<div class="post-footer">
+														<div class="post-footer-line post-footer-line-1">
+															<span class="post-author vcard"> </span> <span
+																class="post-timestamp"> <i class="fa fa-clock-o"></i>
+																<meta itemprop="url"
+																	content="http://videotube-sora.blogspot.com/2014/06/kits-ratings.html" />
+																<a title="permanent link" rel="bookmark"
+																href="http://videotube-sora.blogspot.com/2014/06/kits-ratings.html"
+																class="timestamp-link"><abbr
+																	title="2014-06-22T09:25:00-07:00"
+																	itemprop="datePublished" class="published">6/22/2014</abbr></a>
+															</span> <span class="reaction-buttons"> </span> <span
+																class="star-ratings"> </span> <span
+																class="post-comment-link"> <a onclick=""
+																href="http://videotube-sora.blogspot.com/2014/06/kits-ratings.html#comment-form"
+																class="comment-link"> 1 comment: </a>
+															</span> <span class="post-backlinks post-comment-link"> </span>
+															<span class="post-icons"> </span>
+															<div class="post-share-buttons goog-inline-block">
+															</div>
+														</div>
+														<div class="post-footer-line post-footer-line-2">
+															<span class="post-labels">
+																<div class="label-title">Labels:</div> <a rel="tag"
+																href="http://videotube-sora.blogspot.com/search/label/sports">sports</a>
+															</span>
+															<div class="clear"></div>
+															<div class="related_posts row">
+																<script type="text/javascript">
+																	var defaultnoimage = "http://3.bp.blogspot.com/-H3EZ0LhM0Og/UZ8s_cbYLMI/AAAAAAAABis/r6YgFYWrO-U/s1600/no_image.jpg";
+																	var maxresults = 9;
+																	var splittercolor = "";
+																	var relatedpoststitle = "Related Videos";
+																</script>
+															</div>
+														</div>
+														<div class="post-footer-line post-footer-line-3">
+															<span class="post-location"> </span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="post-outer">
+												<div itemtype="http://schema.org/BlogPosting"
+													itemscope="itemscope" itemprop="blogPost"
+													class="post hentry uncustomized-post-template">
+													<meta itemprop="image_url"
+														content="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/lbHiT2YexV4.jpg" />
+													<meta itemprop="blogId" content="4998516947001987705" />
+													<meta itemprop="postId" content="3073385831539912780" />
+													<a name="3073385831539912780"></a>
+													<h3 itemprop="name" class="post-title entry-title">
+														<a
+															href="http://videotube-sora.blogspot.com/2014/06/best-points-tennis.html">Best
+															Points Tennis</a>
+													</h3>
+													<div class="post-header">
+														<div class="post-header-line-1"></div>
+													</div>
+													<div itemprop="description articleBody"
+														id="post-body-3073385831539912780"
+														class="post-body entry-content">
+														<div id="summary3073385831539912780">
+															<div class="post-summary">
+																<a
+																	href="http://videotube-sora.blogspot.com/2014/06/best-points-tennis.html"><img
+																	width="230px" height="150px"
+																	src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/lbHiT2YexV4.jpg"
+																	class="imgcon" /></a>
+															</div>
+															<a title="Best Points Tennis"
+																href="http://videotube-sora.blogspot.com/2014/06/best-points-tennis.html"
+																class="post-home-title">Best Points Tennis</a>
+														</div>
+														<div style="clear: both;"></div>
+													</div>
+													<div class="post-footer">
+														<div class="post-footer-line post-footer-line-1">
+															<span class="post-author vcard"> </span> <span
+																class="post-timestamp"> <i class="fa fa-clock-o"></i>
+																<meta itemprop="url"
+																	content="http://videotube-sora.blogspot.com/2014/06/best-points-tennis.html" />
+																<a title="permanent link" rel="bookmark"
+																href="http://videotube-sora.blogspot.com/2014/06/best-points-tennis.html"
+																class="timestamp-link"><abbr
+																	title="2014-06-22T09:24:00-07:00"
+																	itemprop="datePublished" class="published">6/22/2014</abbr></a>
+															</span> <span class="reaction-buttons"> </span> <span
+																class="star-ratings"> </span> <span
+																class="post-comment-link"> <a onclick=""
+																href="http://videotube-sora.blogspot.com/2014/06/best-points-tennis.html#comment-form"
+																class="comment-link"> No comments: </a>
+															</span> <span class="post-backlinks post-comment-link"> </span>
+															<span class="post-icons"> </span>
+															<div class="post-share-buttons goog-inline-block">
+															</div>
+														</div>
+														<div class="post-footer-line post-footer-line-2">
+															<span class="post-labels">
+																<div class="label-title">Labels:</div> <a rel="tag"
+																href="http://videotube-sora.blogspot.com/search/label/sports">sports</a>
+															</span>
+															<div class="clear"></div>
+															<div class="related_posts row">
+																<script type="text/javascript">
+																	var defaultnoimage = "http://3.bp.blogspot.com/-H3EZ0LhM0Og/UZ8s_cbYLMI/AAAAAAAABis/r6YgFYWrO-U/s1600/no_image.jpg";
+																	var maxresults = 9;
+																	var splittercolor = "";
+																	var relatedpoststitle = "Related Videos";
+																</script>
+															</div>
+														</div>
+														<div class="post-footer-line post-footer-line-3">
+															<span class="post-location"> </span>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+
+									<!-- google_ad_section_end -->
+								</div>
+							</div>
+							<div id="blog-pager" class="blog-pager">
+								<span id="blog-pager-older-link"> <a title="Older Posts"
+									id="Blog1_blog-pager-older-link"
+									href="http://videotube-sora.blogspot.com/search?updated-max=2014-06-22T09:24:00-07:00&amp;max-results=3"
+									class="blog-pager-older-link">Older Posts</a>
+								</span> <a href="http://videotube-sora.blogspot.com/" class="home-link">Home</a>
+							</div>
+							<div class="clear"></div>
+							<div class="blog-feeds">
+								<div class="feed-links">
+									Subscribe to: <a type="application/atom+xml" target="_blank"
+										href="http://videotube-sora.blogspot.com/feeds/posts/default"
+										class="feed-link">Posts (Atom)</a>
+								</div>
+							</div>
+							<script type="text/javascript">
+								window.___gcfg = {
+									'lang' : 'en'
+								};
+							</script>
+						</div>
+					</div>
+					<div class='home-widgets section' id='home-widgets'>
+						<div class='widget HTML' id='HTML8'>
+							<h2 class='title'>Hot Videos</h2>
+							<div class='widget-content'>
+								<div class="labeled-posts sone-post row">
+									<div style="width: 50%;" class="post-content">
+										<a title="Kits &amp; Ratings"
+											href="http://videotube-sora.blogspot.com/2014/06/kits-ratings.html"
+											class="first-image"> <img width="360px" height="240px"
+											src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/xVSMbvLKNBg.jpg"
+											alt="" /></a><a title="Kits &amp; Ratings"
+											href="http://videotube-sora.blogspot.com/2014/06/kits-ratings.html"><div
+												class="img-hover" style="width: 360px; height: 240px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="Kits &amp; Ratings"
+													href="http://videotube-sora.blogspot.com/2014/06/kits-ratings.html">Kits
+													&amp; Ratings</a>
+											</h3>
+											<span class="post-meta"><div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div> <span class="comnum"><i class="fa fa-comments"></i><a
+													title="1 Comment"
+													href="http://videotube-sora.blogspot.com/2014/06/kits-ratings.html#comment-form">1
+														Comment</a></span></span>
+										</div>
+									</div>
+									<div style="width: 50%;" class="post-content">
+										<a title="Best Points Tennis"
+											href="http://videotube-sora.blogspot.com/2014/06/best-points-tennis.html"
+											class="first-image"><img width="360px" height="240px"
+											src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/lbHiT2YexV4.jpg"
+											alt="" /></a><a title="Best Points Tennis"
+											href="http://videotube-sora.blogspot.com/2014/06/best-points-tennis.html"><div
+												class="img-hover" style="width: 360px; height: 240px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="Best Points Tennis"
+													href="http://videotube-sora.blogspot.com/2014/06/best-points-tennis.html">Best
+													Points Tennis</a>
+											</h3>
+											<span class="post-meta"><div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div> <span class="comnum"><i class="fa fa-comments"></i><a
+													title="No Comments"
+													href="http://videotube-sora.blogspot.com/2014/06/best-points-tennis.html#comment-form">No
+														Comments</a></span></span>
+										</div>
+									</div>
+									<div style="width: 50%;" class="post-content">
+										<a title="Baseball MLB 14"
+											href="http://videotube-sora.blogspot.com/2014/06/baseball-mlb-14.html"
+											class="first-image"><img width="360px" height="240px"
+											src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/-OXttFtAMv0.jpg"
+											alt="" /></a><a title="Baseball MLB 14"
+											href="http://videotube-sora.blogspot.com/2014/06/baseball-mlb-14.html"><div
+												class="img-hover" style="width: 360px; height: 240px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="Baseball MLB 14"
+													href="http://videotube-sora.blogspot.com/2014/06/baseball-mlb-14.html">Baseball
+													MLB 14</a>
+											</h3>
+											<span class="post-meta"><div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div> <span class="comnum"><i class="fa fa-comments"></i><a
+													title="No Comments"
+													href="http://videotube-sora.blogspot.com/2014/06/baseball-mlb-14.html#comment-form">No
+														Comments</a></span></span>
+										</div>
+									</div>
+									<div style="width: 50%;" class="post-content">
+										<a title="Mercedes Benz C63"
+											href="http://videotube-sora.blogspot.com/2014/06/mercedes-benz-c63.html"
+											class="first-image"><img width="360px" height="240px"
+											src="http://res.cloudinary.com/demo/image/vimeo/w_360,h_240/34592862.jpg"
+											alt="" /></a><a title="Mercedes Benz C63"
+											href="http://videotube-sora.blogspot.com/2014/06/mercedes-benz-c63.html"><div
+												class="img-hover" style="width: 360px; height: 240px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="Mercedes Benz C63"
+													href="http://videotube-sora.blogspot.com/2014/06/mercedes-benz-c63.html">Mercedes
+													Benz C63</a>
+											</h3>
+											<span class="post-meta"><div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div> <span class="comnum"><i class="fa fa-comments"></i><a
+													title="No Comments"
+													href="http://videotube-sora.blogspot.com/2014/06/mercedes-benz-c63.html#comment-form">No
+														Comments</a></span></span>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+							<div class='clear'></div>
+							<span class='widget-item-control'> <span
+								class='item-control blog-admin'> <a class='quickedit'
+									href=''
+									onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML8"));'
+									target='configHTML8' title='Edit'> <img alt='' height='18'
+										src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png'
+										width='18' />
+								</a>
+							</span>
+							</span>
+							<div class='clear'></div>
+						</div>
+						<div class='widget HTML' id='HTML7'>
+							<h2 class='title'>Lastest Videos</h2>
+							<div class='widget-content'>
+								<div class="labeled-posts stwo-posts row">
+									<div style="width: 33.3333%;" class="post-content">
+										<a title="Winter Love"
+											href="http://videotube-sora.blogspot.com/2014/06/winter-love.html"
+											class="first-image"><img width="230px" height="150px"
+											src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/HWoUFSsO_aE.jpg"
+											alt="" /></a><a title="Winter Love"
+											href="http://videotube-sora.blogspot.com/2014/06/winter-love.html"><div
+												class="img-hover" style="width: 230px; height: 150px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="Winter Love"
+													href="http://videotube-sora.blogspot.com/2014/06/winter-love.html">Winter
+													Love</a>
+											</h3>
+											<span class="post-meta"><div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div></span>
+										</div>
+									</div>
+									<div style="width: 33.3333%;" class="post-content">
+										<a title="Disney's FROZEN"
+											href="http://videotube-sora.blogspot.com/2014/06/disney-frozen.html"
+											class="first-image"><img width="230px" height="150px"
+											src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/8vxfyvsVRyw.jpg"
+											alt="" /></a><a title="Disney's FROZEN"
+											href="http://videotube-sora.blogspot.com/2014/06/disney-frozen.html"><div
+												class="img-hover" style="width: 230px; height: 150px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="Disney's FROZEN"
+													href="http://videotube-sora.blogspot.com/2014/06/disney-frozen.html">Disney's
+													FROZEN</a>
+											</h3>
+											<span class="post-meta"><div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div></span>
+										</div>
+									</div>
+									<div style="width: 33.3333%;" class="post-content">
+										<a title="Baseball MLB 14"
+											href="http://videotube-sora.blogspot.com/2014/06/baseball-mlb-14.html"
+											class="first-image"><img width="230px" height="150px"
+											src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/-OXttFtAMv0.jpg"
+											alt="" /></a><a title="Baseball MLB 14"
+											href="http://videotube-sora.blogspot.com/2014/06/baseball-mlb-14.html"><div
+												class="img-hover" style="width: 230px; height: 150px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="Baseball MLB 14"
+													href="http://videotube-sora.blogspot.com/2014/06/baseball-mlb-14.html">Baseball
+													MLB 14</a>
+											</h3>
+											<span class="post-meta"><div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div></span>
+										</div>
+									</div>
+									<div style="width: 33.3333%;" class="post-content">
+										<a title="Free Birds Official"
+											href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html"
+											class="first-image"><img width="230px" height="150px"
+											src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/gxslnpqFwOs.jpg"
+											alt="" /></a><a title="Free Birds Official"
+											href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html"><div
+												class="img-hover" style="width: 230px; height: 150px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="Free Birds Official"
+													href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html">Free
+													Birds Official</a>
+											</h3>
+											<span class="post-meta"><div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div></span>
+										</div>
+									</div>
+									<div style="width: 33.3333%;" class="post-content">
+										<a title="Mercedes Benz C63"
+											href="http://videotube-sora.blogspot.com/2014/06/mercedes-benz-c63.html"
+											class="first-image"><img width="230px" height="150px"
+											src="http://res.cloudinary.com/demo/image/vimeo/w_360,h_240/34592862.jpg"
+											alt="" /></a><a title="Mercedes Benz C63"
+											href="http://videotube-sora.blogspot.com/2014/06/mercedes-benz-c63.html"><div
+												class="img-hover" style="width: 230px; height: 150px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="Mercedes Benz C63"
+													href="http://videotube-sora.blogspot.com/2014/06/mercedes-benz-c63.html">Mercedes
+													Benz C63</a>
+											</h3>
+											<span class="post-meta"><div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div></span>
+										</div>
+									</div>
+									<div style="width: 33.3333%;" class="post-content">
+										<a title="Edge Of Tomorrow"
+											href="http://videotube-sora.blogspot.com/2014/06/edge-of-tomorrow.html"
+											class="first-image"><img width="230px" height="150px"
+											src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/fLe_qO4AE-M.jpg"
+											alt="" /></a><a title="Edge Of Tomorrow"
+											href="http://videotube-sora.blogspot.com/2014/06/edge-of-tomorrow.html"><div
+												class="img-hover" style="width: 230px; height: 150px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="Edge Of Tomorrow"
+													href="http://videotube-sora.blogspot.com/2014/06/edge-of-tomorrow.html">Edge
+													Of Tomorrow</a>
+											</h3>
+											<span class="post-meta"><div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div></span>
+										</div>
+									</div>
+									<div style="width: 33.3333%;" class="post-content">
+										<a title="Transformers - Kreo"
+											href="http://videotube-sora.blogspot.com/2014/06/transformers-kreo.html"
+											class="first-image"><img width="230px" height="150px"
+											src="http://res.cloudinary.com/demo/image/vimeo/w_360,h_240/25754975.jpg"
+											alt="" /></a><a title="Transformers - Kreo"
+											href="http://videotube-sora.blogspot.com/2014/06/transformers-kreo.html"><div
+												class="img-hover" style="width: 230px; height: 150px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="Transformers - Kreo"
+													href="http://videotube-sora.blogspot.com/2014/06/transformers-kreo.html">Transformers
+													- Kreo</a>
+											</h3>
+											<span class="post-meta"><div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div></span>
+										</div>
+									</div>
+									<div style="width: 33.3333%;" class="post-content">
+										<a title="The Apes Planet"
+											href="http://videotube-sora.blogspot.com/2014/06/the-apes-planet.html"
+											class="first-image"><img width="230px" height="150px"
+											src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/_dweN_7vhhk.jpg"
+											alt="" /></a><a title="The Apes Planet"
+											href="http://videotube-sora.blogspot.com/2014/06/the-apes-planet.html"><div
+												class="img-hover" style="width: 230px; height: 150px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="The Apes Planet"
+													href="http://videotube-sora.blogspot.com/2014/06/the-apes-planet.html">The
+													Apes Planet</a>
+											</h3>
+											<span class="post-meta"><div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div></span>
+										</div>
+									</div>
+									<div style="width: 33.3333%;" class="post-content">
+										<a title="World Cup Brazil"
+											href="http://videotube-sora.blogspot.com/2014/06/world-cup-brazil.html"
+											class="first-image"><img width="230px" height="150px"
+											src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/dfmDl9t_g9s.jpg"
+											alt="" /></a><a title="World Cup Brazil"
+											href="http://videotube-sora.blogspot.com/2014/06/world-cup-brazil.html"><div
+												class="img-hover" style="width: 230px; height: 150px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="World Cup Brazil"
+													href="http://videotube-sora.blogspot.com/2014/06/world-cup-brazil.html">World
+													Cup Brazil</a>
+											</h3>
+											<span class="post-meta"><div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='clear'></div>
+							<span class='widget-item-control'> <span
+								class='item-control blog-admin'> <a class='quickedit'
+									href=''
+									onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML7"));'
+									target='configHTML7' title='Edit'> <img alt='' height='18'
+										src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png'
+										width='18' />
+								</a>
+							</span>
+							</span>
+							<div class='clear'></div>
+						</div>
+						<div class='widget HTML' id='HTML9'>
+							<h2 class='title'>Lastest Article</h2>
+							<div class='widget-content'>
+								<div class="labeled-posts msone-post row">
+									<div style="width: 100%;" class="post-content">
+										<a title="Big Game"
+											href="http://videotube-sora.blogspot.com/2014/06/big-game.html"
+											class="first-image"><img width="295px" height="197px"
+											src="http://res.cloudinary.com/demo/image/vimeo/w_360,h_240/80209061.jpg"
+											alt=""/></a><a title="Big Game"
+											href="http://videotube-sora.blogspot.com/2014/06/big-game.html"><div
+												class="img-hover" style="width: 295px; height: 197px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="Big Game"
+													href="http://videotube-sora.blogspot.com/2014/06/big-game.html">Big
+													Game</a>
+											</h3>
+											<span class="post-meta">Description: Lorem ipsum dolor
+												sit amet, consectetur adipiscing elit. Integer dolor quam,
+												pretium eu placerat eu, semper et nunc. Nullam ut turpis
+												dictum, luctus mi quis, luctus lorem. Nullam porttitor
+												consectetur nunc in tempor. Cras vitae venenatis sem, at
+												pretium arcu. Nulla hendrerit dui quis metus ...
+												<div class="date">
+													<i class="fa fa-clock-o"></i>24 - June - 2014
+												</div>
+												<span class="comnum"><i class="fa fa-comments"></i><a
+													title="No Comments"
+													href="http://videotube-sora.blogspot.com/2014/06/big-game.html#comment-form">No
+														Comments</a></span> <br style="margin: 0 0 10px;"/>
+											<a class="read-more"
+												href="http://videotube-sora.blogspot.com/2014/06/big-game.html"><i
+													class="fa fa-play-circle"></i>Watch Video</a>
+											</span>
+										</div>
+									</div>
+									<div style="width: 100%;" class="post-content">
+										<a title="Winter Love"
+											href="http://videotube-sora.blogspot.com/2014/06/winter-love.html"
+											class="first-image"><img width="295px" height="197px"
+											src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/HWoUFSsO_aE.jpg"
+											alt=""/></a><a title="Winter Love"
+											href="http://videotube-sora.blogspot.com/2014/06/winter-love.html"><div
+												class="img-hover" style="width: 295px; height: 197px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="Winter Love"
+													href="http://videotube-sora.blogspot.com/2014/06/winter-love.html">Winter
+													Love</a>
+											</h3>
+											<span class="post-meta">Description: Lorem ipsum dolor
+												sit amet, consectetur adipiscing elit. Integer dolor quam,
+												pretium eu placerat eu, semper et nunc. Nullam ut turpis
+												dictum, luctus mi quis, luctus lorem. Nullam porttitor
+												consectetur nunc in tempor. Cras vitae venenatis sem, at
+												pretium arcu. Nulla hendrerit dui quis metus ...
+												<div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div>
+												<span class="comnum"><i class="fa fa-comments"></i><a
+													title="No Comments"
+													href="http://videotube-sora.blogspot.com/2014/06/winter-love.html#comment-form">No
+														Comments</a></span> <br style="margin: 0 0 10px;"/>
+											<a class="read-more"
+												href="http://videotube-sora.blogspot.com/2014/06/winter-love.html"><i
+													class="fa fa-play-circle"></i>Watch Video</a>
+											</span>
+										</div>
+									</div>
+									<div style="width: 100%;" class="post-content">
+										<a title="Disney's FROZEN"
+											href="http://videotube-sora.blogspot.com/2014/06/disney-frozen.html"
+											class="first-image"><img width="295px" height="197px"
+											src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/8vxfyvsVRyw.jpg"
+											alt=""/></a><a title="Disney's FROZEN"
+											href="http://videotube-sora.blogspot.com/2014/06/disney-frozen.html"><div
+												class="img-hover" style="width: 295px; height: 197px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="Disney's FROZEN"
+													href="http://videotube-sora.blogspot.com/2014/06/disney-frozen.html">Disney's
+													FROZEN</a>
+											</h3>
+											<span class="post-meta">Description: Lorem ipsum dolor
+												sit amet, consectetur adipiscing elit. Integer dolor quam,
+												pretium eu placerat eu, semper et nunc. Nullam ut turpis
+												dictum, luctus mi quis, luctus lorem. Nullam porttitor
+												consectetur nunc in tempor. Cras vitae venenatis sem, at
+												pretium arcu. Nulla hendrerit dui quis metus ...
+												<div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div>
+												<span class="comnum"><i class="fa fa-comments"></i><a
+													title="No Comments"
+													href="http://videotube-sora.blogspot.com/2014/06/disney-frozen.html#comment-form">No
+														Comments</a></span> <br style="margin: 0 0 10px;"/>
+											<a class="read-more"
+												href="http://videotube-sora.blogspot.com/2014/06/disney-frozen.html"><i
+													class="fa fa-play-circle"></i>Watch Video</a>
+											</span>
+										</div>
+									</div>
+									<div style="width: 100%;" class="post-content">
+										<a title="Free Birds Official"
+											href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html"
+											class="first-image"><img width="295px" height="197px"
+											src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/gxslnpqFwOs.jpg"
+											alt=""/></a><a title="Free Birds Official"
+											href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html"><div
+												class="img-hover" style="width: 295px; height: 197px;"></div></a>
+										<div class="post-header">
+											<h3>
+												<a title="Free Birds Official"
+													href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html">Free
+													Birds Official</a>
+											</h3>
+											<span class="post-meta">Description: Lorem ipsum dolor
+												sit amet, consectetur adipiscing elit. Integer dolor quam,
+												pretium eu placerat eu, semper et nunc. Nullam ut turpis
+												dictum, luctus mi quis, luctus lorem. Nullam porttitor
+												consectetur nunc in tempor. Cras vitae venenatis sem, at
+												pretium arcu. Nulla hendrerit dui quis metus ...
+												<div class="date">
+													<i class="fa fa-clock-o"></i>22 - June - 2014
+												</div>
+												<span class="comnum"><i class="fa fa-comments"></i><a
+													title="No Comments"
+													href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html#comment-form">No
+														Comments</a></span> <br style="margin: 0 0 10px;"/>
+											<a class="read-more"
+												href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html"><i
+													class="fa fa-play-circle"></i>Watch Video</a>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='clear'></div>
+							<span class='widget-item-control'> <span
+								class='item-control blog-admin'> <a class='quickedit'
+									href=''
+									onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML9"));'
+									target='configHTML9' title='Edit'> <img alt='' height='18'
+										src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png'
+										width='18' />
+								</a>
+							</span>
+							</span>
+							<div class='clear'></div>
+						</div>
+					</div>
+				</div>
+				<!-- Main Left Ends! -->
+				<!-- Sidebar Right -->
+				<ui:include src="common/sidebar.xhtml" />
+				<!-- Sidebar Right Ends! -->
+			</div>
+		</div>
+
+		<!-- MAIN CONTAINER ENDS! -->
+
+	</ui:define>
+</ui:composition>
+</html>

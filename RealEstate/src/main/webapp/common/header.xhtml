@@ -1,0 +1,244 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<f:view contentType="text/html" locale="#{LocaleBean.locale}">
+        <h:head>
+            <f:facet name="first">
+            	<title>Nhà đất Online.Com</title>
+                <meta charset="utf-8" />
+		        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		        <meta name="robots" content="index,follow, home" />
+		        <meta name="copyright" content="nhadat-online.com Copyright 2014 - 2015 Mua bán nhà, nhà cho thuê. Bản quyền thuộc về SnowinRain" />
+		        <meta name="revisit-after" content="7 days" />
+		        <meta name="placename" content="Vietnam" />
+		        <meta content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" name="SKYPE_TOOLBAR" />
+				<meta name="verify-v1" content="+44/Uq2yJqdQMEakVZTn8lY2125DOajkMWmTTwjmeg4=" />
+				<meta content="http://nhadat-online.com" property="og:url"/>
+				<meta content="Cho thuê phòng trọ, Mua bán nhà, mua bán nhà đất, dự án, chung cư, căn hộ, biệt thự" property="og:title" />
+				<meta content="vi_VN" property="og:locale" />
+				<meta content="nhadat-online.com - Chuyên trang về bất động sản Việt Nam" property="og:site_name" />
+				<meta content="Chuyên trang mua bán nhà đất, bất động sản, bán nhà - Thông tin mua, bán, nhà, chung cư, phòng,văn phòng, kho bãi, nhà xưởng, dự án đất đai, dự án bất động sản, dự án đầu tư được cập nhật liên tục và chính xác." property="og:description" />
+				<meta content="Nhà Đất Online - Đăng tin mua bán, cho thuê, thuê phòng trọ. Tin tức nhà cửa, phòng trọ, căn hộ, nhà xưởng, văn phòng được cập nhật thường xuyên" property="og:description" />
+				<meta name="keywords" content="Nha dat Online, Bat dong san, nha dat, mua ban nha dat, cho thue, mua, ban, nha, dat, phong tro, can ho, biet thu, chung cu, phong, dat dai, du an, bang gia, luat, moi gioi, nguoi thu nhap thap, mau nha dep, phong thuy, nha o, phong khach, nha bep, huong nha, Ho Chi Minh, Ha Noi, Hai Phong, Da Nang, Binh Duong, Vung Tau, quan, huyen, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, Binh Tan, Binh Thanh, Go Vap, Phu Nhuan, Tan Binh, Tan Phu, Thu Duc, Binh Chanh, Can Gio, Cu Chi, Hoc Mon, Nha Be" />
+				<meta name="description" content="Chuyên trang mua bán nhà đất, bất động sản, bán nhà, cho thuê nhà, phòng trọ - Thông tin mua, bán, nhà, đất, căn hộ, chung cư, phòng, cao ốc, biệt thự cao cấp, mặt bằng, văn phòng, kho bãi, nhà xưởng, dự án đất đai, dự án bất động sản, dự án đầu tư được cập nhật liên tục và chính xác." />
+				<meta content="nhadat-online.com - Địa chỉ bất động sản lớn nhất Việt Nam" itemprop="name" />
+				<meta content="nhadat-online.com - địa chỉ đáp ứng mọi nhu cầu của bạn về bất động sản, website tốt nhất về BĐS cho nhu cầu của bạn." itemprop="description" />
+
+				<meta name="verify-adnet" content="59262abb848ed42c889bc5bc86e3d2b4" />
+
+		        <link rel="icon" type="image/png" href="http://teothemes.com/html/Unreal-estate/img/favicon.png" />
+		        <meta name="description" content="" />
+		        <meta name="viewport" content="width=device-width" />
+		        <script src="/javax.faces.resource/jquery/jquery.js.xhtml?ln=primefaces&amp;v=5.0" type="text/javascript"></script>
+            </f:facet>
+
+			<link rel="stylesheet" href="css/bootstrap.css" />
+	        <link rel="stylesheet" href="css/bootstrap-responsive.css" />
+	        <link rel="stylesheet" href="css/bootstrap-select.css" />
+	        <link rel="stylesheet" href="css/slider.css" />
+	        <link rel="stylesheet" href="css/jquery.css" />
+	        <link rel="stylesheet" href="css/style.css" />
+	        <link rel="stylesheet" href="css/custom.css" />
+        </h:head>
+        <h:body>
+
+        <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-52497289-1', 'auto');
+		  ga('send', 'pageview');
+		  
+		  function setActiveLink(index) {
+			  	$('.l_tinynav1 li').eq(index).addClass('active');
+		  }
+
+		</script>
+
+		<p:ajaxStatus
+			onstart="PF('statusDialog').show(); $('#loadingDialog').css('width', '0px');$('#loadingDialog').css('height', '0px');"
+			onsuccess="PF('statusDialog').hide();" />
+
+		<p:dialog modal="true" widgetVar="statusDialog" showHeader="false"
+			id="loadingDialog" resizable="false" draggable="false"
+			closable="false">
+			<p:graphicImage value="/img/ajax-loading.gif" id="ajaxImage"
+				style="position: fixed;top:40%; left:47%" />
+		</p:dialog>
+
+			<p:growl id="growl" showDetail="true" life="5000" />
+
+			<!-- ================================== HEADER SECTION ========================================== -->
+			<header>
+	            <section class="container">
+	                <section class="row">
+	                    <div class="span3">
+	                        <figure class="logo">
+	                            <a href="http://nhadat-online.com">
+	                                <img src="img/logo.png" alt="nha dat online" title="nhadat-online.com"/>
+	                            </a>
+	                        </figure>
+	                    </div>
+	                    <div class="span6">
+	                        <nav class="main-nav">
+	                            <ul class="l_tinynav1 hidden-phone">
+	                            	<li >
+	                            		<p:commandLink value="#{msg['menu.home']}" action="index?faces-redirect=true" actionListener="#{SearchBean.performFilter}"/>
+	                            	</li>
+	                                <li>
+										<p:commandLink value="#{msg['menu.search']}" action="search?faces-redirect=true" actionListener="#{SearchBean.performFilter}" />
+									</li>
+									<li>
+	                                    <p:commandLink value="#{msg['menu.article']}" action="#{ArticleBean.navigateToArticle(0)}"/>
+	                                    <ul class="dropdown-menu">
+	                                    	<li><p:commandLink value="#{msg['article.category.option1']}" action="#{ArticleBean.navigateToArticle(1)}"/></li>
+	                                    	<li><p:commandLink value="#{msg['article.category.option2']}" action="#{ArticleBean.navigateToArticle(2)}"/></li>
+	                                    </ul>
+	                                </li>
+	                                <li>
+	                                    <p:commandLink value="#{msg['menu.contact']}" action="contact?faces-redirect=true" />
+	                                </li>
+	                                <li>
+	                                	<p:commandLink value="#{msg['menu.register']} / #{msg['menu.login']}" action="login?faces-redirect=true" actionListener="#{RegisterBean.reset}" rendered="#{empty LoginBean.account.userName}"></p:commandLink>
+	                                </li>
+	                                <li>
+	                                    <p:commandLink value="#{LoginBean.account.userName}" rendered="#{!empty LoginBean.account.userName}" action="manageNews?faces-redirect=true"/>
+	                                    <ul class="dropdown-menu">
+	                                    	<li><p:commandLink value="#{msg['menu.addNews']}" action="addNews?faces-redirect=true"/></li>
+	                                    	<li><p:commandLink value="#{msg['menu.addArticle']}" action="addArticle?faces-redirect=true" rendered="#{!empty LoginBean.account.userName and LoginBean.account.role eq 'ROLE_ADMIN'}"/></li>
+	                                    	<li><p:commandLink value="#{msg['menu.login.profile']}" action="editProfile?faces-redirect=true"/></li>
+	                                    	<li><p:commandLink value="#{msg['menu.login.news']}" action="manageNews?faces-redirect=true"/></li>
+	                                    	<li><p:commandLink value="#{msg['menu.login.article']}" action="#{ArticleBean.navigateToManageArticle}" rendered="#{!empty LoginBean.account.userName and LoginBean.account.role eq 'ROLE_ADMIN'}"/></li>
+	                                    	<li><p:commandLink value="#{msg['menu.login.follow']}" action="manageFollow?faces-redirect=true"/></li>
+	                                        <li><p:commandLink value="#{msg['menu.login.logout']}" action="#{LoginBean.logout}"/></li>
+	                                    </ul>
+	                                </li>
+	                            </ul><select class="tinynav tinynav1 visible-phone" id="tinynav1"><option selected="selected">Navigation</option><option value="index.html">Home</option><option value="about.html">About</option><option value="property.html">Property</option><option value="search-location.html">- For Sale</option><option value="search-list.html">- For Rent</option><option value="search-grid-no-form.html">- - Sub menu item 1</option><option value="search-grid.html">- - Sub menu item 2</option><option value="search-grid.html">- - Sub menu item 3</option><option value="search-grid.html">- - Sub menu item 4</option><option value="search-location.html">- Forclosures</option><option value="search-grid.html">- - Sub menu item 1</option><option value="search-grid-no-form.html">- - Sub menu item 2</option><option value="search-grid-no-form.html">- - Sub menu item 3</option><option value="search-grid.html">- - Sub menu item 4</option><option value="search-grid-no-form.html">- New Homes</option><option value="agents.html">Agents</option><option value="agent.html">- Single agent</option><option value="blog.html">Blog</option><option value="post.html">- Single post</option><option value="search-grid-no-form.html">Search</option><option value="search-grid-no-form.html">- Search grid no form</option><option value="search-grid.html">- Search grid with form</option><option value="search-list.html">- Search list</option><option value="search-location.html">- Search with location</option></select>
+	                        </nav>
+	                    </div>
+	                    <div class="span3">
+	                    	<h:form>
+		                        <div class="header-buttons">
+		                        	<p:commandLink action="#{NewsBean.gotoAddNews}" styleClass="add custom-tooltip" title="#{msg['menu.addNews']}">
+		                            	Add
+		                            </p:commandLink>
+		                            <p:commandLink action="addArticle?faces-redirect=true" styleClass="article custom-tooltip" title="#{msg['menu.addArticle']}" style="border-left:none"
+		                            	rendered="#{!empty LoginBean.account.userName and LoginBean.account.role eq 'ROLE_ADMIN'}">
+		                            	Add
+		                            </p:commandLink>
+<!-- 		                            <p:commandLink action="{LocaleBean.countryLocaleCodeChanged('vi')}" styleClass="vn custom-tooltip" ajax="false" title="Vietnamese" /> -->
+<!-- 		                            <p:commandLink action="{LocaleBean.countryLocaleCodeChanged('en')}" styleClass="us custom-tooltip" ajax="false" title="English" /> -->
+
+		                        </div>
+	                        </h:form>
+	                    </div>
+	                </section>
+	            </section>
+	        </header>
+			<!-- =========================================== PAGE TITLE ========================================== -->
+			<section id="homepage-slider">
+	            <section class="slider-wrapper">
+	                <div class="homepage-slider hidden-phone">
+	                    <ul class="slides">
+	                        <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; display: none;">
+	                            <img src="img/photos/4834201449_2801d96045_o-1.jpg" alt="" class="bg-image" />
+	                            <div class="container">
+	                                <div class="row">
+	                                    <div class="span12">
+	                                        <div class="text-box span6">
+	                                            <h1><a href="http://nhadat-online.com">NHÀ ĐẤT ONLINE</a></h1>
+	                                            <p>Tin tức bất động sản được cập nhật liên tục</p>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li class="flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; display: list-item;">
+	                            <img src="img/photos/4834826842_7483d905eb_o.jpg" alt="" class="bg-image" />
+	                            <div class="container">
+	                                <div class="row">
+	                                    <div class="span12">
+	                                        <div class="text-box span6">
+	                                            <h1><a href="http://nhadat-online.com">NHÀ ĐẤT ONLINE</a></h1>
+	                                        <p>Chuyên trang về bất động sản Việt Nam</p>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </li>
+	                    </ul>
+	                </div>
+	            </section>
+	        </section>
+
+			<!-- =========================================== MAIN SECTION ========================================== -->
+				<ui:insert name="main"></ui:insert>
+
+            <!-- =========================================== FOOTER SECTION ========================================== -->
+
+            <section id="sub-footer">
+	            <section class="container">
+	                <section class="row">
+	                    <div class="span3">
+	                        <figure class="logo">
+	                            <a href="http://nhadat-online.com">
+	                                <img src="img/logo-footer.png" alt=""/>
+	                            </a>
+	                        </figure>
+	                    </div>
+	                    <div class="span6">
+	                        <div class="copyright">
+	                            <p> #{msg['text.footer']} <a href="https://www.facebook.com/nhan.lequang.14">SnowinRain</a></p>
+	                        </div>
+	                    </div>
+	                    <div class="span3">
+	                        <div class="social-icons">
+	                            <a href="#" class="be">Be</a>
+	                            <a href="#" class="star">Star</a>
+	                            <a href="#" class="pinterest">Pinterest</a>
+	                            <a href="#" class="facebook">Facebook</a>
+	                            <a href="#" class="twitter">Twitter</a>
+	                        </div>
+	                    </div>
+	                </section>
+	            </section>
+	        </section>
+
+			<h:form prependId="false" id="javascript-form">
+				<script src="js/modernizr-2.js"></script>
+		        <script src="js/bootstrap.js"></script>
+		        <script src="js/bootstrap-select.js"></script>
+		        <script src="js/jquery_004.js"></script>
+		        <script src="js/bootstrap-slider.js"></script>
+		        <script src="js/jquery_003.js"></script>
+		        <script src="js/jquery_002.js"></script>
+		        <script src="js/tinynav.js"></script>
+		        <script src="js/jquery.js"></script>
+<!-- 		        <script async="async" src="js/gmap3.js"></script> -->
+		        <script src="js/main.js"></script>
+		        <script src="js/custom.js"></script>
+
+			<script>
+			    function centerAndShowDialog(id, widgetVar)
+			    {
+			        PF(widgetVar).show();
+			        $(id).css("top",Math.max(0,((window.innerHeight - $(id).outerHeight()) / 2) + $(window).scrollTop()) + "px");
+			    }
+			</script>
+		</h:form>
+
+		<script type="text/javascript">
+			var infolinks_pid = 2138858;
+			var infolinks_wsid = 0;
+		</script>
+		<script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
+        </h:body>
+    </f:view>
+</html>

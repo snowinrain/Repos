@@ -1,0 +1,214 @@
+
+ <svg height="581" version="1.1" width="1457" xmlns="http://www.w3.org/2000/svg" style="overflow: hidden; position: relative;" viewBox="-373.5 10.900002999999998 1457 581" preserveAspectRatio="xMinYMin" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <desc>Created with Raphaël 2.1.2</desc>
+   <defs/> 
+   <rect x="0" y="0" width="160" height="46.666666666666664" r="5" rx="5" ry="5" fill="rgba(136, 175, 67, 1)" stroke="#000" style="" class="node-rect node-level-2 nodeLeft" id="pageId-TXbDgsKYJyfDg8K8QTnDgg==" data-hasqtip="0" transform="matrix(1,0,0,1,540,56.5667)" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 13.3333px &quot;Arial&quot;;" x="80" y="23.333333333333332" text-anchor="middle" font="13.333333333333334px &quot;Arial&quot;" stroke="none" fill="rgba(255, 255, 255, 1)" class="node-text" data-hasqtip="1" transform="matrix(1,0,0,1,540,56.5667)" stroke-width="1">
+     <tspan dy="4.999999364217121">WiT_1</tspan>
+   </text>
+   <image x="4" y="11.333333333333332" width="18" height="18" preserveAspectRatio="none" href="images/info-details.png" style="display: none;" transform="matrix(1,0,0,1,540,56.5667)" stroke-width="1"/> 
+   <image x="0" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_bug.png" transform="matrix(1,0,0,1,540,56.5667)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="16" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,540,56.5667)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="30" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_suggestion.png" transform="matrix(1,0,0,1,540,56.5667)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="46" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,540,56.5667)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="60" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_note.png" transform="matrix(1,0,0,1,540,56.5667)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="76" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,540,56.5667)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="90" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_question.png" transform="matrix(1,0,0,1,540,56.5667)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="106" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,540,56.5667)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <path style="" fill="none" stroke="#FFFFFF" d="M480,119.333336C510,119.333336,510,79.89999933333333,540,79.89999933333333" stroke-width="1"/> 
+   <rect x="0" y="0" width="160" height="46.666666666666664" r="5" rx="5" ry="5" fill="rgba(208, 223, 181, 1)" stroke="#000" style="" class="node-rect node-level-2 nodeLeft" id="pageId-w4PCvMOCwpwtYcOCwrFCSg==" data-hasqtip="2" transform="matrix(1,0,0,1,540,135.4333)" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 13.3333px &quot;Arial&quot;;" x="80" y="23.333333333333332" text-anchor="middle" font="13.333333333333334px &quot;Arial&quot;" stroke="none" fill="rgba(0, 0, 0, 1)" class="node-text" data-hasqtip="3" transform="matrix(1,0,0,1,540,135.4333)" stroke-width="1">
+     <tspan dy="4.999999364217121">qTraceNet</tspan>
+   </text>
+   <image x="4" y="11.333333333333332" width="18" height="18" preserveAspectRatio="none" href="images/info-details.png" style="display: none;" transform="matrix(1,0,0,1,540,135.4333)" stroke-width="1"/> 
+   <image x="0" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_bug.png" transform="matrix(1,0,0,1,540,135.4333)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="16" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,540,135.4333)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="30" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_suggestion.png" transform="matrix(1,0,0,1,540,135.4333)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="46" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,540,135.4333)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="60" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_note.png" transform="matrix(1,0,0,1,540,135.4333)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="76" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,540,135.4333)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="90" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_question.png" transform="matrix(1,0,0,1,540,135.4333)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="106" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,540,135.4333)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <path style="" fill="none" stroke="#FFFFFF" d="M480,119.333336C510,119.333336,510,158.76666333333336,540,158.76666333333336" stroke-width="1"/> 
+   <rect x="0" y="0" width="180" height="52.5" r="5" rx="5" ry="5" fill="rgba(129, 170, 56, 1)" stroke="#000" style="" class="node-rect node-level-1 nodeLeft" id="pageId-esODwoIiw4LCk8ODwpbDgw==" data-hasqtip="4" transform="matrix(1,0,0,1,300,93.0833)" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 15px &quot;Arial&quot;;" x="90" y="26.25" text-anchor="middle" font="15px &quot;Arial&quot;" stroke="none" fill="rgba(255, 255, 255, 1)" class="node-text" data-hasqtip="5" transform="matrix(1,0,0,1,300,93.0833)" stroke-width="1">
+     <tspan dy="5">ThongTinCongNghe</tspan>
+   </text>
+   <circle cx="0" cy="0" r="5" fill="none" stroke="#000" transform="matrix(1,0,0,1,480,119.3333)" style="" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;;" x="0" y="0" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,480,119.3333)" stroke-width="1">
+     <tspan dy="3.5">-</tspan>
+   </text>
+   <image x="4" y="14.25" width="18" height="18" preserveAspectRatio="none" href="images/info-details.png" style="display: none;" transform="matrix(1,0,0,1,300,93.0833)" stroke-width="1"/> 
+   <image x="0" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_bug.png" transform="matrix(1,0,0,1,300,93.0833)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="16" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,93.0833)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="30" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_suggestion.png" transform="matrix(1,0,0,1,300,93.0833)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="46" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,93.0833)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="60" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_note.png" transform="matrix(1,0,0,1,300,93.0833)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="76" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,93.0833)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="90" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_question.png" transform="matrix(1,0,0,1,300,93.0833)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="106" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,93.0833)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <path style="" fill="none" stroke="#FFFFFF" d="M240,332.15833C270,332.15833,270,119.333336,300,119.333336" stroke-width="1"/> 
+   <rect x="0" y="0" width="160" height="46.666666666666664" r="5" rx="5" ry="5" fill="rgba(241, 246, 234, 1)" stroke="#000" style="" class="node-rect node-level-2 nodeLeft" id="pageId-w4PCocOCwq1tLMOCwpTDgg==" data-hasqtip="6" transform="matrix(1,0,0,1,540,227.3)" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 13.3333px &quot;Arial&quot;;" x="80" y="23.333333333333332" text-anchor="middle" font="13.333333333333334px &quot;Arial&quot;" stroke="none" fill="rgba(0, 0, 0, 1)" class="node-text" data-hasqtip="7" transform="matrix(1,0,0,1,540,227.3)" stroke-width="1">
+     <tspan dy="4.999999364217121">Forgot Password</tspan>
+   </text>
+   <image x="4" y="11.333333333333332" width="18" height="18" preserveAspectRatio="none" href="images/info-details.png" style="display: none;" transform="matrix(1,0,0,1,540,227.3)" stroke-width="1"/> 
+   <image x="0" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_bug.png" transform="matrix(1,0,0,1,540,227.3)" style="display: none;" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none;" x="16" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,540,227.3)" stroke-width="1">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="30" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_suggestion.png" transform="matrix(1,0,0,1,540,227.3)" style="display: none;" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none;" x="46" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,540,227.3)" stroke-width="1">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="60" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_note.png" transform="matrix(1,0,0,1,540,227.3)" style="display: none;" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none;" x="76" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,540,227.3)" stroke-width="1">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="90" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_question.png" transform="matrix(1,0,0,1,540,227.3)" style="display: none;" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none;" x="106" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,540,227.3)" stroke-width="1">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <path style="" fill="none" stroke="#FFFFFF" d="M480,250.63333C510,250.63333,510,250.63333333333335,540,250.63333333333335" stroke-width="1"/> 
+   <rect x="0" y="0" width="180" height="52.5" r="5" rx="5" ry="5" fill="rgba(195, 215, 161, 1)" stroke="#000" style="" class="node-rect node-level-1 nodeLeft" id="pageId-Ziglw4PCqjkyQnXDgsKVww==" data-hasqtip="8" transform="matrix(1,0,0,1,300,224.3833)" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 15px &quot;Arial&quot;;" x="90" y="26.25" text-anchor="middle" font="15px &quot;Arial&quot;" stroke="none" fill="rgba(0, 0, 0, 1)" class="node-text" data-hasqtip="9" transform="matrix(1,0,0,1,300,224.3833)" stroke-width="1">
+     <tspan dy="5">Login</tspan>
+   </text>
+   <circle cx="0" cy="0" r="5" fill="none" stroke="#000" transform="matrix(1,0,0,1,480,250.6333)" style="" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;;" x="0" y="0" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,480,250.6333)" stroke-width="1">
+     <tspan dy="3.5">-</tspan>
+   </text>
+   <image x="4" y="14.25" width="18" height="18" preserveAspectRatio="none" href="images/info-details.png" style="display: none;" transform="matrix(1,0,0,1,300,224.3833)" stroke-width="1"/> 
+   <image x="0" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_bug.png" transform="matrix(1,0,0,1,300,224.3833)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="16" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,224.3833)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="30" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_suggestion.png" transform="matrix(1,0,0,1,300,224.3833)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="46" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,224.3833)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="60" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_note.png" transform="matrix(1,0,0,1,300,224.3833)" style="display: none;" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none;" x="76" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,224.3833)" stroke-width="1">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="90" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_question.png" transform="matrix(1,0,0,1,300,224.3833)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="106" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,224.3833)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <path style="" fill="none" stroke="#FFFFFF" d="M240,332.15833C270,332.15833,270,250.63333,300,250.63333" stroke-width="1"/> 
+   <rect x="0" y="0" width="180" height="52.5" r="5" rx="5" ry="5" fill="rgba(228, 237, 213, 1)" stroke="#000" style="" class="node-rect node-level-1 nodeLeft" id="pageId-w4PCq8ODwpHDgsK+RsOCwg==" data-hasqtip="10" transform="matrix(1,0,0,1,300,310.8333)" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 15px &quot;Arial&quot;;" x="90" y="26.25" text-anchor="middle" font="15px &quot;Arial&quot;" stroke="none" fill="rgba(0, 0, 0, 1)" class="node-text" data-hasqtip="11" transform="matrix(1,0,0,1,300,310.8333)" stroke-width="1">
+     <tspan dy="5">Purchase Licens..</tspan>
+   </text>
+   <image x="4" y="14.25" width="18" height="18" preserveAspectRatio="none" href="images/info-details.png" style="display: none;" transform="matrix(1,0,0,1,300,310.8333)" stroke-width="1"/> 
+   <image x="0" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_bug.png" transform="matrix(1,0,0,1,300,310.8333)" style="display: none;" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none;" x="16" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,310.8333)" stroke-width="1">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="30" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_suggestion.png" transform="matrix(1,0,0,1,300,310.8333)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="46" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,310.8333)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="60" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_note.png" transform="matrix(1,0,0,1,300,310.8333)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="76" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,310.8333)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="90" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_question.png" transform="matrix(1,0,0,1,300,310.8333)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="106" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,310.8333)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <path style="" fill="none" stroke="#FFFFFF" d="M240,332.15833C270,332.15833,270,337.08334,300,337.08334" stroke-width="1"/> 
+   <rect x="0" y="0" width="180" height="52.5" r="5" rx="5" ry="5" fill="rgba(188, 210, 150, 1)" stroke="#000" style="" class="node-rect node-level-1 nodeLeft" id="pageId-w4LCpDJ5RA7Dg8KnRlHDgg==" data-hasqtip="12" transform="matrix(1,0,0,1,300,397.2833)" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 15px &quot;Arial&quot;;" x="90" y="26.25" text-anchor="middle" font="15px &quot;Arial&quot;" stroke="none" fill="rgba(0, 0, 0, 1)" class="node-text" data-hasqtip="13" transform="matrix(1,0,0,1,300,397.2833)" stroke-width="1">
+     <tspan dy="5">Manage Organiza..</tspan>
+   </text>
+   <image x="4" y="14.25" width="18" height="18" preserveAspectRatio="none" href="images/info-details.png" style="display: none;" transform="matrix(1,0,0,1,300,397.2833)" stroke-width="1"/> 
+   <image x="0" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_bug.png" transform="matrix(1,0,0,1,300,397.2833)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="16" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,397.2833)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="30" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_suggestion.png" transform="matrix(1,0,0,1,300,397.2833)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="46" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,397.2833)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="60" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_note.png" transform="matrix(1,0,0,1,300,397.2833)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="76" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,397.2833)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="90" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_question.png" transform="matrix(1,0,0,1,300,397.2833)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="106" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,397.2833)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <path style="" fill="none" stroke="#FFFFFF" d="M240,332.15833C270,332.15833,270,423.53333,300,423.53333" stroke-width="1"/> 
+   <rect x="0" y="0" width="180" height="52.5" r="5" rx="5" ry="5" fill="rgba(221, 232, 202, 1)" stroke="#000" style="" class="node-rect node-level-1 nodeLeft" id="pageId-QcODwqHDgsKGw4LCj8ODwg==" data-hasqtip="14" transform="matrix(1,0,0,1,300,483.7333)" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 15px &quot;Arial&quot;;" x="90" y="26.25" text-anchor="middle" font="15px &quot;Arial&quot;" stroke="none" fill="rgba(0, 0, 0, 1)" class="node-text" data-hasqtip="15" transform="matrix(1,0,0,1,300,483.7333)" stroke-width="1">
+     <tspan dy="5">Register</tspan>
+   </text>
+   <image x="4" y="14.25" width="18" height="18" preserveAspectRatio="none" href="images/info-details.png" style="display: none;" transform="matrix(1,0,0,1,300,483.7333)" stroke-width="1"/> 
+   <image x="0" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_bug.png" transform="matrix(1,0,0,1,300,483.7333)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="16" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,483.7333)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="30" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_suggestion.png" transform="matrix(1,0,0,1,300,483.7333)" style="display: none;" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none;" x="46" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,483.7333)" stroke-width="1">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="60" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_note.png" transform="matrix(1,0,0,1,300,483.7333)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="76" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,483.7333)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="90" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_question.png" transform="matrix(1,0,0,1,300,483.7333)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="106" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,300,483.7333)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <path style="" fill="none" stroke="#FFFFFF" d="M240,332.15833C270,332.15833,270,509.98334,300,509.98334" stroke-width="1"/> 
+   <rect x="0" y="0" width="240" height="70" r="5" rx="5" ry="5" fill="rgba(103, 153, 15, 1)" stroke="#000" style="" class="node-rect node-level-0 nodeLeft" id="pageId-HsOCwobDg8KfDG7Dg8KDQg==" data-hasqtip="16" transform="matrix(1,0,0,1,0,297.1583)" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 20px &quot;Arial&quot;;" x="120" y="35" text-anchor="middle" font="20px &quot;Arial&quot;" stroke="none" fill="rgba(255, 255, 255, 1)" class="node-text" data-hasqtip="17" transform="matrix(1,0,0,1,0,297.1583)" stroke-width="1">
+     <tspan dy="7">Projects</tspan>
+   </text>
+   <circle cx="0" cy="0" r="5" fill="none" stroke="#000" transform="matrix(1,0,0,1,240,332.1583)" style="" stroke-width="1"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;;" x="0" y="0" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,240,332.1583)" stroke-width="1">
+     <tspan dy="3.5">-</tspan>
+   </text>
+   <image x="4" y="23" width="18" height="18" preserveAspectRatio="none" href="images/info-details.png" style="display: none;" transform="matrix(1,0,0,1,0,297.1583)" stroke-width="1"/> 
+   <image x="0" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_bug.png" transform="matrix(1,0,0,1,0,297.1583)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="16" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,0,297.1583)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="30" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_suggestion.png" transform="matrix(1,0,0,1,0,297.1583)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="46" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,0,297.1583)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="60" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_note.png" transform="matrix(1,0,0,1,0,297.1583)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="76" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,0,297.1583)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+   <image x="90" y="-23" width="32" height="32" preserveAspectRatio="none" href="images/ic_question.png" transform="matrix(1,0,0,1,0,297.1583)" style="display: none; opacity: 0;" stroke-width="1" opacity="0"/> 
+   <text style="text-anchor: middle; font: 10px &quot;Arial&quot;; display: none; opacity: 0;" x="106" y="-12.333333333333334" text-anchor="middle" font="10px &quot;Arial&quot;" stroke="none" fill="#000000" transform="matrix(1,0,0,1,0,297.1583)" stroke-width="1" opacity="0">
+     <tspan dy="-12.333333333333334"></tspan>
+   </text>
+ </svg>

@@ -1,0 +1,277 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="common/header.xhtml">
+	<ui:define name="main">
+
+		<script type="text/javascript">
+			setActiveLink(7);
+		</script>
+
+		<div id="content" style="padding-bottom: 35px">
+			<section class="container">
+	                <section class="row">
+	                    <div class="span9">
+	                        <div class="contact-box" style="width:100%">
+	                            <div class="title-bar">
+	                                <div class="inner">
+	                                    <h2>#{msg['news.header.edit']}</h2>
+	                                    <p>#{msg['news.subHeader']}</p>
+	                                </div>
+	                            </div>
+	                            <div class="contact-box-content">
+	                                <div class="inner">
+	                                		<h:form id="uploadForm" prependId="false" enctype="multipart/form-data">
+		                                		<section class="featured-items" style="width: 100%; height: 60px;">
+		                                			<p:messages id="msg"/>
+													<h:panelGroup layout="block" styleClass="featured-item" style="margin-right: 20px; float: left; height: 69px;margin-bottom: 10px;" rendered="#{empty NewsBean.news.images}">
+														<figure style="height:68px;">
+				                                			<p:graphicImage value="/img/no_house.jpg" height="90" width="90"/>
+				                                			<p:commandLink styleClass="figure-hover" style="background-image: url('img/figure-zoom.png')" onclick="document.getElementById('fileUpload_input').click()">
+																Zoom
+				                                            </p:commandLink>
+			                                            </figure>
+		                                            </h:panelGroup>
+
+													<ui:repeat value="#{NewsBean.news.images}" var="img" varStatus="imageStatus">
+														<div class="featured-item" style="margin-right: 20px; float: left; height: 69px;margin-bottom: 10px;">
+															<figure style="height:68px;">
+																<p:graphicImage value="#{img}" height="90" width="90" style="float:left; margin-right: 10px; margin-bottom: 10px;"/>
+															    <p:commandLink styleClass="figure-hover" style="background-image: url('img/delete.png')" actionListener="#{NewsBean.deleteImage(imageStatus.index)}" update="@form">
+																	Zoom
+					                                            </p:commandLink>
+					                                        </figure>
+				                                        </div>
+													</ui:repeat>
+												</section>
+
+													<div style="clear:both"/>
+
+													<p:commandLink value="#{msg['news.upload']}" style="margint-top: 10px;" onclick="document.getElementById('fileUpload_input').click()"/>
+
+													<p:fileUpload id="fileUpload" mode="advanced" multiple="true" auto="true" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+														sizeLimit="2097152" fileUploadListener="#{NewsBean.handleFileUpload}"
+														showButtons="false" update="@form" style="visibility:hidden; position:absolute"
+														invalidSizeMessage="The maximum of image is 2MB. Please choose again"
+														invalidFileMessage="Please choose file type gif, jpg, jpeg, png"/>
+
+	                                		</h:form>
+
+	                                        <h:form prependId="false" id="addNewsForm">
+	                                            <label for="newsContent">#{msg['news.content']}</label>
+	                                            <p:editor id="newsContent" widgetVar="newsContent" value="#{NewsBean.news.content}" required="true"
+	                                            	requiredMessage="#{msg['news.content.required']}">
+	                                            </p:editor>
+
+	                                            <label for="address">#{msg['news.address']}</label>
+	                                            <p:inputText id="address" placeholder="#{msg['news.address.placeHolder']}" value="#{NewsBean.news.address}"
+	                                            	type="text" styleClass="input-block-level" />
+
+												<div style="float:left; width: 30%">
+													<label for="city">#{msg['news.city']}</label>
+		                                            <p:selectOneMenu id="city" value="#{NewsBean.selectedCity}" required="true"
+		                                            	styleClass="customSelect" effect="fade" requiredMessage="#{msg['news.city.required']}">
+												            <f:selectItem itemLabel="#{msg['select.defaultOption']}" itemValue="" />
+												            <f:selectItems value="#{NewsBean.lstCity}"></f:selectItems>
+												            <p:ajax event="change" update="district" listener="#{NewsBean.populateDistrict}"/>
+										        	</p:selectOneMenu>
+										        </div>
+
+												<div style="float:left; width: 30%; margin-left: 5%;">
+													<label for="district">#{msg['news.district']}</label>
+										        	<p:selectOneMenu id="district" value="#{NewsBean.selectedDistrict}" disabled="#{empty NewsBean.selectedCity}"
+		                                            	styleClass="customSelect" effect="fade" required="true" requiredMessage="#{msg['news.district.required']}">
+												            <f:selectItem itemLabel="#{msg['select.defaultOption']}" itemValue="" />
+												            <f:selectItems value="#{NewsBean.lstDistrict}"></f:selectItems>
+										        	</p:selectOneMenu>
+										        </div>
+
+										        <div style="clear:both" />
+
+												<div style="float:left; width: 30%">
+		                                            <label for="length">#{msg['house.length']}</label>
+													<p:inputText id="length" placeholder="10.5" value="#{NewsBean.length}" onkeypress="return isNumberKey(event)"
+		                                            	type="text" styleClass="input-block-level"
+		                                            	required="true" requiredMessage="#{msg['news.length.required']}">
+		                                            	<p:ajax event="blur" update="size" process="length, width" listener="#{NewsBean.calculateSize}"/>
+		                                            </p:inputText>
+	                                            </div>
+
+												<div style="float:left; margin-left: 5%; width: 30%">
+		                                            <label for="width">#{msg['house.width']}</label>
+		                                            <p:inputText id="width" placeholder="10.5" value="#{NewsBean.width}"
+		                                            	type="text" styleClass="input-block-level" onkeypress="return isNumberKey(event)"
+		                                            	required="true" requiredMessage="#{msg['news.width.required']}">
+		                                            	<p:ajax event="blur" update="size" process="length, width" listener="#{NewsBean.calculateSize}"/>
+		                                            </p:inputText>
+	                                            </div>
+
+												<div style="float:right; margin-left: 5%; width: 30%">
+		                                            <h:outputLabel escape="false" value="#{msg['house.size']}" for="size" />
+		                                            <p:inputText id="size" placeholder="110.25" value="#{NewsBean.size}" style="color:blue; font-weight:300;"
+		                                            	type="text" styleClass="input-block-level" readonly="true"/>
+												</div>
+
+												<div style="clear:both" />
+
+												<div style="float:left; width: 30%">
+		                                            <label for="bedRoom">#{msg['house.bedRoom']}</label>
+		                                            <p:inputText id="bedRoom" placeholder="3" value="#{NewsBean.bedRoom}" onkeypress="return isNumberKey(event)"
+		                                            	type="text" styleClass="input-block-level" />
+	                                            </div>
+
+												<div style="float:left; margin-left: 5%; width: 30%">
+		                                            <label for="bathRoom">#{msg['house.bathRoom']}</label>
+		                                            <p:inputText id="bathRoom" placeholder="2" value="#{NewsBean.bathRoom}"
+		                                            	type="text" styleClass="input-block-level" onkeypress="return isNumberKey(event)"/>
+	                                            </div>
+
+												<div style="float:right; margin-left: 5%; width: 30%">
+		                                            <label for="livingRoom">#{msg['house.livingRoom']}</label>
+		                                            <p:inputText id="livingRoom" placeholder="1" value="#{NewsBean.livingRoom}"
+		                                            	type="text" styleClass="input-block-level" onkeypress="return isNumberKey(event)" />
+												</div>
+
+												<div style="clear:both" />
+
+												<div style="float:left; width: 30%; margin-bottom:10px;">
+													<label for="houseType">#{msg['news.houseType']}</label>
+													<p:selectOneMenu id="houseType" value="#{NewsBean.news.houseType}" required="true"
+		                                            	styleClass="customSelect" effect="fade" requiredMessage="#{msg['news.houseType.required']}">
+												            <f:selectItem itemLabel="#{msg['select.defaultOption']}" itemValue="" />
+												            <f:selectItem itemLabel="#{msg['news.houseType.option1']}" itemValue="#{msg['news.houseType.option1']}" />
+												            <f:selectItem itemLabel="#{msg['news.houseType.option2']}" itemValue="#{msg['news.houseType.option2']}" />
+												            <f:selectItem itemLabel="#{msg['news.houseType.option3']}" itemValue="#{msg['news.houseType.option3']}" />
+												            <f:selectItem itemLabel="#{msg['news.houseType.option4']}" itemValue="#{msg['news.houseType.option4']}" />
+												            <f:selectItem itemLabel="#{msg['news.houseType.option5']}" itemValue="#{msg['news.houseType.option5']}" />
+												            <f:selectItem itemLabel="#{msg['news.houseType.option6']}" itemValue="#{msg['news.houseType.option6']}" />
+										        	</p:selectOneMenu>
+										        </div>
+
+												<div style="float:left; margin-left: 5%; width: 30%; margin-bottom:10px;">
+													<label for="exchangeType">#{msg['news.exchangeType']}</label>
+													<p:selectOneMenu id="exchangeType" value="#{NewsBean.news.exchangeType}" required="true"
+		                                            	styleClass="customSelect" effect="fade" requiredMessage="#{msg['news.exchangeType.required']}">
+												            <f:selectItem itemLabel="#{msg['select.defaultOption']}" itemValue="" />
+												            <f:selectItem itemLabel="#{msg['news.exchangeType.option1']}" itemValue="#{msg['news.exchangeType.option1']}" />
+												            <f:selectItem itemLabel="#{msg['news.exchangeType.option2']}" itemValue="#{msg['news.exchangeType.option2']}" />
+												            <p:ajax event="change" update="priceType"/>
+										        	</p:selectOneMenu>
+											    </div>
+
+											    <div style="float:right; margin-left: 5%; width: 30%">
+											    	<label for="expiration">#{msg['news.expiration']}</label>
+		                                            <p:selectOneMenu id="expiration" name="expiration" value="#{NewsBean.news.expirationValue}"
+		                                            	styleClass="customSelect"
+		                                            	effect="fade" required="true" requiredMessage="#{msg['news.expiration.required']}">
+												            <f:selectItem itemLabel="#{msg['select.defaultOption']}" itemValue="" />
+												            <f:selectItem itemLabel="#{msg['news.expiration.option1']}" itemValue="1" />
+												            <f:selectItem itemLabel="#{msg['news.expiration.option2']}" itemValue="2" />
+												            <f:selectItem itemLabel="#{msg['news.expiration.option3']}" itemValue="4" />
+											        </p:selectOneMenu>
+											    </div>
+
+												<div style="clear:both" />
+
+												<div style="float:left; width: 30%">
+											        <label for="price" >#{msg['news.price']}</label>
+		                                            <p:inputText id="price" placeholder="2,000,000" value="#{NewsBean.price}"
+		                                            	type="text" styleClass="input-block-level" onkeyup="return auto_currency(this.id)"
+		                                            	required="true" requiredMessage="#{msg['news.price.required']}">
+		                                            </p:inputText>
+		                                            <script type="text/javascript">
+		                                            	var component = document.getElementById('price');
+		                                            	var newValue = component.value.replace(/,/g, "");
+		                                            	component.value = newValue.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		                                            </script>
+	                                           	</div>
+
+	                                            <div style="float:left; margin-left: 5%; width: 30%">
+		                                            <label for="currency">#{msg['news.currency']}</label>
+		                                            <p:selectOneMenu id="currency" value="#{NewsBean.news.currency}"
+		                                            	styleClass="customSelect"
+		                                            	effect="fade" required="true" requiredMessage="#{msg['news.currency.required']}">
+												            <f:selectItem itemLabel="#{msg['select.defaultOption']}" itemValue="" />
+												            <f:selectItem itemLabel="#{msg['news.currency.option1']}" itemValue="#{msg['news.currency.option1']}" />
+												            <f:selectItem itemLabel="#{msg['news.currency.option2']}" itemValue="#{msg['news.currency.option2']}" />
+										        	</p:selectOneMenu>
+		                                        </div>
+
+		                                        <h:panelGroup layout="block" style="float:right; margin-left: 5%; width: 30%" id="priceType" >
+													<label for="priceType">#{msg['news.priceType']}</label>
+		                                            <p:selectOneMenu name="priceType" value="#{NewsBean.news.priceType}"
+		                                            	styleClass="customSelect" rendered="#{NewsBean.news.exchangeType eq msg['news.exchangeType.option2']}"
+		                                            	effect="fade" required="true" requiredMessage="#{msg['news.priceType.required']}">
+												            <f:selectItem itemLabel="#{msg['select.defaultOption']}" itemValue="" />
+												            <f:selectItem itemLabel="#{msg['news.priceType.option3']}" itemValue="#{msg['news.priceType.option3']}"/>
+												            <f:selectItem itemLabel="#{msg['news.priceType.option4']}" itemValue="#{msg['news.priceType.option4']}"/>
+											        </p:selectOneMenu>
+
+											        <p:selectOneMenu name="priceType" value="#{NewsBean.news.priceType}"
+		                                            	styleClass="customSelect" rendered="#{NewsBean.news.exchangeType ne msg['news.exchangeType.option2']}"
+		                                            	effect="fade" required="true" requiredMessage="#{msg['news.priceType.required']}">
+												            <f:selectItem itemLabel="#{msg['select.defaultOption']}" itemValue="" />
+												            <f:selectItem itemLabel="#{msg['news.priceType.option1']}" itemValue="#{msg['news.priceType.option1']}"/>
+												            <f:selectItem itemLabel="#{msg['news.priceType.option2']}" itemValue="#{msg['news.priceType.option2']}"/>
+											        </p:selectOneMenu>
+											    </h:panelGroup>
+
+												<div style="clear:both" />
+
+												<p:commandLink update=":uploadForm :javascript-form exchangeType priceType address newsContent city district length width bedRoom bathRoom size livingRoom price currency houseType expiration" process="@form" styleClass="btn btn-primary btn-large pull-right customButton"
+													actionListener="#{NewsBean.addNews}" action="manageNews?faces-redirect=true" type="submit" value="#{msg['button.edit']}"/>
+
+	                                        </h:form>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <aside class="span3">
+	                        <section class="widget">
+	                            <section class="widget-title">
+	                                <div class="inner">
+	                                    <h2>#{msg['user.title']}</h2>
+	                                    <p>#{msg['text.userName']}: #{LoginBean.account.userName}</p>
+	                                </div>
+	                            </section>
+	                            <section class="widget-content top-arrow">
+	                                <div class="inner">
+	                                	<div style="text-align: center">
+	                                		<section class="featured-items" style="height: 60px; margin-top: 10px; margin-bottom: 60px; margin-left: 23%;">
+												<div class="featured-item" style="margin-right: 20px; float: left; height: 122px;margin-bottom: 10px;">
+													<figure style="height: 120px; width: 120px;">
+														<p:graphicImage value="#{LoginBean.account.accountDetail.avatar}" style="height:inherit"/>
+			                                        </figure>
+		                                        </div>
+											</section>
+	                                	</div>
+
+	                                	<label>#{msg['text.fullName']}</label>
+	                                    <p>#{LoginBean.account.accountDetail.fullName}</p>
+
+	                                    <label>Email</label>
+	                                    <p>#{LoginBean.account.email}</p>
+
+	                                    <label>#{msg['text.phone']}</label>
+	                                    <p>#{LoginBean.account.accountDetail.phone}</p>
+
+	                                    <label>#{msg['text.address']}</label>
+	                                    <p>#{LoginBean.account.accountDetail.address}</p>
+
+	                                    <div style="width: 100%; text-align: center;">
+	                                    	<p:commandLink value="#{msg['text.changeProfile']}" immediate="true" process="@this" action="editProfile?faces-redirect=true"/>
+	                                    </div>
+	                                </div>
+	                            </section>
+	                        </section>
+	                    </aside>
+	                </section>
+	            </section>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link href="css/login.css" rel="stylesheet" type="text/css"/>
+</h:head>
+
+<h:body>
+	<p:ajaxStatus onstart="PF('statusDialog').show();" onsuccess="PF('statusDialog').hide();" />
+	<p:dialog modal="true" widgetVar="statusDialog" showHeader="false" id="loadingPanel" resizable="false"
+	        draggable="false" closable="false">
+	    <p:graphicImage value="/images/ajax-loading.gif" style="position: fixed;margin-top:-50px;margin-left:-50px"/>
+	</p:dialog>
+
+	<h:form prependId="false" id="form">
+
+		<p:panel styleClass="loginPanel">
+			<p:panel styleClass="topPanel">
+				<p:messages id="msg"/>
+				<table style="height: 110px;">
+					<tr>
+						<td class="col1" >
+							<h:outputText value="Username" style="margin-left: 20px;"/>
+						</td>
+						<td class="col2">
+							<h:outputText value="Password" />
+						</td>
+					</tr>
+
+					<tr>
+						<td class="col1" valign="top">
+							<p:inputText value="#{LoginBean.account.userName}" style="margin: 0 10px 15px 20px;"
+							 	id="email" required="true" requiredMessage="Username is required field">
+							</p:inputText>
+						</td>
+						<td class="col2" valign="top">
+							<p:password value="#{LoginBean.account.password}" style="margin-bottom:5px;"
+								id="pass" required="true" requiredMessage="Password is required field">
+							</p:password>
+							<p:commandLink value="forgot password" styleClass="smallLink" style="margin-right: 23px;"/>
+						</td>
+					</tr>
+				</table>
+			</p:panel>
+
+			<p:panel styleClass="bottomPanel">
+				<div class="button">
+					<div class="left">
+						<h:selectBooleanCheckbox value="#{LoginBean.remember}"/>
+						<h:outputLabel value="Keep me logged in for 2 weeks" style="font-size: 12px;"/>
+					</div>
+					<div class="right">
+						<p:commandButton value="Login" update="msg" action="#{LoginBean.login}"/>
+
+						<h:outputText value="or " style="margin-left : 5px; margin-right : 3px"></h:outputText>
+
+						<p:commandLink value="sign up" action="register?faces-redirect=true" immediate="true" style="text-decoration: underline;"></p:commandLink>
+					</div>
+				</div>
+			</p:panel>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>

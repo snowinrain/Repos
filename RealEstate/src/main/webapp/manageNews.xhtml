@@ -1,0 +1,196 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="common/header.xhtml">
+	<ui:define name="main">
+
+		<script type="text/javascript">
+			setActiveLink(7);
+		</script>
+
+		<style type="text/css">
+			.ui-datagrid .ui-paginator-top, .ui-datalist .ui-paginator-top {
+				margin-bottom: 20px !important;
+			}
+		</style>
+
+		<div id="content" style="padding-bottom: 35px">
+			<section class="container">
+	           	<section class="row featured-items">
+					<h:form prependId="false" id="search-list-form">
+						<section class="span9">
+
+							<p:dataList value="#{ManageNewsBean.newsLst}" var="news" itemType="none" paginator="true" rows="10" styleClass="paginated"
+								paginatorPosition="top" rendered="#{ManageNewsBean.viewMode eq 2}"
+						        currentPageReportTemplate="#{msg['text.topNavigation.show1']} {startRecord}-{endRecord} #{msg['text.topNavigation.show2']} {totalRecords} #{msg['text.topNavigation.show3']}"
+						        paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+						        rowsPerPageTemplate="20,40,100">
+
+
+								<div class="row">
+		                            <div class="span9 featured-item-wrapper featured-item-list" style="margin-bottom: 3px;">
+		                                <div class="featured-item featured-list">
+		                                    <div class="top">
+		                                        <div class="inner-border">
+		                                            <div class="inner-padding">
+		                                                <figure>
+		                                                    <p:graphicImage value="#{news.images[0]}"/>
+		                                                    <div class="banner">
+																<h:outputText value="#{news.exchangeType}"/>
+															</div>
+		                                                    <p:commandLink styleClass="figure-hover" action="#{NewsBean.gotoEditNews}">
+																<f:setPropertyActionListener target="#{NewsBean.news}" value="#{news}" />
+																Zoom
+				                                            </p:commandLink>
+		                                                </figure>
+		                                                <div class="right">
+		                                                    <h3>
+																<p:commandLink action="#{NewsBean.gotoEditNews}" value="#{news.address}">
+																	<f:setPropertyActionListener target="#{NewsBean.news}" value="#{news}" />
+																</p:commandLink>
+						                                    </h3>
+		                                                    <p>
+			                                                 	<h:outputText value="#{ManageNewsBean.getDistrictByCode(news.city, news.district)}," rendered="#{!empty news.district}"/>
+			                                                 		 #{ManageNewsBean.getCityByCode(news.city)}
+			                                                </p>
+		                                                    <div class="description">
+		                                                        <p style="height: 88px;overflow: hidden;">
+		                                                        	<h:outputText value="#{news.content.length() gt 330 ? fn:substring(news.content, 0, 330).concat('...') : news.content}" escape="false" />
+		                                                        </p>
+		                                                        <p style="float: right">
+
+		                                                        	<p:commandLink action="#{NewsBean.changeNewsStatus}" update=":growl, @form" rendered="#{news.status eq 'ACTIVE'}" style="color:red; text-decoration:none">
+		                                                        		<f:setPropertyActionListener target="#{NewsBean.news}" value="#{news}" />
+		                                                        		<img src="img/close.png" />
+		                                                        		#{msg['text.status.closed']}
+		                                                        	</p:commandLink>
+		                                                        	<p:commandLink action="#{NewsBean.changeNewsStatus}" update=":growl, @form" rendered="#{news.status eq 'CLOSED'}" style="color:green; text-decoration:none">
+		                                                        		<f:setPropertyActionListener target="#{NewsBean.news}" value="#{news}" />
+		                                                        		<img src="img/active.png" height="16" width="16"/>
+		                                                        		#{msg['text.status.active']}
+		                                                        	</p:commandLink>
+
+		                                                        	<p:commandLink style="text-decoration:none; margin-left: 10px;" action="#{NewsBean.gotoEditNews}">
+		                                                        		<f:setPropertyActionListener target="#{NewsBean.news}" value="#{news}" />
+		                                                        		<img src="img/editNews.png" />
+		                                                        		#{msg['text.editNews']}
+		                                                        	</p:commandLink>
+		                                                        	<p:commandLink style="text-decoration:none; margin-left: 10px;" oncomplete="centerAndShowDialog('#confirmDialog', 'confirmation')" process="@this" immediate="true">
+		                                                        		<f:setPropertyActionListener target="#{NewsBean.news}" value="#{news}" />
+		                                                        		<img src="img/delete1.png" height="16" width="16"/>
+		                                                        		#{msg['text.delete']}
+		                                                        	</p:commandLink>
+
+		                                                        </p>
+		                                                    </div>
+		                                                    <div class="price-wrapper">
+		                                                        <div class="price">
+									                             	<h:outputText value="$" rendered="#{news.currency eq 'USD'}" />
+																	<h:outputText value="#{news.price}">
+																		<f:convertNumber locale="en_US"/>
+																	</h:outputText> <h:outputText value=" VND" rendered="#{news.currency eq 'VND'}" />
+
+									                             </div>
+									                             <div class="rate">
+									                             	<h:outputText value="/#{news.priceType}"/>
+									                             </div>
+		                                                    </div>
+		                                                </div>
+		                                            </div>
+		                                        </div>
+
+		                                    </div>
+		                                    <div class="bottom">
+		                                        <div class="inner-border">
+		                                            <div class="inner-padding">
+		                                                <p>
+		                                                	<h:outputText value="#{news.bedRoom} #{msg['house.bedRoom']} + " rendered="#{news.bedRoom ne 0}"/>
+															<h:outputText value="#{news.bathRoom} #{msg['house.bathRoom']} + " rendered="#{news.bathRoom ne 0}"/>
+															<h:outputText escape="false" value="#{news.size} #{msg['measure.meterSquare']}" />
+		                                                </p>
+		                                                <div class="pull-right">
+		                                                	<h:outputText value="#{news.updatedDate}" style="color:#A9A9A9">
+		                                                		<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+		                                                	</h:outputText>
+		                                                </div>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+
+							</p:dataList>
+						</section>
+					</h:form>
+
+
+
+					<h:form prependId="false" id="refine_search_form">
+						<aside class="span3" style="margin-top: -20px;">
+	                        <section class="widget">
+	                            <section class="widget-title uppercase">
+	                                <div class="inner">
+	                                    <h2>Menu</h2>
+	                                </div>
+	                            </section>
+	                            <section class="widget-content">
+                                    <div class="widget-section">
+                                        <div class="inner">
+	                                        <p:commandLink style="text-transform: uppercase" value="#{msg['menu.addNews']}" action="addNews?faces-redirect=true"/>
+	                                    </div>
+                                    </div>
+                                    <h:panelGroup layout="block" styleClass="widget-section" rendered="#{!empty LoginBean.account.userName and LoginBean.account.role eq 'ROLE_ADMIN'}">
+                                        <div class="inner">
+	                                        <p:commandLink style="text-transform: uppercase" value="#{msg['menu.addArticle']}" action="addArticle?faces-redirect=true" />
+	                                    </div>
+                                    </h:panelGroup>
+                                    <div class="widget-section">
+                                        <div class="inner">
+	                                    	<p:commandLink style="text-transform: uppercase" value="#{msg['menu.login.profile']}" action="editProfile?faces-redirect=true"/>
+	                                    </div>
+                                    </div>
+                                    <div class="widget-section">
+                                        <div class="inner">
+	                                    	<p:commandLink style="text-transform: uppercase" value="#{msg['menu.login.news']}" action="manageNews?faces-redirect=true"/>
+	                                    </div>
+                                    </div>
+                                    <div class="widget-section">
+                                        <div class="inner">
+	                                    	<p:commandLink style="text-transform: uppercase" value="#{msg['menu.login.follow']}" action="manageFollow?faces-redirect=true"/>
+	                                    </div>
+                                    </div>
+                                    <h:panelGroup layout="block" styleClass="widget-section" rendered="#{!empty LoginBean.account.userName and LoginBean.account.role eq 'ROLE_ADMIN'}">
+                                        <div class="inner">
+	                                    	<p:commandLink style="text-transform: uppercase" value="#{msg['menu.login.article']}" action="#{ArticleBean.navigateToManageArticle}" />
+	                                    </div>
+                                    </h:panelGroup>
+                                    <div class="widget-section" style="border-bottom:none">
+										<div class="inner">
+											<p:commandLink style="text-transform: uppercase;" value="#{msg['menu.login.logout']}" action="#{LoginBean.logout}" />
+										</div>
+									</div>
+	                            </section>
+	                        </section>
+	                    </aside>
+	                  </h:form>
+				</section>
+	        </section>
+		</div>
+
+		<h:form prependId="false">
+			<p:confirmDialog id="confirmDialog" message="#{msg['text.confirmDelete']}"
+	               header="#{msg['text.confirmDelete.header']}" severity="alert" widgetVar="confirmation" >
+		        <p:commandButton id="confirm" value="#{msg['text.confirmDelete.yes']}" update=":growl, :search-list-form" oncomplete="PF('confirmation').hide()" process="@this"
+		                    actionListener="#{NewsBean.deleteNews}" />
+		        <p:commandButton id="decline" value="#{msg['text.confirmDelete.no']}" onclick="PF('confirmation').hide()" type="button" immediate="true"/>
+		    </p:confirmDialog>
+	    </h:form>
+
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,32 @@
+body {
+    background: url("../images/bg.jpg") repeat top left;
+    color: #c3c1b5;
+}
+.login-header {
+  height: 150px;
+}
+.login-body {
+  height: 350px;
+  background: url("../images/login-body-bg.jpg") repeat top left;
+  padding-top: 20px;
+}
+.login-footer {
+  height: 300px;
+  margin-top: 10px;
+}
+.login-logo {
+  margin-top: 85px;
+}
+.news {
+  padding-right: 40px;
+  background: url("../images/login-separater.jpg") no-repeat top right;
+  background-position: right 33px;
+}
+.news-item {
+  margin-top: 10px;
+}
+.login-form {
+  padding-left: 40px;
+}
+.login-form-content {
+}

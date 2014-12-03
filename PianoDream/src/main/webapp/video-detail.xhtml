@@ -1,0 +1,359 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="common/header.xhtml">
+	<ui:define name="main">
+
+		<script type="text/javascript">
+		//<![CDATA[
+		    $(document).ready(function() {
+
+			    var owl = $("#owl-demo");
+
+			    owl.owlCarousel({
+			    	autoPlay: 5000, //Set AutoPlay to 3 seconds
+				    items : 3, //10 items above 1000px browser width
+				    itemsDesktop : [750,3], //5 items between 1000px and 901px
+				    itemsDesktopSmall : [750,3], // betweem 900px and 601px
+				    itemsTablet: [600,2], //2 items between 600 and 0
+				    itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
+			    });
+
+			    // Custom Navigation Events
+			    $(".next").click(function(){
+			    	owl.trigger('owl.next');
+			    })
+			    $(".prev").click(function(){
+			    	owl.trigger('owl.prev');
+			    })
+		    });
+		//]]>
+		</script>
+
+		<style>
+			h3.post-title.entry-title {
+				display: inline;
+			}
+
+			.post.hentry {
+				float: none;
+			}
+
+			.post-timestamp {
+				display: none;
+			}
+
+			.post-labels {
+				display: block;
+			}
+
+			.post-labels .label-title,.post-labels a {
+				background: none repeat scroll 0 0 #e73737;
+				color: #fff;
+				display: block;
+				float: left;
+				font-size: 11px;
+				margin-bottom: 3px;
+				margin-right: 3px;
+				padding: 5px 7px;
+				text-transform: uppercase;
+			}
+
+			.post-labels a {
+				background: none repeat scroll 0 0 #b2b2b2;
+				transition: all 0.4s ease 0s;
+			}
+
+			.post-labels a:hover {
+				background: none repeat scroll 0 0 #555;
+				color: #fff;
+				text-decoration: none;
+			}
+
+			.post-body {
+				margin-bottom: 30px;
+			}
+
+			#related-posts #owl-demo {
+				overflow: visible;
+			}
+
+			#related-posts .owl-controls.clickable {
+				position: relative;
+			}
+
+			#related-posts .owl-controls.clickable .owl-pagination {
+				position: absolute;
+				right: 0;
+				top: -215px;
+			}
+
+			.post-title.entry-title {
+				font-size: 24px;
+			}
+
+			.post-body.entry-content iframe,.post-body.entry-content img {
+				padding: 10px;
+			}
+
+			.feathumb img, .img-hover {
+				height: 150px;
+			}
+
+			#related-posts .title h4 {
+				color: #888;
+			    font-family: Lato,sens-serif;
+			    font-size: 20px;
+			    font-weight: 300;
+			    letter-spacing: 0;
+			    margin: 25px 14px 10px;
+			}
+
+			.item-img h3 a {
+				color: #000;
+			    font-size: 13px;
+			    font-weight: 700;
+			    overflow: hidden;
+			    white-space: nowrap;
+			}
+		</style>
+
+
+		<!-- MAIN CONTAINER -->
+		<div class='container'>
+			<div class='row'>
+				<!-- Main Left -->
+				<div class='col-sm-8'>
+					<div class='main section' id='main'>
+						<div class='widget Blog' id='Blog1'>
+							<div class='blog-posts hfeed'>
+								<div class='row'>
+									<!-- google_ad_section_start(name=default) -->
+
+									<div class="date-outer">
+
+										<div class="date-posts">
+
+											<div class='post-outer'>
+												<div class='post hentry uncustomized-post-template'>
+													<h3 class='post-title entry-title'>
+														<h:outputText value="#{VideoBean.selectedVideo.title}" />
+													</h3>
+													<div class='post-header'>
+														<div class='post-header-line-1'>
+															<i class="fa fa-user fa-fw" />
+															<h:outputText value="#{VideoBean.selectedVideo.account.userName}" style="margin-right: 10px;"/>
+
+															<i class="fa fa-clock-o fa-fw" />
+															<h:outputText value="#{VideoBean.selectedVideo.createdDate}">
+		                                                		<f:convertDateTime pattern="dd - MMM - yyyy" />
+		                                                	</h:outputText>
+														</div>
+													</div>
+													<div class='post-body entry-content'>
+														<script>
+															var vid = getVideoId('#{VideoBean.selectedVideo.videoURL}');
+															document.write('<iframe src="//www.youtube.com/embed/' + vid + '" width="720" height="450" allowfullscreen="" frameborder="0"/>');
+														</script>
+														<b>Description: </b> <h:outputText value="#{VideoBean.selectedVideo.description}"/>
+														<div style='clear: both;'></div>
+													</div>
+													<div class='post-footer'>
+														<div class='post-footer-line post-footer-line-2'>
+															<span class='post-labels'>
+																<div class='label-title'>Tags:</div>
+																<ui:repeat value="#{VideoBean.selectedVideo.tags}" var="tag">
+																	<p:commandLink rel="tag" value="#{tag}"/>
+																</ui:repeat>
+															</span>
+															<div style="clear:both" />
+															<div class='related_posts row'>
+																<div id='related-posts'>
+																	<div class="title"><h4>Related Videos</h4></div>
+
+																	<div class="owl-carousel owl-theme" id="owl-demo">
+																		<div class="item">
+																			<div class="item-img">
+																				<a title="Free Birds Official"
+																					href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html"
+																					class="feathumb"> <img height="150"
+																					src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/gxslnpqFwOs.jpg"
+																					alt="" />
+																				</a> <a title="Free Birds Official"
+																					href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html"
+																					class="feathumb">
+																					<div class="img-hover" />
+																				</a>
+																				<h3>
+																					<a href="http://videotube-sora.blogspot.com/2014/06/transformers-kreo.html" title="Transformers - Kreo">Transformers - Kreo</a>
+																				</h3>
+																			</div>
+																		</div>
+
+																		<div class="item">
+																			<div class="item-img">
+																				<a title="Free Birds Official"
+																					href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html"
+																					class="feathumb"> <img height="150"
+																					src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/gxslnpqFwOs.jpg"
+																					alt="" />
+																				</a> <a title="Free Birds Official"
+																					href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html"
+																					class="feathumb">
+																					<div class="img-hover" />
+																				</a>
+																				<h3>
+																					<a href="http://videotube-sora.blogspot.com/2014/06/transformers-kreo.html" title="Transformers - Kreo">Transformers - Kreo</a>
+																				</h3>
+																			</div>
+																		</div>
+
+																		<div class="item">
+																			<div class="item-img">
+																				<a title="Free Birds Official"
+																					href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html"
+																					class="feathumb"> <img height="150"
+																					src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/gxslnpqFwOs.jpg"
+																					alt="" />
+																				</a> <a title="Free Birds Official"
+																					href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html"
+																					class="feathumb">
+																					<div class="img-hover" />
+																				</a>
+																				<h3>
+																					<a href="http://videotube-sora.blogspot.com/2014/06/transformers-kreo.html" title="Transformers - Kreo">Transformers - Kreo</a>
+																				</h3>
+																			</div>
+																		</div>
+
+																		<div class="item">
+																			<div class="item-img">
+																				<a title="Free Birds Official"
+																					href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html"
+																					class="feathumb"> <img height="150"
+																					src="http://res.cloudinary.com/demo/image/youtube/w_480,h_270,c_fill/gxslnpqFwOs.jpg"
+																					alt="" />
+																				</a> <a title="Free Birds Official"
+																					href="http://videotube-sora.blogspot.com/2014/06/free-birds-official.html"
+																					class="feathumb">
+																					<div class="img-hover" />
+																				</a>
+																				<h3>
+																					<a href="http://videotube-sora.blogspot.com/2014/06/transformers-kreo.html" title="Transformers - Kreo">Transformers - Kreo</a>
+																				</h3>
+																			</div>
+																		</div>
+
+																	</div>
+
+																</div>
+																<div style='clear: both'></div>
+															</div>
+															<div class='ads-here'>
+																<center>
+																	<div style='width: 750px; height: 100px; line-height: 100px; text-align: center; border: 1px solid rgb(206, 203, 203); background-color: #F2F9FC;'>
+																		Ads 750	x 100
+																	</div>
+																</center>
+															</div>
+														</div>
+														<div class='post-footer-line post-footer-line-3'>
+															<span class='post-location'> </span>
+														</div>
+													</div>
+												</div>
+												<div class='comments' id='comments'>
+													<a name='comments'></a>
+
+													<h4>
+														<h:outputText value="No comments" rendered="#{empty VideoBean.selectedVideo.comments}"/>
+														<h:outputText value="#{VideoBean.selectedVideo.comments.size} comment(s):" rendered="#{!empty VideoBean.selectedVideo.comments}"/>
+													</h4>
+
+													<ui:repeat var="comment" value="#{VideoBean.selectedVideo.comments}">
+														<h:panelGroup styleClass='comments-content' layout="blocked">
+															<div id='comment-holder'>
+																<div id='bc_0_2C' kind='c'>
+																	<div id='bc_0_2CT'>
+																		<div id='bc_0_1T' class='comment-thread' kind='r' t='0'	u='0'>
+																			<ol id='bc_0_1TB'>
+																				<li id='bc_0_0B' class='comment' kind='b'>
+																					<div class='avatar-image-container'>
+																						<p:graphicImage value="#{comment.account.avatar}"/>
+																					</div>
+																					<div id='c426542650032023186' class='comment-block'>
+																						<div id='bc_0_0M' class='comment-header' kind='m'>
+																							<cite class='user'>
+																								<p:commandLink value="#{comment.account.userName}"/>
+																							</cite>
+																							<span class='icon user'></span>
+																							<span class='datetime secondary-text'>
+																								<h:outputText value="#{comment.createdDate}" rel='nofollow'>
+											                                                		<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+											                                                	</h:outputText>
+																							</span>
+																						</div>
+																						<p id='bc_0_0MC' class='comment-content'>
+																							<h:outputText value="#{comment.content}"/>
+																						</p>
+																						<span id='bc_0_0MN'
+																							class='comment-actions secondary-text' kind='m'><a
+																							kind='i' href='javascript:;' target='_self' o='r'>Reply</a><span
+																							class='item-control blog-admin pid-73162828'><a
+																								o='d' target='_self'
+																								href='http://www.blogger.com/delete-comment.g?blogID=4998516947001987705&amp;postID=426542650032023186'>Delete</a></span></span>
+																					</div>
+																					<div id='bc_0_0BR' class='comment-replies'></div>
+																					<div id='bc_0_0B_box'
+																						class='comment-replybox-single'></div></li>
+																			</ol>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</h:panelGroup>
+													</ui:repeat>
+
+												</div>
+
+												<div class="allHolder">
+													<h:form prependId="false" id="commentForm">
+														<div id="commentsHolder">
+															<p:inputTextarea id="commentBodyField" placeholder="Enter your comment..."/>
+														</div>
+
+														<div class="postCommentButtonHolder" id="postCommentButtonHolder">
+															<p:commandButton name="postCommentSubmit"
+																id="postCommentSubmit" value="Submit"/>
+														</div>
+													</h:form>
+												</div>
+
+
+											</div>
+
+										</div>
+									</div>
+
+									<!-- google_ad_section_end -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Main Left Ends! -->
+
+				<!-- Sidebar Right -->
+				<ui:include src="common/sidebar.xhtml" />
+				<!-- Sidebar Right Ends! -->
+			</div>
+		</div>
+
+
+	</ui:define>
+</ui:composition>
+</html>

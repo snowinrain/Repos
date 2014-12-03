@@ -1,0 +1,396 @@
+
+
+
+
+/*Filter bar*/
+#nav-filter-panel
+{
+  margin-left: 15px;
+  /*margin-right: 10px;*/
+}
+
+.filter-dropdown
+{
+  margin: 0px 10px 0px 10px;
+}
+
+#nav-filter-panel .dropdown-menu, #nav-filter-panel .filter-input
+{
+  font-family: "Arial" !important;
+  font-size: 9pt !important;
+  background: #EBF0F3;
+  color: #000 !important;
+}
+
+
+#nav-filter-panel .dropdown-menu
+{
+  width: 210px !important;
+}
+
+#nav-filter-panel .filter-input
+{
+  height: 24px !important;
+  width: 150px !important;
+  border: none;
+  border-radius: 4px;
+  margin: 2px 0px 0px 0px;
+  cursor: pointer;
+    padding-left: 10px;
+    background: #EBF0F3 url(../images/arrow-down.png) no-repeat right 3px center / 16px;
+}
+
+#nav-filter-panel .dropdown-menu > .dropdown-part ul
+{
+    list-style-type: none;
+    padding-left: 0px !important;
+    margin: 7px 0px 10px 0px !important;
+}
+#nav-filter-panel .dropdown-menu > .dropdown-part ul > li
+{
+    cursor: pointer;
+    padding: 4px 0px 4px 20px !important;
+}
+#nav-filter-panel .dropdown-menu > .dropdown-part ul > li:hover
+{
+  background: #DDD !important;
+}
+
+#nav-filter-panel .dropdown-menu > .dropdown-part > .dropdown-part-name
+{
+    padding-left: 10px;
+    font-weight: 600;
+}
+
+
+#nav-filter-panel .dropdown-menu > .dropdown-part .delete-filter
+{
+    float: right;
+    margin-right: 10px;
+}
+
+#nav-filter-panel .filter-toggle
+{
+  cursor: pointer;
+    margin-right: 5px;
+    color: #0d74ae;
+}
+#nav-filter-panel .filter-toggle img
+{
+    margin-left: 2px;
+}
+
+
+
+
+/*Right bar*/
+
+
+
+
+.right-bar {
+  background-color: #353638;
+  height: 100%;
+  padding: 5px 10px 10px 10px !important;
+  width: 250px;
+  position:fixed;
+  right:0;
+  z-index: 0;
+  font-family: "Arial" !important;
+  font-size: 9pt !important;
+  top: 30px;
+  border-left: 1px solid #1F2021;
+  display: none;
+}
+/*.home-date input{
+  padding-left: 0px !important;
+}
+.home-date div {
+  padding-right: 0px !important;
+}*/
+.accordation-filter{
+  margin-top: 20px;
+  padding-left: 30px;
+}
+.create-filter {
+  background-color: #1d1e20;
+/*  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  margin-right:30px;*/
+}
+.create-filter input[type="radio"]{
+  position:relative;
+  top: 2px;
+}
+.panel-default .panel-heading{
+  background-color: #1d1e20 !important;
+  background-image: none;
+  color: #c1c2ba;
+  cursor: pointer;
+}
+.panel-default .panel-heading a {
+  text-decoration: none;
+}
+.panel {
+  border: 0px transparent;
+  background-color: #1d1e20;
+}
+.panel-body {
+  background-color: #353638;
+  border-top: 0px solid #ddd !important;
+}
+
+/*filter save panel*/
+.filter-type-panel
+{
+  margin: 9px 0px 5px 0px;
+}
+
+.right-bar * {
+/*  font-family: "Arial";*/
+  font-size: 9pt;
+}
+
+.right-bar > .right-bar-content > .right-bar-part
+{
+  margin: 5px 0px 5px 0px !important;
+  padding: 0px !important;
+}
+
+.home-date .home-date-picker
+{
+  width: 110px;
+  display: inline-table;
+}
+.home-date .home-date-picker input.calendar
+{
+  padding-left: 5px;
+  padding-right: 5px;
+  background: url('../images/right-bar-calendar.jpg') no-repeat right center;
+  background-color: white;
+}
+.home-date .home-date-picker-from
+{
+  margin-right: 6px;
+}
+
+
+.right-bar-part .right-bar-panel-header{
+  background-color: #1d1e20 !important;
+  background-image: none;
+  color: #c1c2ba;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 7px 10px 7px 10px;
+  border-radius: 3px;
+}
+
+.right-bar-part .right-bar-panel-header a {
+  text-decoration: none;
+}
+.right-bar-part .right-bar-panel-body {
+  padding: 10px 3px 5px 3px;
+}
+
+
+/*Public style*/
+.down-caret {
+    border-left: 5px solid rgba(0, 0, 0, 0);
+    border-right: 5px solid rgba(0, 0, 0, 0);
+    border-top: 5px solid;
+    color: #FFFFFF;
+    color: white;
+}
+.right-bar-part .down-caret
+{
+  position: relative;
+  top: 10px;
+  margin-right: 10px;
+}
+.panel-header-instruction
+{
+  font-style: italic;
+  margin: 5px 0px 3px 10px;
+  font-size: 8.5pt;
+
+}
+
+/*Session type filter*/
+#session-filter-panel-collapse .right-bar-panel-body .checkbox-item
+{
+  margin: 0px 0px 0px 30px !important;
+}
+#session-filter-panel-collapse .right-bar-panel-body .checkbox-item label
+{
+  font-weight: 400;
+}
+#session-filter-panel-collapse .right-bar-panel-body .checkbox-item input[type="checkbox"]
+{
+  position: relative;
+  top: 2px;
+  margin-right: 10px;
+}
+
+
+
+/*Date picker*/
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date
+{
+  width: 220px !important;
+  background-color: #242424;
+  border: 1px solid #444;
+}
+
+.home-date-picker *
+{
+  outline: none;
+}
+
+.home-date-picker td *
+{
+  font-size: 7pt !important;
+}
+
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date > li
+{
+  margin: 3px 5px 0px 7px;
+}
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date > li.ng-scope
+{
+  display: none;
+}
+
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date table thead th
+{
+  padding: 2px !important;
+  width: 14px !important;
+}
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date table tbody td
+{
+  padding: 0px 2px 0px 2px !important;
+  width: 14px !important;
+}
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date table thead .text-center.ng-scope small
+{
+  text-transform: uppercase !important;
+  font-size: 5pt !important;
+  color: #AAA !important;
+}
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date table thead
+{
+  padding-bottom: 5px;
+  border-bottom: 1px solid #666 !important;
+}
+
+.home-date-picker-from > ul.dropdown-menu.ng-valid.ng-valid-date
+{
+  position: fixed;
+  top: 70px !important;
+  right: 15px !important;
+  left: auto !important;
+}
+.home-date-picker-to > ul.dropdown-menu.ng-valid.ng-valid-date
+{
+  position: fixed;
+  top: 292px !important;
+  right: 15px !important;
+  left: auto !important;
+}
+
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date table tbody .btn.btn-default.btn-sm
+{
+  width: 25px !important;
+  height: 25px !important;
+  border-radius: 12px;
+  border: transparent;
+  background-image: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  background-color: #242424 !important;
+  color: #AAA !important;
+}
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date table tbody .btn.btn-default.btn-sm.active
+{
+  background-color: #CCC !important;
+  color: #333 !important;
+}
+
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date table tbody .btn.btn-default.btn-sm > .text-muted
+{
+  color: #555 !important;
+}
+
+/*header*/
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date table thead .btn.btn-default.btn-sm
+{
+  border: transparent;
+  background-image: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  background-color: transparent !important;
+  color: #AAA !important;
+  margin-left: 15px;
+}
+
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date table thead .btn.btn-default.btn-sm[id^='datepicker-']
+{
+  padding: 0px 0px 5px 0px !important;
+}
+
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date table thead .btn.btn-default.btn-sm[id^='datepicker-'] *
+{
+  color: #EEE !important;
+  font-family: Segoe UI;
+  font-size: 15pt;
+  font-weight: 200;
+  line-height: 20px;
+  text-transform: capitalize;
+
+}
+
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date table thead .btn.btn-default.btn-sm.pull-left
+{
+  position: absolute;
+  left: 30px;
+  top: 6px;
+}
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date table thead .btn.btn-default.btn-sm.pull-left > i:before
+{
+  content: url("../images/ic_calendar_prev.png") !important;
+  width: 15px;
+  height: 15px;
+}
+
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date table thead .btn.btn-default.btn-sm.pull-right
+{
+  position: absolute;
+  right: 15px;
+  top: 6px;
+}
+.home-date-picker > ul.dropdown-menu.ng-valid.ng-valid-date table thead .btn.btn-default.btn-sm.pull-right > i:before
+{
+  content: url("../images/ic_calendar_next.png") !important;
+}
+.home-date-picker-from > ul.dropdown-menu.ng-valid.ng-valid-date table thead > tr > :first-child
+{
+    background: url(../images/word-from.jpg) no-repeat left 8px;
+}
+.home-date-picker-to > ul.dropdown-menu.ng-valid.ng-valid-date table thead > tr > :first-child
+{
+    background: url(../images/word-to.jpg) no-repeat left 8px;
+}
+.selectize-control.multi .selectize-input [data-value] {
+  background-color: #1b9dec;
+}
+.save-filter-bar {
+
+}
+.filter-name {
+}
+.filter-name:hover {
+  cursor: pointer;
+}
+
+
+

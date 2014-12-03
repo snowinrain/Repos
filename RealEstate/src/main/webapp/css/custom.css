@@ -1,0 +1,260 @@
+#sortBy, #showPage {
+	width: 158px !important;
+}
+
+#sortBy_label, #showPage_label {
+	width: 150px !important;
+}
+
+.customTopBar {
+	float: none;
+	position: absolute;
+	top: 78;
+	width: 900px;
+}
+
+.ui-widget {
+	font-family: "Ubuntu",Arial !important;
+	font-size: 14px !important;
+}
+
+.measure-type {
+	left: 202;
+	margin-right: 7px;
+	margin-top:6px;
+	position: relative !important;
+	top:-39;
+}
+
+/***************** Calendar *******************/
+.ui-datepicker {
+	width: 276px;
+}
+
+/***************** Refine Search *******************/
+#refine_search_form .customSelect {
+	width: 230px !important;
+}
+
+#refine_search_form .ui-selectonemenu label.ui-selectonemenu-label {
+	width: 222px !important;
+}
+
+/***************** Red Button *******************/
+.redButton {
+  background: #fa0808;
+  background-image: -webkit-linear-gradient(top, #fa0808, #de1b1b);
+  background-image: -moz-linear-gradient(top, #fa0808, #de1b1b);
+  background-image: -ms-linear-gradient(top, #fa0808, #de1b1b);
+  background-image: -o-linear-gradient(top, #fa0808, #de1b1b);
+  background-image: linear-gradient(to bottom, #fa0808, #de1b1b);
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  color: #ffffff;
+  padding: 4px 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.redButton:hover {
+  background: #fc0303;
+  background-image: -webkit-linear-gradient(top, #fc0303, #c41212);
+  background-image: -moz-linear-gradient(top, #fc0303, #c41212);
+  background-image: -ms-linear-gradient(top, #fc0303, #c41212);
+  background-image: -o-linear-gradient(top, #fc0303, #c41212);
+  background-image: linear-gradient(to bottom, #fc0303, #c41212);
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/***************** Paginator *******************/
+.ui-paginator .ui-paginator-page, .ui-paginator .ui-paginator-next, .ui-paginator .ui-paginator-last, .ui-paginator .ui-paginator-first, .ui-paginator .ui-paginator-prev {
+	background-image: none;
+	background-color: #FFFFFF;
+	border: 1px solid #C3C5C9;
+	color: #5A5A5A;
+	font-weight: 300;
+	width: 15px;
+}
+
+.ui-paginator-page:hover {
+	background-color: #EDEEEF !important;
+}
+
+.ui-paginator-pages .ui-state-active {
+	background-color: #4378C7;
+	background-image: linear-gradient(0deg, #4C86E0 0%, #4479CA 100%);
+	border-color: #4176C6;
+	color: white;
+}
+
+/***************** Data List *******************/
+.ui-datalist-content {
+	border: 0;
+	background: none;
+}
+
+/***************** Data Grid *******************/
+.ui-datagrid .ui-paginator-top, .ui-datalist .ui-paginator-top {
+	border-radius: 4px;
+	font-family: "Ubuntu",Arial;
+	background-image: none;
+	float: none;
+	margin-bottom: 80px;
+	height: 46px;
+	padding-top: 6px;
+}
+
+.ui-datagrid-column {
+	padding:0px;
+}
+
+.ui-datagrid-content {
+	margin-left:-30px;
+	border:0px;
+	background:none;
+}
+
+.ui-datagrid-content-empty {
+	margin-left:0px;
+}
+
+/***************** TextArea *******************/
+.customTextArea, .ui-editor {
+	resize:both;
+	background-color: #F9F9F9;
+    border-color: #C3C5C9;
+    box-shadow: 0 4px 7px #EBECED inset;
+    font-family: "Ubuntu",Arial !important;
+    font-weight: 300;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    padding-top: 5px 10px 5px 10px;
+}
+
+.customTextArea:focus, .ui-editor:focus {
+	background: #F1F7FF;
+	border-color: rgba(82, 168, 236, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+    outline: 0 none;
+}
+
+/***************** Editor *******************/
+.ui-editor {
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	margin-bottom: 10px;
+	padding:0px;
+}
+
+/***************** Select *******************/
+.ui-selectonemenu label.ui-selectonemenu-label {
+	height:25px;
+	padding-top: 9px;
+	background: #F9F9F9;
+	font-weight: 300;
+	font-family: "Ubuntu",Arial !important;
+	font-size: : 14px;
+	box-shadow: 0px 4px 7px #EBECED inset !important;
+	width: 240px !important;
+	color: #313131;
+	text-align: center;
+}
+
+.customSelect {
+	border-radius: 4px;
+	border: 1px solid #C3C5C9;
+	height:38px;
+	width: 248px !important;
+}
+
+.ui-selectonemenu .ui-selectonemenu-trigger .ui-icon {
+	margin-top: 11px !important;
+}
+
+.customSelect .ui-state-default {
+	border:none;
+	background: none;
+	box-shadow:none;
+}
+
+.customSelect.ui-state-focus {
+	border-color: rgba(82, 168, 236, 0.8) ;
+}
+
+.ui-state-focus label.ui-selectonemenu-label{
+	background-color: #f1f7ff !important;
+	outline: 0;
+	outline: thin dotted \9;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px
+		rgba(82, 168, 236, 0.6);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px
+		rgba(82, 168, 236, 0.6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px
+		rgba(82, 168, 236, 0.6)
+}
+
+.ui-selectonemenu-panel .ui-selectonemenu-list-item {
+	text-align: center;
+}
+
+/***************** Customize Button *******************/
+.customButton {
+	background-image: linear-gradient(0deg, #4C86E0 0%, #4479CA 100%);
+	background-repeat: repeat-x;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.customButton:hover {
+	background-color: #4479CA !important;
+	background-image: none !important;
+}
+
+/***************** Error State *******************/
+.ui-state-error, .ui-state-error input[type="text"], .ui-state-error label.ui-selectonemenu-label {
+	background: none repeat scroll 0 0 #FBE3E4 !important;
+	border: 1px solid #FBC2C4 !important;
+	color: #8A1F11 !important;
+	box-shadow: 0 0 7px #EBECED inset !important;
+}
+
+.ui-state-error:focus, .ui-state-error label.ui-selectonemenu-label:focus {
+	background: none repeat scroll 0 0 #FBE3E4 !important;
+	border: 1px solid #FBC2C4 !important;
+	color: #8A1F11 !important;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6) !important;
+}
+
+/***************** Ajax Status *******************/
+#loadingPanel{
+	border:0;
+	box-shadow:none;
+	background: none;
+}
+
+#loading .ui-shadow{
+	box-shadow:0;
+}
+
+.ui-dialog {
+	position: absolute !important;
+}
+
+#loading .ui-dialog-content{
+	padding:0 !important;
+}
+
+#loadingPanel_modal.ui-widget-overlay{
+	background: none;
+}
+
+/***************** message *******************/
+.ui-messages-error-icon, .ui-messages-info-icon {
+	background-image: none;
+}
+
+.ui-messages-info-summary, .ui-messages-warn-summary, .ui-messages-error-summary, .ui-messages-fatal-summary, .ui-message-info-summary, .ui-message-warn-summary, .ui-message-error-summary, .ui-message-fatal-summary{
+	margin-left: -15px;
+}

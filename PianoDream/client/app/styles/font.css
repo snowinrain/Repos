@@ -1,0 +1,15 @@
+@font-face
+{
+	font-family: 'my Segoe UI';
+	src: url(../fonts/segoeui.ttf);
+}
+@font-face
+{
+	font-family: 'my Segoe UI Bold';
+	src: url(../fonts/segoeuib.ttf);
+}
+@font-face
+{
+	font-family: 'my Segoe UI Light';
+	src: url(../fonts/segoeuil.ttf);
+}

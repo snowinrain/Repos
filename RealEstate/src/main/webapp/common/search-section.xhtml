@@ -1,0 +1,103 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition>
+	<section id="main" role="main">
+		<section class="container">
+			<section class="row tab-finder">
+				<div class="span12">
+					<div class="tabbable">
+						<div class="tab-content">
+							<div class="tab-pane active" id="tab1">
+								<div class="inner">
+									<h:form id="featureForm" prependId="false" style="width:100%">
+										<p:selectOneMenu id="city_search" value="#{SearchBean.selectedCity}" style="margin-right:15px; margin-bottom:10px"
+											styleClass="customSelect" effect="fade">
+											<f:selectItem itemLabel="#{msg['news.index.city.defaultOption']}" itemValue="0" />
+											<f:selectItems value="#{SearchBean.lstCity}"></f:selectItems>
+											<p:ajax event="change" update="district_search" listener="#{SearchBean.populateDistrict}" />
+										</p:selectOneMenu>
+
+										<p:selectOneMenu id="district_search" value="#{SearchBean.selectedDistrict}" disabled="#{SearchBean.selectedCity eq 0}"
+											styleClass="customSelect" effect="fade"	style="margin-right:15px; margin-bottom:10px">
+											<f:selectItem itemLabel="#{msg['news.index.district.defaultOption']}" itemValue="0" />
+											<f:selectItems value="#{SearchBean.lstDistrict}"></f:selectItems>
+										</p:selectOneMenu>
+
+										<div style="clear: both" />
+
+										<div style="float: left; width: 251px; margin-right: 14px;">
+											<p:inputText id="bedRoom_search"
+												placeholder="#{msg['house.bedRoom']}"
+												value="#{SearchBean.bedRoom}" type="text"
+												styleClass="input-block-level"
+												onkeypress="return isNumberKey(event)">
+											</p:inputText>
+										</div>
+
+										<div style="float: left; width: 251px; margin-right: 14px;">
+											<p:inputText id="bathRoom_search"
+												placeholder="#{msg['house.bathRoom']}"
+												value="#{SearchBean.bathRoom}" type="text"
+												styleClass="input-block-level"
+												onkeypress="return isNumberKey(event)">
+											</p:inputText>
+										</div>
+
+										<div style="float: left; width: 251px; margin-right: 14px;">
+											<p:inputText id="livingRoom_search"
+												placeholder="#{msg['house.livingRoom']}"
+												value="#{SearchBean.livingRoom}" type="text"
+												styleClass="input-block-level"
+												onkeypress="return isNumberKey(event)">
+											</p:inputText>
+										</div>
+
+										<p:commandLink process="@form"
+											style="float:left; margin-right:15px;" update=":search-list-form :javascript-form"
+											actionListener="#{SearchBean.performFilter}">
+											<button type="submit" class="btn btn-primary search-property"
+												style="width: 251px;">
+												<i class="icon-search icon-white"></i>
+												#{msg['button.search']}
+											</button>
+										</p:commandLink>
+									</h:form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<div style="margin-top: 5px; margin-bottom: 5px; float: left;">
+				<!--  ExAd.me | 728x90 | nhadat-online.com -->
+				<div style="float: left;">
+					<script type="text/javascript" src="http://728x90.exad.me/js/?id=6137"></script>
+				</div>
+
+				<div style="float: left;">
+				<!-- START AD CODE -->
+				<script language="javascript" type="text/javascript" charset="utf-8">
+				var cpxcenter_banner_border = '#990033';
+				var cpxcenter_banner_text = '#000000';
+				var cpxcenter_banner_bg = '#FFFFFF';
+				cpxcenter_banner_link = '#000000';
+				cpxcenter_width = 468;
+				cpxcenter_height = 60;
+				</script>
+				<script language="JavaScript" type="text/javascript" src="http://ads.cpxcenter.com/cpxcenter/showAd.php?nid=4&amp;zone=68287&amp;type=banner&amp;sid=51004&amp;pid=49601&amp;subid=&amp;opt1=&amp;opt2=">
+				</script>
+				<!-- END AD CODE -->
+				</div>
+
+			</div>
+
+		</section>
+	</section>
+</ui:composition>
+</html>

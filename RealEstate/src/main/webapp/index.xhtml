@@ -1,0 +1,451 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="common/header.xhtml">
+	<div style="clear:both"> </div>
+
+	<ui:define name="main">
+
+		<script type="text/javascript">
+			setActiveLink(0);
+		</script>
+
+		<section id="main" role="main" style="height: 335px;">
+		<section class="container">
+
+			<section class="row featured-items">
+				<div class="span12">
+					<h2>#{msg['news.index.title.mostViewed']}</h2>
+					<div class="controls">
+						<a href="#" class="prev">Previous</a> <a href="#" class="next">Next</a>
+					</div>
+
+					<div class="featured-items-slider">
+						<ul class="slides">
+							<c:if test="${fn:length(SearchBean.mostViewedNews_1) gt 0}">
+								<li class="flex-active-slide"
+									style="width: 100%; float: left; margin-right: -100%; position: relative; display: list-item;">
+									<div class="row">
+										<ui:repeat value="#{SearchBean.mostViewedNews_1}" var="news">
+											<div class="span3 featured-item-wrapper">
+												<div class="featured-item">
+													<div class="top">
+														<div class="inner-border">
+															<div class="inner-padding">
+																<figure>
+						                                        	<p:graphicImage value="#{news.images[0]}"/>
+						                                            <div class="banner">
+																		<h:outputText value="#{news.exchangeType}"/>
+																	</div>
+																	<p:commandLink styleClass="figure-hover" action="#{NewsDetailBean.performSelectNews(news.id)}">
+																		Zoom
+						                                            </p:commandLink>
+						                                        </figure>
+						                                        <h3>
+																	<p:commandLink action="#{NewsDetailBean.performSelectNews(news.id)}" value="#{news.address}">
+																	</p:commandLink>
+							                                    </h3>
+																<p>
+																	<h:outputText
+																		value="#{SearchBean.getDistrictByCode(news.city, news.district)},"
+																		rendered="#{!empty news.district}" />
+																	#{SearchBean.getCityByCode(news.city)}
+																</p>
+															</div>
+														</div>
+														<i class="bubble"></i>
+													</div>
+													<div class="bottom">
+														<div class="inner-border">
+															<div class="inner-padding">
+																<p>
+																	<h:outputText value="#{news.bedRoom} #{msg['house.bedRoom']} + " rendered="#{news.bedRoom ne 0}"/>
+																	<h:outputText value="#{news.bathRoom} #{msg['house.bathRoom']} + " rendered="#{news.bathRoom ne 0}"/>
+																	<h:outputText escape="false" value="#{news.size} #{msg['measure.meterSquare']}" />
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="price-wrapper">
+													<div class="price">
+														<h:outputText value="$" rendered="#{news.currency eq 'USD'}" />
+														<h:outputText value="#{news.price}">
+															<f:convertNumber locale="en_US"/>
+														</h:outputText> <h:outputText value=" VND" rendered="#{news.currency eq 'VND'}" />
+													</div>
+													<div class="rate">
+														<h:outputText value="/#{news.priceType}"/>
+													</div>
+												</div>
+											</div>
+
+										</ui:repeat>
+									</div>
+								</li>
+							</c:if>
+
+							<c:if test="${fn:length(SearchBean.mostViewedNews_2) gt 0}">
+								<li
+									style="width: 100%; float: left; margin-right: -100%; position: relative;">
+									<div class="row">
+										<ui:repeat value="#{SearchBean.mostViewedNews_2}" var="news">
+
+											<div class="span3 featured-item-wrapper">
+												<div class="featured-item">
+													<div class="top">
+														<div class="inner-border">
+															<div class="inner-padding">
+																<figure>
+						                                        	<p:graphicImage value="#{news.images[0]}"/>
+						                                            <div class="banner">
+																		<h:outputText value="#{news.exchangeType}"/>
+																	</div>
+																	<p:commandLink styleClass="figure-hover" action="#{NewsDetailBean.performSelectNews(news.id)}">
+																		Zoom
+						                                            </p:commandLink>
+						                                        </figure>
+						                                        <h3>
+																	<p:commandLink action="#{NewsDetailBean.performSelectNews(news.id)}" value="#{news.address}">
+																	</p:commandLink>
+							                                    </h3>
+																<p>#{SearchBean.getDistrictByCode(news.city,
+																	news.district)}, #{SearchBean.getCityByCode(news.city)}
+																</p>
+															</div>
+														</div>
+														<i class="bubble"></i>
+													</div>
+													<div class="bottom">
+														<div class="inner-border">
+															<div class="inner-padding">
+																<p>
+																	<h:outputText value="#{news.bedRoom} #{msg['house.bedRoom']} + " rendered="#{news.bedRoom ne 0}"/>
+																	<h:outputText value="#{news.bathRoom} #{msg['house.bathRoom']} + " rendered="#{news.bathRoom ne 0}"/>
+																	<h:outputText escape="false" value="#{news.size} #{msg['measure.meterSquare']}" />
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="price-wrapper">
+													<div class="price">
+														<h:outputText value="$" rendered="#{news.currency eq 'USD'}" />
+														<h:outputText value="#{news.price}">
+															<f:convertNumber locale="en_US"/>
+														</h:outputText> <h:outputText value=" VND" rendered="#{news.currency eq 'VND'}" />
+													</div>
+													<div class="rate">
+														<h:outputText value="/#{news.priceType}"/>
+													</div>
+												</div>
+											</div>
+
+										</ui:repeat>
+									</div>
+								</li>
+							</c:if>
+
+							<c:if test="${fn:length(SearchBean.mostViewedNews_3) gt 0}">
+								<li
+									style="width: 100%; float: left; margin-right: -100%; position: relative;">
+									<div class="row">
+										<ui:repeat value="#{SearchBean.mostViewedNews_3}" var="news">
+
+											<div class="span3 featured-item-wrapper">
+												<div class="featured-item">
+													<div class="top">
+														<div class="inner-border">
+															<div class="inner-padding">
+																<figure>
+						                                        	<p:graphicImage value="#{news.images[0]}"/>
+						                                            <div class="banner">
+																		<h:outputText value="#{news.exchangeType}"/>
+																	</div>
+																	<p:commandLink styleClass="figure-hover" action="#{NewsDetailBean.performSelectNews(news.id)}">
+																		Zoom
+						                                            </p:commandLink>
+						                                        </figure>
+						                                        <h3>
+																	<p:commandLink action="#{NewsDetailBean.performSelectNews(news.id)}" value="#{news.address}">
+																	</p:commandLink>
+							                                    </h3>
+																<p>#{SearchBean.getDistrictByCode(news.city,
+																	news.district)}, #{SearchBean.getCityByCode(news.city)}
+																</p>
+															</div>
+														</div>
+														<i class="bubble"></i>
+													</div>
+													<div class="bottom">
+														<div class="inner-border">
+															<div class="inner-padding">
+																<p>
+																	<h:outputText value="#{news.bedRoom} #{msg['house.bedRoom']} + " rendered="#{news.bedRoom ne 0}"/>
+																	<h:outputText value="#{news.bathRoom} #{msg['house.bathRoom']} + " rendered="#{news.bathRoom ne 0}"/>
+																	<h:outputText escape="false" value="#{news.size} #{msg['measure.meterSquare']}" />
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="price-wrapper">
+													<div class="price">
+														<h:outputText value="$" rendered="#{news.currency eq 'USD'}" />
+														<h:outputText value="#{news.price}">
+															<f:convertNumber locale="en_US"/>
+														</h:outputText> <h:outputText value=" VND" rendered="#{news.currency eq 'VND'}" />
+													</div>
+													<div class="rate">
+														<h:outputText value="/#{news.priceType}"/>
+													</div>
+
+
+												</div>
+											</div>
+
+										</ui:repeat>
+									</div>
+								</li>
+							</c:if>
+
+						</ul>
+					</div>
+				</div>
+				<i class="content-bubble"></i>
+			</section>
+		</section>
+	</section>
+
+		<div id="content" style="padding-bottom: 5px; padding-top: 5px;">
+			<section class="container">
+	                <section class="row featured-items">
+
+	                <section id="article-slider" style="margin:10px 0 10px 30px">
+                         <div class="container">
+                             <div class="row" style="margin-left: 0px;">
+
+                              	<div class="contact-box" style="width: inherit;">
+                              		<div class="contact-box-content">
+		                              	<p:graphicImage value="#{IndexBean.articles[0].image}" alt="#{IndexBean.articles[0].title}" style="float: left; height: 250px; width:350px"/>
+		                                  <div class="span6" style="margin-left: 0px; float: left; width: 547px;">
+
+		                                      <div class="text-box span6" style="margin-left: 10px; width: 537px; margin-top: 5px; height: 210px; overflow: hidden;">
+		                                          <h3 style="font-size: 13px; margin-bottom: 10px;">
+		                                          	<p:commandLink value="#{IndexBean.articles[0].title}" action="#{ArticleBean.navigateToArticleDetail(IndexBean.articles[0])}"/>
+		                                          </h3>
+
+		                                          <p><h:outputText value="#{IndexBean.articles[0].subTitle}"/></p>
+
+													<ul>
+														<c:forEach begin="1" end="${fn:length(IndexBean.articles) - 1}" varStatus="loop">
+															<li style="background:url('img/tab_right.png') no-repeat left 2px; padding-left: 18px; list-style: none;">
+																<p:commandLink value="#{IndexBean.articles[loop.index].title}" action="#{ArticleBean.navigateToArticleDetail(IndexBean.articles[loop.index])}"/>
+															</li>
+														</c:forEach>
+													</ul>
+		                                      </div>
+
+		                                      <p:commandLink action="#{ArticleBean.navigateToArticle(0)}" value="#{msg['text.viewall']}" style="float:right; margin-right:10px; text-decoration:underline" />
+		                                  </div>
+		                                  	<div style="border-left: 1px solid #c3c5c9; float: left">
+		                                  		<script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+												<!-- Rectangle Ad -->
+												<ins class="adsbygoogle"
+												     style="display:inline-block;width:300px;height:250px"
+												     data-ad-client="ca-pub-6710010670292922"
+												     data-ad-slot="4731543090"></ins>
+												<script>
+												(adsbygoogle = window.adsbygoogle || []).push({});
+												</script>
+		                                  	
+											</div>
+									  </div>
+	                              </div>
+
+                         	</div>
+                         </div>
+			        </section>
+
+	                <div style="margin-left: 30px;margin-bottom: 10px">
+						<!--  ExAd.me | 728x90 | nhadat-online.com -->
+						<div style="float: left;">
+							<script type="text/javascript" src="http://728x90.exad.me/js/?id=6137"></script>
+						</div>
+
+						<!-- START AD CODE -->
+						<script language="javascript" type="text/javascript" charset="utf-8">
+						var cpxcenter_banner_border = '#990033';
+						var cpxcenter_banner_text = '#000000';
+						var cpxcenter_banner_bg = '#FFFFFF';
+						cpxcenter_banner_link = '#000000';
+						cpxcenter_width = 468;
+						cpxcenter_height = 60;
+						</script>
+						<script language="JavaScript" type="text/javascript" src="http://ads.cpxcenter.com/cpxcenter/showAd.php?nid=4&amp;zone=68064&amp;type=banner&amp;sid=50853&amp;pid=49601&amp;subid=&amp;opt1=&amp;opt2=">
+						</script>
+						<!-- END AD CODE -->
+					</div>
+					<div class="span9" style="margin-top:10px">
+
+						<div class="contact-box" style="width: 105%">
+							<div class="title-bar">
+								<div class="inner" style="float: left; width: 97%">
+									<h2 style="float: left">#{msg['news.index.title.recently']}</h2>
+									<p:commandLink action="search?faces-redirect=true" value="#{msg['text.viewall']}" actionListener="#{SearchBean.performFilter}"
+										style="float:right; margin-right:5px; text-decoration:underline" />
+								</div>
+							</div>
+							<div class="contact-box-content">
+								<div class="inner">
+
+									<p:dataGrid var="news" value="#{IndexBean.recentlyNews}"
+										columns="3" id="most_view"
+										emptyMessage="#{msg['text.emptyMessage']}">
+
+										<div class="span3 featured-item-wrapper">
+											<div class="featured-item">
+												<div class="top">
+													<div class="inner-border">
+														<div class="inner-padding">
+															<figure>
+																<p:graphicImage value="#{news.images[0]}" />
+																<div class="banner">
+																	<h:outputText value="#{news.exchangeType}" />
+																</div>
+																<p:commandLink styleClass="figure-hover"
+																	action="#{NewsDetailBean.performSelectNews(news.id)}">
+																	Zoom
+					                                            </p:commandLink>
+															</figure>
+															<h3>
+																<p:commandLink
+																	action="#{NewsDetailBean.performSelectNews(news.id)}"
+																	value="#{news.address}" />
+															</h3>
+															<p>
+																<h:outputText
+																	value="#{SearchBean.getDistrictByCode(news.city, news.district)},"
+																	rendered="#{!empty news.district}" />
+																#{SearchBean.getCityByCode(news.city)}
+															</p>
+														</div>
+													</div>
+													<i class="bubble"></i>
+												</div>
+												<div class="bottom">
+													<div class="inner-border">
+														<div class="inner-padding">
+															<p>
+																<h:outputText
+																	value="#{news.bedRoom} #{msg['house.bedRoom']} + "
+																	rendered="#{news.bedRoom ne 0}" />
+																<h:outputText
+																	value="#{news.bathRoom} #{msg['house.bathRoom']} + "
+																	rendered="#{news.bathRoom ne 0}" />
+																<h:outputText escape="false"
+																	value="#{news.size} #{msg['measure.meterSquare']}" />
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="price-wrapper">
+												<div class="price">
+													<h:outputText value="$"
+														rendered="#{news.currency eq 'USD'}" />
+													<h:outputText value="#{news.price}">
+														<f:convertNumber locale="en_US" />
+													</h:outputText>
+													<h:outputText value=" VND"
+														rendered="#{news.currency eq 'VND'}" />
+												</div>
+												<div class="rate">
+													<h:outputText value="/#{news.priceType}"/>
+												</div>
+											</div>
+										</div>
+									</p:dataGrid>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<aside class="span3" style="margin-left: 60px; width: 240px; margin-top:10px">
+                        <section class="widget" style="width:inherit">
+                            <section class="widget-title uppercase">
+                                <div class="inner" style="height: 40px;">
+                                    <h2>#{msg['text.topUser']}</h2>
+                                </div>
+                            </section>
+                            <section class="widget-content">
+
+                            	<ui:repeat var="topAccount" value="#{IndexBean.topAccounts}" varStatus="status">
+                            		<div class="widget-section" style="border-bottom:none">
+	                            			<div class="inner">
+											<section class="featured-items" style="margin-top: 10px; float: left">
+												<div class="featured-item" style="margin-right: 20px; float: left; margin-bottom: 10px; height: 92px;">
+													<figure style="height: 90px; width: 90px;">
+														<p:graphicImage value="img/number_#{status.index + 1}.png" style="width:30%; position:absolute;"/>
+														<p:graphicImage value="#{topAccount.account.accountDetail.avatar}" style="height:inherit"/>
+
+				                                        </figure>
+			                                        </div>
+												</section>
+
+												<div>
+													<h6><h:outputText value="#{topAccount.account.accountDetail.fullName}"/></h6>
+													<h:outputText value="#{msg['text.newsNum']} #{topAccount.newsNum}"/>
+												</div>
+											</div>
+										</div>
+
+									</ui:repeat>
+
+	                            </section>
+	                        </section>
+
+	                        <section class="widget" style="width:inherit; border: 0" id="adsSection">
+		                        <div style="float: left">
+		                        	<!-- START AD CODE -->
+									<script language="javascript" type="text/javascript" charset="utf-8">
+									var cpxcenter_banner_border = '#990033';
+									var cpxcenter_banner_text = '#000000';
+									var cpxcenter_banner_bg = '#FFFFFF';
+									cpxcenter_banner_link = '#000000';
+									cpxcenter_width = 120;
+									cpxcenter_height = 600;
+									</script>
+									<script language="JavaScript" type="text/javascript" src="http://ads.cpxcenter.com/cpxcenter/showAd.php?nid=4&amp;zone=68069&amp;type=banner&amp;sid=50855&amp;pid=49601&amp;subid=&amp;opt1=&amp;opt2=">
+									</script>
+									<!-- END AD CODE -->
+								</div>
+
+								<div style="float: left">
+		                        	<!-- START AD CODE -->
+									<script language="javascript" type="text/javascript" charset="utf-8">
+									var cpxcenter_banner_border = '#990033';
+									var cpxcenter_banner_text = '#000000';
+									var cpxcenter_banner_bg = '#FFFFFF';
+									cpxcenter_banner_link = '#000000';
+									cpxcenter_width = 120;
+									cpxcenter_height = 600;
+									</script>
+									<script language="JavaScript" type="text/javascript" src="http://ads.cpxcenter.com/cpxcenter/showAd.php?nid=4&amp;zone=68069&amp;type=banner&amp;sid=50855&amp;pid=49601&amp;subid=&amp;opt1=&amp;opt2=">
+									</script>
+									<!-- END AD CODE -->
+								</div>
+							</section>
+
+	                    </aside>
+	                </section>
+				</section>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

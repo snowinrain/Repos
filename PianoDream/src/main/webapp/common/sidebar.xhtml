@@ -1,0 +1,148 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition>
+
+	<div class='col-sm-4 sidebar'>
+		<div class='sidebar-widgets section' id='sidebar-widgets'>
+
+			<h:panelGroup layout="block" styleClass="widget HTML"
+				rendered="#{!empty LoginBean.account.userName}">
+					<h2 class='title'>USER INFO</h2>
+					<div class='widget-content'>
+						<h:form prependId="false">
+							<div style="float: left; margin-right: 3.3%">
+								<div class="featured-item" style="width: 119px;">
+									<figure style="height: inherit; width: 120px;">
+										<p:graphicImage value="#{LoginBean.account.avatar}"
+											style="height:inherit" />
+									</figure>
+								</div>
+							</div>
+
+							<div>
+								<i class="fa fa-user fa-fw" />
+								<h:outputText value="#{LoginBean.account.userName}" />
+								<br /> <i class="fa fa-envelope-o fa-fw" />
+								<h:outputText value="#{LoginBean.account.email}" />
+								<br /> <br />
+
+								<i class="fa fa-caret-right fa-fw user-menu"/>
+								<p:commandLink value="My Videos" styleClass="user-menu" action="my-video?faces-redirect=true"/>
+								<br /> <i class="fa fa-caret-right fa-fw user-menu" />
+								<p:commandLink value="My Articles" styleClass="user-menu"/>
+								<br /> <i class="fa fa-caret-right fa-fw user-menu" />
+								<p:commandLink value="Change Profile" styleClass="user-menu"/>
+								<br /> <i class="fa fa-caret-right fa-fw user-menu" />
+								<p:commandLink value="Logout" styleClass="user-menu" action="#{LoginBean.logout}"/>
+								<br />
+							</div>
+						</h:form>
+					</div>
+					<div style="clear: both;"></div>
+
+			</h:panelGroup>
+
+
+			<div class='widget HTML' id='HTML3'>
+				<h2 class='title'>INTRODUCTION</h2>
+				<div class='widget-content'>
+					<div class="social-counter-item">
+						<a target="_blank" href="#"> <i class="fa fa-facebook"></i> <span
+							class="counter">132</span> <span class="counter-text">Fans</span>
+						</a>
+					</div>
+					<div class="social-counter-item">
+						<a target="_blank" href="#"> <i class="fa fa-twitter"></i> <span
+							class="counter">54</span> <span class="counter-text">Followers</span>
+						</a>
+					</div>
+					<div class="social-counter-item">
+						<a target="_blank" href="#"> <i class="fa fa-google-plus"></i>
+							<span class="counter">0</span> <span class="counter-text">Fans</span>
+						</a>
+					</div>
+					<div class="social-counter-item last">
+						<a target="_blank" href="#"> <i class="fa fa-rss"></i> <span
+							class="counter">155</span> <span class="counter-text">Subscribers</span>
+						</a>
+					</div>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<div class='widget HTML' id='HTML4'>
+				<h2 class='title'>Advertisement</h2>
+				<div class='widget-content'>
+					<script>
+						var gfEbExpBanerIM = true;
+					</script>
+					<noscript>
+						<a href="" target="_blank"><img
+							src="http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=bsr&amp;FlightID=8972776&amp;Page=&amp;PluID=0&amp;Pos=1338982874"
+							border="0" width="300" height="250" /></a>
+					</noscript>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<div class='widget HTML' id='HTML5'>
+				<h2 class='title'>Recent Comments</h2>
+				<div class='widget-content'>
+					<script type='text/javascript'>
+						var numposts2 = 6;
+						var showhover2 = false;
+						var showpostsummary2 = false;
+						var showpostdate2 = true;
+						var showcommentnum2 = false;
+						var displaymore2 = false;
+						var postwidth2 = 50;
+						var thumbwidth2 = 165;
+						var thumbheight2 = 108;
+						var type2 = "stwo-posts";
+					</script>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<div class='widget HTML' id='HTML6'>
+				<h2 class='title'>Movies Trailers</h2>
+				<div class='widget-content'>
+					<script type='text/javascript'>
+						var numposts2 = 3;
+						var showhover2 = true;
+						var showpostsummary2 = false;
+						var showpostdate2 = true;
+						var showcommentnum2 = true;
+						var displaymore2 = false;
+						var postwidth2 = 100;
+						var thumbheight2 = 240;
+						var thumbwidth2 = 360;
+						var type2 = "sone-post";
+					</script>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<div class='widget HTML' id='HTML2'>
+				<h2 class='title'>Sports</h2>
+				<div class='widget-content'>
+					<script type='text/javascript'>
+						var numposts2 = 4;
+						var showhover2 = true;
+						var showpostsummary2 = false;
+						var showpostdate2 = true;
+						var showcommentnum2 = false;
+						var displaymore2 = false;
+						var postwidth2 = 50;
+						var thumbwidth2 = 165;
+						var thumbheight2 = 108;
+						var type2 = "stwo-posts";
+					</script>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+	</div>
+</ui:composition>
+</html>

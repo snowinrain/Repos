@@ -1,0 +1,98 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="common/header.xhtml">
+	<ui:define name="main">
+
+		<!-- MAIN CONTAINER -->
+		<div class='container'>
+			<div class='row'>
+				<!-- Main Left -->
+					<div class='col-sm-8'>
+						<h:form prependId="false">
+							<div class='home-widgets section' id='home-widgets'>
+								<div class='widget HTML' id='HTML9'>
+									<h2 class='title' style="float: left;">My Videos</h2>
+
+									<p:commandLink styleClass="btn btn-danger" style="float: right" action="add-video?faces-redirect=true">
+										<i class="fa fa-file-movie-o fa-lg" style="margin-right: 5%"/>
+		  								Add Video
+									</p:commandLink>
+
+									<div class='widget-content'>
+
+										<p:dataList value="#{VideoBean.myVideos}" var="video" itemType="none" paginator="true" rows="10" styleClass="paginated"
+										paginatorPosition="bottom" currentPageReportTemplate="(Showing {startRecord}-{endRecord} of {totalRecords})"
+								        paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+								        rowsPerPageTemplate="20,40,100">
+
+											<div class="labeled-posts msone-post row">
+												<div style="width: 100%;" class="post-content">
+
+													<p:commandLink title="#{video.title}" action="#{VideoBean.navToVideoDetail(video)}" styleClass="first-image">
+														<script type="text/javascript">
+															var src = getScreen('#{video.videoURL}');
+															document.write('<img src="' + src + '" width="295px" height="197px" />');
+														</script>
+													</p:commandLink>
+
+													<p:commandLink title="#{video.title}" action="#{VideoBean.navToVideoDetail(video)}">
+														<div class="img-hover" style="width: 295px; height: 197px;"/>
+													</p:commandLink>
+
+													<div class="post-header">
+														<h3>
+															<p:commandLink title="#{video.title}" value="#{video.title}" action="http://videotube-sora.blogspot.com/2014/06/big-game.html" />
+														</h3>
+														<span class="post-meta">
+															<div style="min-height: 88px; overflow-y: hidden;">
+																Description: <h:outputText value="#{video.description}"/>
+															</div>
+															<div class="date">
+																<i class="fa fa-clock-o" />
+																<h:outputText value="#{video.createdDate}">
+			                                                		<f:convertDateTime pattern="dd - MMM - yyyy" />
+			                                                	</h:outputText>
+															</div>
+															<span class="comnum"><i class="fa fa-comments"></i><a
+																title="No Comments"
+																href="http://videotube-sora.blogspot.com/2014/06/big-game.html#comment-form">No
+																	Comments</a></span> <br style="margin: 0 0 10px;"/>
+
+															<p:commandLink styleClass="read-more" style="margin-right:2.3%">
+																<i class="fa fa-edit" />Edit
+															</p:commandLink>
+
+															<p:commandLink styleClass="read-more">
+																 <i class="fa fa-trash-o" />Delete
+															</p:commandLink>
+														</span>
+													</div>
+												</div>
+											</div>
+
+										</p:dataList>
+
+									</div>
+									<div class='clear'></div>
+								</div>
+							</div>
+						</h:form>
+					</div>
+
+				<!-- Main Left Ends! -->
+				<!-- Sidebar Right -->
+				<ui:include src="common/sidebar.xhtml" />
+				<!-- Sidebar Right Ends! -->
+			</div>
+		</div>
+
+		<!-- MAIN CONTAINER ENDS! -->
+
+	</ui:define>
+</ui:composition>
+</html>

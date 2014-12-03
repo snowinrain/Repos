@@ -1,0 +1,11 @@
+User-Agent: *
+Disallow:
+Allow: /
+Allow: /login.xhtml
+Allow: /register.xhtml
+Allow: /search.xhtml
+Allow: /addNews.xhtml
+Allow: /editNews.xhtml
+Allow: /news-detail.xhtml
+Allow: /index.xhtml
+Allow: /manageNews.xhtml

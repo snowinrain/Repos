@@ -1,0 +1,196 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="common/header.xhtml">
+	<ui:define name="main">
+
+		<script type="text/javascript">
+			setActiveLink(2);
+		</script>
+
+		<div id="content" style="padding-top:0px;">
+
+			<section id="content" class="alternate-bg" style="background-image: none;">
+				<section class="container">
+					<section class="row featured-items">
+						<h:form style="margin-bottom: 0px;">
+							<section class="span9">
+								<div class="property-box">
+									<div class="top">
+										<div class="row">
+											<div class="left" style="width: 100%">
+												<figure style="width: 579px; float: left">
+													<p:galleria value="#{NewsDetailBean.news.images}" autoPlay="false" var="image" panelWidth="577" panelHeight="365" showCaption="false">
+													    <p:graphicImage value="#{image}"/>
+													</p:galleria>
+
+													<div class="banner">
+														<h:outputText value="#{NewsDetailBean.news.exchangeType}"/>
+													</div>
+												</figure>
+												<div style="text-align: center">
+													<h2>#{msg['text.viewNum']}</h2>
+													<h1>#{NewsDetailBean.viewNum}</h1>
+
+													<h2>#{msg['button.follow']}</h2>
+													<h1>#{NewsDetailBean.followNum}</h1>
+												</div>
+												<div class="title-line">
+													<div class="pull-left">
+														<h2>
+															#{NewsDetailBean.news.address}
+														</h2>
+														<br/>
+														<p>
+															<h:outputText value="#{SearchBean.getDistrictByCode(NewsDetailBean.news.city, NewsDetailBean.news.district)}," rendered="#{!empty NewsDetailBean.news.district}"/>
+		                                                 		 #{SearchBean.getCityByCode(NewsDetailBean.news.city)}
+														</p>
+													</div>
+													<div class="pull-right price-wrapper" style="margin-right:30%">
+														<span class="price">
+															<h:outputText value="$" rendered="#{NewsDetailBean.news.currency eq 'USD'}" />
+															<h:outputText value="#{NewsDetailBean.news.price}">
+																<f:convertNumber locale="en_US"/>
+															</h:outputText> <h:outputText value=" VND" rendered="#{NewsDetailBean.news.currency eq 'VND'}" />
+														</span>
+														<div class="rate">
+							                             	<h:outputText value="/#{NewsDetailBean.news.priceType}"/>
+							                             </div>
+													</div>
+												</div>
+												<div class="description">
+													<p>
+														<h:outputText escape="false" value="#{NewsDetailBean.news.content}" />
+													</p>
+												</div>
+												<table class="table table-hover table-bordered">
+													<tbody>
+														<tr>
+															<td>#{msg['news.createdDate']}</td>
+															<td>
+																<h:outputText value="#{NewsDetailBean.news.createdDate}" style="color:green">
+			                                                		<f:convertDateTime pattern="dd/MM/yyyy" />
+			                                                	</h:outputText>
+															</td>
+														</tr>
+														<tr>
+															<td>#{msg['news.expirationDate']}</td>
+															<td>
+																<h:outputText value="#{NewsDetailBean.news.expirationDate}" style="color:red">
+			                                                		<f:convertDateTime pattern="dd/MM/yyyy" />
+			                                                	</h:outputText>
+															</td>
+														</tr>
+														<tr>
+															<td>#{msg['news.houseType']}</td>
+															<td>#{NewsDetailBean.news.houseType}</td>
+														</tr>
+														<tr>
+															<td>#{msg['house.bedRoom']}</td>
+															<td>#{NewsDetailBean.news.bedRoom}</td>
+														</tr>
+														<tr>
+															<td>#{msg['house.bathRoom']}</td>
+															<td>#{NewsDetailBean.news.bathRoom}</td>
+														</tr>
+														<tr>
+															<td>#{msg['house.livingRoom']}</td>
+															<td>#{NewsDetailBean.news.livingRoom}</td>
+														</tr>
+														<tr>
+															<td><h:outputText escape="false" value="#{msg['house.size']}"/></td>
+															<td>#{NewsDetailBean.news.length} x #{NewsDetailBean.news.width} = <span style="color: blue">#{NewsDetailBean.news.size} (m<sup>2</sup>)</span></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="bottom">
+										<div class="inner">
+											<div class="row">
+												<div class="pull-left update-box">
+													<p>
+														#{msg['text.lastUpdated']}
+														<h:outputText value="#{NewsDetailBean.news.updatedDate}" >
+	                                                		<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+	                                                	</h:outputText>
+													</p>
+												</div>
+												<div class="pull-right">
+													<c:if test="${empty LoginBean.account.userName}">
+														<p>
+															#{msg['text.loginRequired1']} <p:commandLink action="login?faces-redirect=true" value="#{msg['menu.login']}" styleClass="text-transform:lowercase"/> #{msg['text.loginRequired2']}
+														</p>
+													</c:if>
+
+													<c:if test="${!empty LoginBean.account.userName}">
+														<c:if test="${!NewsDetailBean.followed}">
+															<p:commandLink id="btnFollow" styleClass="follow btn btn-primary" actionListener="#{NewsDetailBean.performFollow}" update="@all">
+																	<i class="icon-white icon-plus"></i>
+																	#{msg['button.follow']}
+															</p:commandLink>
+														</c:if>
+
+														<c:if test="${NewsDetailBean.followed}">
+															<p:commandLink styleClass="redButton btn btn-primary" actionListener="#{NewsDetailBean.performUnfollow}" update="@all">
+																	#{msg['button.unfollow']}
+															</p:commandLink>
+														</c:if>
+													</c:if>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</h:form>
+
+						<aside class="span3">
+	                        <section class="widget">
+	                            <section class="widget-title">
+	                                <div class="inner">
+	                                    <h2>#{msg['user.title']}</h2>
+	                                    <p>#{msg['text.userName']}: #{NewsDetailBean.news.account.userName}</p>
+	                                </div>
+	                            </section>
+	                            <section class="widget-content top-arrow">
+	                                <div class="inner">
+	                                	<div style="text-align: center">
+	                                		<section class="featured-items" style="height: 60px; margin-top: 10px; margin-bottom: 60px; margin-left: 23%;">
+												<div class="featured-item" style="margin-right: 20px; float: left; height: 122px;margin-bottom: 10px;">
+													<figure style="height: 120px; width: 120px;">
+														<p:graphicImage value="#{NewsDetailBean.news.account.accountDetail.avatar}" style="height:inherit"/>
+			                                        </figure>
+		                                        </div>
+											</section>
+	                                	</div>
+
+	                                	<label>#{msg['text.fullName']}</label>
+	                                    <p>#{NewsDetailBean.news.account.accountDetail.fullName}</p>
+
+	                                    <label>Email</label>
+	                                    <p>#{NewsDetailBean.news.account.email}</p>
+
+	                                    <label>#{msg['text.phone']}</label>
+	                                    <p>#{NewsDetailBean.news.account.accountDetail.phone}</p>
+
+										<c:if test="${!empty NewsDetailBean.news.account.accountDetail.address}">
+		                                    <label>#{msg['text.address']}</label>
+		                                    <p>#{NewsDetailBean.news.account.accountDetail.address}</p>
+		                                </c:if>
+	                                </div>
+	                            </section>
+	                        </section>
+	                    </aside>
+					</section>
+				</section>
+			</section>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

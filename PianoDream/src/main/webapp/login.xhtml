@@ -1,0 +1,192 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="common/header.xhtml">
+	<ui:define name="main">
+		<div class='container'>
+			<div class="row">
+				<!-- Main Left -->
+				<div class="col-sm-8">
+					<div id="main" class="main section">
+						<div id="register" class="widget Blog leftSide">
+							<h2 class="title">Register</h2>
+							<div class="widget-content">
+
+								<h:form id="uploadForm" prependId="false" enctype="multipart/form-data">
+
+									<p:messages id="msg"/>
+
+									<div style="text-align: center">
+										<div class="featured-item" style="width: 119px; margin-left: 42%;">
+											<figure style="height: inherit; width: 120px;">
+												<p:graphicImage value="#{RegisterBean.account.avatar}" style="height:inherit"/>
+	                                        </figure>
+                                        </div>
+
+										<div style="clear:both"/>
+
+										<p:commandLink value="Upload Avatar" style="margint-top: 10px; color: #e73737"
+														onclick="document.getElementById('fileUpload_input').click()"/>
+
+										<p:fileUpload id="fileUpload" mode="advanced" multiple="false" auto="true" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+											sizeLimit="2097152" fileUploadListener="#{RegisterBean.avatarUpload}" process="@form"
+											showButtons="false" update="@form" style="visibility:hidden; position:absolute"
+											invalidSizeMessage="The maximum of image is 2MB. Please choose again"
+											invalidFileMessage="Please choose file type gif, jpg, jpeg, png"/>
+									</div>
+                               	</h:form>
+
+								<h:form id="register-form" prependId="false">
+
+									<div class="input-group margin-bottom-sm leftCol">
+									  <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+									  <p:inputText styleClass="form-control" placeholder="Username" value="#{RegisterBean.account.userName}"
+									  	required="true" requiredMessage="Username is required field"/>
+									</div>
+									<div class="input-group margin-bottom-sm rightCol">
+									  <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+									  <p:inputText styleClass="form-control" placeholder="Email address" value="#{RegisterBean.account.email}"
+									  	required="true" requiredMessage="Email is required field"/>
+									</div>
+
+									<div style="clear: both"></div>
+
+									<div class="input-group margin-bottom-sm leftCol" style="margin-bottom: 0">
+									  <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+									  <p:password styleClass="form-control" placeholder="Password" value="#{RegisterBean.account.password}"
+										required="true" requiredMessage="Password is required field"/>
+									</div>
+									<div class="input-group margin-bottom-sm rightCol" style="margin-bottom: 0">
+									  <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+									  <p:password styleClass="form-control" placeholder="Re-type Password" value="#{RegisterBean.rePass}" />
+									</div>
+
+									<div style="clear: both"></div>
+
+									<p:commandButton style="visibility: hidden; position:absolute" id="submitBtn" update=":register-form, :uploadForm" action="#{RegisterBean.register}"
+										onstart="PF('statusDialog').show(); $('#loadingDialog').css('width', '0px');$('#loadingDialog').css('height', '0px');"
+										onsuccess="PF('statusDialog').hide();" />
+
+									<p:defaultCommand target="submitBtn"/>
+								</h:form>
+							</div>
+
+							<div class="widget-bottom">
+								<h:form>
+									<p:commandLink styleClass="btn btn-primary" onclick="document.getElementById('submitBtn').click()">
+										<i class="fa fa-check fa-fw"></i>
+										Register
+									</p:commandLink>
+								</h:form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Main Left Ends! -->
+
+				<!-- Sidebar Right -->
+				<div class="col-sm-4 sidebar">
+					<div id="sidebar-widgets" class="sidebar-widgets section">
+						<div id="HTML3" class="widget HTML rightSide">
+							<h2 class="title">Login</h2>
+							<div class="widget-content">
+
+								<h:form id="login-form" prependId="false">
+
+									<p:messages id="loginMsg"/>
+
+									<div class="input-group margin-bottom-sm">
+									  <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+									  <p:inputText styleClass="form-control" placeholder="Username/Email" value="#{LoginBean.account.userName}"
+									  	required="true" requiredMessage="Username is required field"/>
+									</div>
+
+									<div class="input-group margin-bottom-sm" style="margin-bottom: 0">
+									  <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+									  <p:password styleClass="form-control" placeholder="Password" value="#{LoginBean.account.password}"
+										required="true" requiredMessage="Password is required field"/>
+									</div>
+
+									<p:commandButton style="visibility: hidden; position:absolute" id="loginBtn" update="login-form" action="#{LoginBean.login}"
+										onstart="PF('statusDialog').show(); $('#loadingDialog').css('width', '0px');$('#loadingDialog').css('height', '0px');"	onsuccess="PF('statusDialog').hide();" />
+
+									<p:defaultCommand target="loginBtn"/>
+								</h:form>
+							</div>
+
+							<div class="widget-bottom" style="text-align: left; padding-left: 20px;">
+								<h:form>
+									<p:commandLink styleClass="btn btn-primary" onclick="document.getElementById('loginBtn').click()">
+										<i class="fa fa-unlock fa-fw"></i>
+										Login
+									</p:commandLink>
+									<p:commandLink value="Forgot Password ?" oncomplete="centerAndShowDialog('#forgotPasswordDlg', 'forgotPasswordDialog')"
+										update=":dlgForm" style="color:#e73737; margin-right: 20px; margin-top: 6px; float:right">
+											<f:setPropertyActionListener target="#{LoginBean.forgotPass}" value="false" />
+									</p:commandLink>
+								</h:form>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!-- Sidebar Right Ends! -->
+			</div>
+		</div>
+
+
+		<h:form prependId="false" id="dlgForm">
+			<p:dialog modal="true" widgetVar="forgotPasswordDialog" id="forgotPasswordDlg" resizable="false" draggable="false" styleClass="widget Blog leftSide" closable="false">
+				<f:facet name="header">
+					FORGOT PASSWORD
+				</f:facet>
+
+				<h:panelGroup layout="block" id="parent-block" styleClass="widget-content">
+					<h:panelGroup layout="block" rendered="#{!LoginBean.forgotPass}">
+						<p:messages id="forgotPasswordMsg"/>
+
+						<span>Please enter your email to get Password</span>
+
+	                    <div class="input-group margin-bottom-sm" style="margin-top: 10px;">
+						  <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+						  <p:inputText styleClass="form-control" placeholder="Email address" value="#{LoginBean.forgotEmail}"
+						  	required="true" requiredMessage="Email is required field"/>
+						</div>
+
+						<p:commandLink styleClass="btn btn-primary" actionListener="#{LoginBean.forgotPassword}" update="parent-block"
+							onstart="PF('statusDialog').show(); $('#loadingDialog').css('width', '0px');$('#loadingDialog').css('height', '0px');"	onsuccess="PF('statusDialog').hide();">
+							<i class="fa fa-check fa-fw"></i>
+							Submit
+						</p:commandLink>
+
+						<p:commandLink styleClass="btn btn-default" oncomplete="PF('forgotPasswordDialog').hide();" immediate="true" style="margin-left: 10px;">
+							<i class="fa fa-times fa-fw"></i>
+							Close
+						</p:commandLink>
+
+
+
+					</h:panelGroup>
+
+					<h:panelGroup layout="block" rendered="#{LoginBean.forgotPass}">
+						<span>Password is sent. Please check your email to get password info !</span>
+
+						<br/>
+
+						<p:commandLink styleClass="btn btn-default" oncomplete="PF('forgotPasswordDialog').hide();" immediate="true">
+							<i class="fa fa-times fa-fw"></i>
+							Close
+						</p:commandLink>
+					</h:panelGroup>
+				</h:panelGroup>
+
+			</p:dialog>
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+</html>
