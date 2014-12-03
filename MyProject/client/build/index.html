@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="myProject" lang="en" manifest="myproject.appcache">
+
+<head>
+    <title>PATIENT MANAGEMENT</title>
+    <!--<link rel="shortcut icon" href="assets/images/phone.ico"/>-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- compiled CSS -->
+    
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.css" />
+        
+        <link rel="stylesheet" type="text/css" href="assets/myProject-1.0.0.css" />
+        
+
+    <link rel="stylesheet" type="text/css" href="assets/css/kendo.common-material.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/kendo.material.min.css" />
+
+            <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!--[if lt IE 9]>
+<script type="text/javascript" src="vendor/angular-ui-utils/modules/ie-shiv/ie-shiv.js"></script>
+<script type="text/javascript" src="vendor/html5shiv/dist/html5shiv.js"></script>
+<script type="text/javascript" src="vendor/respond/respond.src.js"></script>
+<script type="text/javascript" src="vendor/es5-shim/es5-shim.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-controller="appCtrl">
+
+    <div ng-show="app.indicator" class="app-indicator text-center">
+        <img class='indicator' src='https://d1fnpdk9svbocx.cloudfront.net/img/ajax_loader_gray_64.gif'>
+    </div>
+
+    <div ui-view></div>
+
+    <!-- compiled JavaScript -->
+    
+        <script type="text/javascript" src="vendor/jquery/jquery.js"></script>
+    
+        <script type="text/javascript" src="vendor/angular/angular.js"></script>
+    
+        <script type="text/javascript" src="vendor/angular-sanitize/angular-sanitize.js"></script>
+    
+        <script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    
+        <script type="text/javascript" src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+    
+        <script type="text/javascript" src="vendor/moment/moment.js"></script>
+    
+        <script type="text/javascript" src="vendor/jaydata/release/jaydata.min.js"></script>
+    
+        <script type="text/javascript" src="vendor/jaydata/release/jaydataproviders/IndexedDbProvider.min.js"></script>
+    
+        <script type="text/javascript" src="src/app/app.js"></script>
+    
+        <script type="text/javascript" src="src/app/main/main.js"></script>
+    
+        <script type="text/javascript" src="templates-common.js"></script>
+    
+        <script type="text/javascript" src="templates-app.js"></script>
+    
+
+    <script type="text/javascript" src="assets/js/kendo.all.min.js"></script>
+    
+    <script type="text/javascript">
+        $('html').on('click', function(e) {
+            $('.popover-link').each(function() {
+                if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0 && typeof $(e.target).data('original-title') == 'undefined' && !$(e.target).parents().is('.popover.in')) {
+                    var sibling = $(this).siblings();
+                    if (sibling.length > 0 && $(sibling[0]).is('.popover.in')) {
+                        $(this).click(); // this hides popover, but content remains
+                    }
+                    return;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
